@@ -255,19 +255,38 @@ END
 
 Subrutinas
 =========
+
+<table>
+<tr>
+<td> Carga Total </td> <td> Carga Parcial </td> <td></td>
+</tr>
+<tr>
+<td>
+ 
 ```Assembly
 ORG 1000H
   NUM1 DW 3
   NUM2 DW 3
   RES DW ?
+```
+</td>
+<td>
  
+
+```Assembly
 ORG 3000H
-  MUL:MOV CX,0 ;Por el momento el resultado es 0
+  MUL:MOV CX,0 
+  ;Por el momento el resultado es 0
   LOOP: ADD CX,BX
     DEC AX
     JNZ LOOP
   FIN: RET
+```
  
+</td>
+<td>
+  
+```Assembly
 ORG 2000H
   ;Inicializamos AX y BX
   MOV AX,NUM1
@@ -277,3 +296,7 @@ ORG 2000H
   HLT 
 END
 ```
+</td>
+</tr>
+ 
+</table>
