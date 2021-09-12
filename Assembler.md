@@ -358,3 +358,72 @@ END
 </tr>
  
 </table>
+
+
+Parametros_Por_Referencia
+=========================
+
+<table>
+<tr>
+<td> Variables </td> <td> Modulo </td> <td>Programa Principal</td>
+</tr>
+<tr>
+<td>
+ 
+```Assembly
+ORG 1000H
+   NUM1 DW 3
+   NUM2 DW 3
+   RES DW ?
+```
+</td>
+<td>
+ 
+
+```Assembly
+ORG 3000H
+  MUL:MOV BX, SP 
+  ;Tomo Valor de NUM2 en AX
+  ADD BX,2       ;Posiciono en DIR de NUM2
+  MOV AX, [BX]   ;AX = Dir de NUM2
+  MOV DX, BX     ;Backup de BX
+  MOV BX, AX     ;BX = Dir de NUM2
+  MOV AX, [BX]   ;AX = NUM2
+  MOV BX, DX     ;Recupero el puntero de la pila
+  
+  ;Tomo valor NUM1 en DX
+  ADD BX, 2
+  MOV DX, [BX] ;DX = DIR NUM1(1000H)
+  MOV BX, DX   ;BX = DIR NUM1(1000H)
+  MOV DX, [BX] ;DX = NU1
+  
+  ;MULTIPLICAR
+  LOOP: ADD CX,DX
+    DEC AX
+    JNZ LOOP
+    
+  FIN: RET
+```
+ 
+</td>
+<td>
+  
+```Assembly
+ORG 2000H
+  ;Inicializamos AX y BX
+  MOV AX,NUM1
+  MOV BX,NUM2
+  ;Apilamos antes de llamar
+  PUSH AX
+  PUSH BX
+  CALL MUL
+  MOV RES,CX
+  POP AX
+  POP BX
+  HLT 
+END
+```
+</td>
+</tr>
+ 
+</table>
