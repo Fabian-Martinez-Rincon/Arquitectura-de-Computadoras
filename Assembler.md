@@ -109,7 +109,7 @@ Suma De Elementos En Una Tabla
 ==============================
 ```Assembly
 ORG 1000H
-  TABLA DB 2,4,6,8,10,12,14,16,18,20 ;Se ejecuta la misma cantidad de numeros que teiene la tabla
+  TABLA DB 2,4,6,8,10,12,14,16,18,20 ;Se ejecuta la misma cantidad de numeros que tiene la tabla
   FIN DB ? ;Lo empiezo con basura 1010h
   TOTAL DB ? ;Tambien tiene basura 1011h
   MAX DB 13 ; 1012h
