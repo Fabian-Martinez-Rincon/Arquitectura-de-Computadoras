@@ -4,11 +4,11 @@
 Indice
 =================
 
-   * [If](#Registros_Indice)
-   * [Potencias](#Flags)
-   * [Suma De Elementos en una Tabla](#Direccionamientos)
-   * [Menores o Iguales de x en una Tabla](#Transferencia_De_Datos)
-   * [Suma De Vectores](#Instrucciones_Aritmeticas)
+   * [If](#IF)
+   * [Potencias](#Potencias)
+   * [Suma De Elementos en una Tabla](#Suma_De_Elementos_En_Una_Tabla)
+   * [Menores o Iguales de x en una Tabla](#Menores_o_Iguales_de_X_en_una_Tabla)
+   * [Suma De Vectores](#Suma_De_Vectores)
    * [Saltos](#Saltos)
    * [Instrucciones Logicas](#Instrucciones_Logicas)
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
@@ -105,7 +105,7 @@ ORG 2000H ;empiezo en la 2000
 END
 ;1,2,4,8,16,32,64,128,256
 ```
-Suma De Elementos En Una Tabla
+Suma_De_Elementos_En_Una_Tabla
 ==============================
 ```Assembly
 ORG 1000H
@@ -127,7 +127,7 @@ ORG 2000H
 END
 ; El resultado final es 6E (110 en decimal) 
 ```
-Menores o Iguales de X en una Tabla
+Menores_o_Iguales_de_X_en_una_Tabla
 ===================================
 ```Assembly
 ORG 1000H
@@ -152,7 +152,7 @@ ORG 2000H
   HLT
 END
 ```
-Suma De Vectores
+Suma_De_Vectores
 ================
 ```Assembly
 
