@@ -8,7 +8,7 @@ Indice
    * [Potencias](#Flags)
    * [Suma De Elementos en una Tabla](#Direccionamientos)
    * [Menores o Iguales de x en una Tabla](#Transferencia_De_Datos)
-   * [Instrucciones Aritmeticas](#Instrucciones_Aritmeticas)
+   * [Suma De Vectores](#Instrucciones_Aritmeticas)
    * [Saltos](#Saltos)
    * [Instrucciones Logicas](#Instrucciones_Logicas)
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
