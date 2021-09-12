@@ -4,7 +4,7 @@
 Indice
 =================
 
-   * [Registros Indice](#Registros_Indice)
+   * [If](#Registros_Indice)
    * [Flags](#Flags)
    * [Direccionamientos](#Direccionamientos)
    * [Transeferencia de Datos](#Transferencia_De_Datos)
@@ -14,12 +14,45 @@ Indice
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
 
 
-Registros_Indice
+IF
 ================
-***SP*** (Stack Pointer): Apuntador de Pila. Proporciona un valor de desplazamiento que se refiere a la palabra actual que  está siendo procesada en la pila.
 
-***IP*** (Instruction Pointer): Es un registro de 16 bits que contiene el desplazamiento de la dirección  de la siguiente instrucción que se ejecutará.
 
+<table>
+<tr>
+<td> Variables </td> <td> Programa Principal </td>
+</tr>
+<tr>
+<td>
+ 
+```Assembly
+ORG 1000H
+  A DB 4
+  B DB 8
+  C DB ?
+
+```
+</td>
+<td>
+ 
+
+```Assembly
+org 2000h
+  MOV AL, A
+  MOV BL, B
+  MOV CL, C
+  CMP AL,BL
+  JS MENOR
+  MOV C,BL
+  JMP TERMINAR
+  MENOR: MOV C,AL
+  TERMINAR:HLT
+END
+```
+  
+</td>
+</tr>
+</table>
 Flags
 ***O*** Overflow , ***Z*** Zeros, ***S*** Signo, ***C*** Carry.
 
