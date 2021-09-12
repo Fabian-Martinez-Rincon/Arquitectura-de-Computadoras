@@ -105,14 +105,31 @@ ORG 2000H ;empiezo en la 2000
 END
 ;1,2,4,8,16,32,64,128,256
 ```
+
 Suma_De_Elementos_En_Una_Tabla
 ==============================
+
+<table>
+<tr>
+<td> Carga Total </td> <td> Carga Parcial </td>
+</tr>
+<tr>
+<td>
+ 
 ```Assembly
 ORG 1000H
-  TABLA DB 2,4,6,8,10,12,14,16,18,20 ;Se ejecuta la misma cantidad de numeros que tiene la tabla
-  FIN DB ? ;Lo empiezo con basura 1010h
-  TOTAL DB ? ;Tambien tiene basura 1011h
+  TABLA DB 2,4,6,8,10,12,14,16,18,20
+  FIN DB ? 
+  ;Lo empiezo con basura 1010h
+  TOTAL DB ? 
+  ;Tambien tiene basura 1011h
   MAX DB 13 ; 1012h
+```
+</td>
+<td>
+ 
+
+```Assembly
 ORG 2000H
   MOV AL, 0  ;Pongo el registro AL en 0
   MOV CL, OFFSET FIN-OFFSET TABLA ;Resta ambas direcciones
@@ -127,6 +144,12 @@ ORG 2000H
 END
 ; El resultado final es 6E (110 en decimal) 
 ```
+ 
+</td>
+</tr>
+ 
+</table>
+
 Menores_o_Iguales_de_X_en_una_Tabla
 ===================================
 ```Assembly
