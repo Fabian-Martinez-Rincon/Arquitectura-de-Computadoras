@@ -304,3 +304,57 @@ END
 
 Parametros_Por_Valor
 ====================
+
+<table>
+<tr>
+<td> Variables </td> <td> Modulo </td> <td>Programa Principal</td>
+</tr>
+<tr>
+<td>
+ 
+```Assembly
+ORG 1000H
+   NUM1 DW 3
+   NUM2 DW 3
+   RES DW ?
+```
+</td>
+<td>
+ 
+
+```Assembly
+ORG 3000H
+   MUL:MOV CX,0 ;Por el momento el resultado es 0
+   MOV BX, SP 
+   ADD BX,2 ;Posiciono en NUM2
+   MOV DX, [BX] ;Tomo NUM2 en DX
+   ADD BX,2 ;Posiciono en NUM1
+   MOV AX,[BX];Tomo NUM1 en AX
+   LOOP: ADD CX,DX
+      DEC AX
+      JNZ LOOP
+   FIN: RET
+```
+ 
+</td>
+<td>
+  
+```Assembly
+ORG 2000H
+  ;Inicializamos AX y BX
+  MOV AX,NUM1
+  MOV BX,NUM2
+  ;Apilamos antes de llamar
+  PUSH AX
+  PUSH BX
+  CALL MUL
+  MOV RES,CX
+  POP AX
+  POP BX
+  HLT 
+END
+```
+</td>
+</tr>
+ 
+</table>
