@@ -9,6 +9,7 @@ Indice
    * [Suma De Elementos en una Tabla](#Suma_De_Elementos_En_Una_Tabla)
    * [Menores o Iguales de x en una Tabla](#Menores_o_Iguales_de_X_en_una_Tabla)
    * [Suma De Vectores](#Suma_De_Vectores)
+   * [Subrutinas](#Subrutinas)
    * [Parametros_Por_Valor](#Parametros_Por_Valor)
    * [Instrucciones Logicas](#Instrucciones_Logicas)
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
@@ -253,8 +254,8 @@ END
  
 </table>
 
-Parametros_Por_Valor
-====================
+Subrutinas
+==========
 
 <table>
 <tr>
@@ -300,3 +301,6 @@ END
 </tr>
  
 </table>
+
+Parametros_Por_Valor
+====================
