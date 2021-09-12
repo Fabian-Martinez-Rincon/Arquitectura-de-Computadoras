@@ -31,6 +31,9 @@ ORG 1000H
   B DB 8
   C DB ?
 
+C:=A
+else
+C:=B
 ```
 </td>
 <td>
@@ -68,5 +71,21 @@ org 2000h
  END
   ```
  </td>
+  <td>
+    
+```Assembly
+org 2000h
+  MOV AL, A
+  MOV BL, B
+  MOV CL, C
+  CMP AL,BL
+  JZ IGUAL
+  MOV C,BL
+  JMP TERMINAR
+  IGUAL: MOV C,AL
+  TERMINAR:HLT
+END
+```
+  </td>
 </tr>
 </table>
