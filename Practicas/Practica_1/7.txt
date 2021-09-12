@@ -1,0 +1,2 @@
+E) Push: Carga fuente en el tope de la pila
+Pop: Desapila el tope de la pila y lo almacena en el destino
