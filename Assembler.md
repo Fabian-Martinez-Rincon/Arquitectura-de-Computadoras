@@ -51,5 +51,22 @@ END
 ```
   
 </td>
+<td>
+  
+ ```Assembly
+org 2000h
+  MOV AL, A
+  MOV BL, B
+  MOV CL, C
+  CMP AL,BL
+  JS MENOR
+  JZ MENOR
+  MOV C,BL
+  JMP TERMINAR
+  MENOR: MOV C,AL
+  TERMINAR:HLT
+ END
+  ```
+ </td>
 </tr>
 </table>
