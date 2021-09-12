@@ -197,18 +197,34 @@ END
 
 Suma_De_Vectores
 ================
-```Assembly
 
+<table>
+<tr>
+<td> Carga Total </td> <td> Carga Parcial </td>
+</tr>
+<tr>
+<td>
+ 
+```Assembly
 ; Memoria de Datos
 ORG 1000H
-  TAB1 DW 1, 1, 1, 1, 1, 1;6 Elementos de 16 bits c/u 
+  TAB1 DW 1, 1, 1, 1, 1, 1
+  ;6 Elementos de 16 bits c/u 
   TAB2 DW 2, 2, 2, 2, 2, 2
-  TAB3 DW ?, ?, ?, ?, ?, ?;Guardo las direcciones para el resultado
+  TAB3 DW ?, ?, ?, ?, ?, ?
+  ;Guardo las direcciones para el resultado
 
-  Contador DB 6 ;Para recorrer la tabla 
+  Contador DB 6 
+  ;Para recorrer la tabla 
 
-  DIRECCION DW ?  ;Es solo para no perder la direccion de TAB3
+  DIRECCION DW ?  
+  ;Es solo para no perder la direccion de TAB3
+```
+</td>
+<td>
+ 
 
+```Assembly
 ORG 2000H
   MOV AX, OFFSET TAB1 ;Guardo la dir de Tab1 en AX
   MOV CX, OFFSET TAB2 ;Guardo la dir de Tab2 en CX
@@ -231,6 +247,12 @@ ORG 2000H
   HLT
 END
 ```
+ 
+</td>
+</tr>
+ 
+</table>
+
 Subrutinas
 =========
 ```Assembly
