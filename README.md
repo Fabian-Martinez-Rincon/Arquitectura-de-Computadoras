@@ -5,16 +5,12 @@ Indice
 
    * [Registros Indice](#Registros_Indice)
    * [Flags](#Flags)
-   * [Imprimir](#Imprimir)
-   * [Maximo](#Maximo)
-   * [Minimo](#Minimo)
-   * [Cantidad de Elementos](#Cantidad_Elementos)
-   * [Entre dos Numeros](#Entre_Numeros)
-   * [Borrar](#Borrar)
-   * [Encontrar Ordenado](#Encontrar_Ordenado)
-   * [Encontrar Sin Orden](#Encontrar_SinOrden)
-   * [Encontrar Sin Orden2](#Encontrar_SinOrden2)
-
+   * [Direccionamientos](#Direccionamientos)
+   * [Transeferencia de Datos](#Transferencia_De_Datos)
+   * [Instrucciones Aritmeticas](#Instrucciones_Aritmeticas)
+   * [Saltos](#Saltos)
+   * [Instrucciones Logicas](#Instrucciones Logicas)
+   * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
 
 
 Registros_Indice
@@ -51,7 +47,7 @@ Instrucciones_Logicas
 
 ![4 invertida](https://user-images.githubusercontent.com/55964635/132963321-d6d539f6-616e-45e3-a04b-f80ef3999fb6.png)
 
-Instrucciones_De_Control_Y_Manejo_De_Operaciones
-================================================
+Instrucciones_De_Control_Y_Manejo_De_Interrupciones
+===================================================
 
 ![5 invertida](https://user-images.githubusercontent.com/55964635/132963323-c116eb1f-12fd-4124-ac96-28dfc96cbbba.png)
