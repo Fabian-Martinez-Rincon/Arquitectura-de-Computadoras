@@ -9,7 +9,7 @@ Indice
    * [Transeferencia de Datos](#Transferencia_De_Datos)
    * [Instrucciones Aritmeticas](#Instrucciones_Aritmeticas)
    * [Saltos](#Saltos)
-   * [Instrucciones Logicas](#Instrucciones Logicas)
+   * [Instrucciones Logicas](#Instrucciones_Logicas)
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
 
 
