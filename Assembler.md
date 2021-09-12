@@ -135,11 +135,11 @@ ORG 2000H
   MOV CL, OFFSET FIN-OFFSET TABLA ;Resta ambas direcciones
   ;100Ah-1000h
   ;El resultado nos da la cantidad de elementos que tiene tabla
-  MOV BX, OFFSET TABLA ;Mandamos al registro BX la direccion de tabla (1000h)
+  MOV BX, OFFSET TABLA ;Mandamos al registro BX la dir de tabla (1000h)
   SUMA: ADD AL, [BX];Sumo a lo que apunta 1000h se lo suma al registo AL
   INC BX ;Incremento la posicion de memoria para ir a 1001h
   DEC CL ;Decremento el contador de elementos que tengo en la tabla
-  JNZ SUMA ;Mientras nuestro contador no esta en cero, que se vuelva a ajecutar
+  JNZ SUMA ;Mientras nuestro contador no esta en cero
   HLT
 END
 ; El resultado final es 6E (110 en decimal) 
@@ -152,12 +152,26 @@ END
 
 Menores_o_Iguales_de_X_en_una_Tabla
 ===================================
+
+<table>
+<tr>
+<td> Carga Total </td> <td> Carga Parcial </td>
+</tr>
+<tr>
+<td>
+ 
 ```Assembly
 ORG 1000H
   TABLA DB 2,4,6,8,10,12,14,16,18,20
   FIN DB ?
   TOTAL DB ?
   MAX DB 13
+```
+</td>
+<td>
+ 
+
+```Assembly
 ORG 2000H
   MOV AL, 0 ;Inicializo el contador de elementos menores iguales
   MOV CL, OFFSET FIN-OFFSET TABLA ;Saco los elementos de la tabla 
@@ -175,6 +189,12 @@ ORG 2000H
   HLT
 END
 ```
+ 
+</td>
+</tr>
+ 
+</table>
+
 Suma_De_Vectores
 ================
 ```Assembly
