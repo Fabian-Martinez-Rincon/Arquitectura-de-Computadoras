@@ -1,6 +1,5 @@
-<h1 align="center"> 💻Arquitectura De Computadoras </h1>
+<h1 align="center"> 💻Assembler</h1>
 
-- [Assembler](/Assembler.md)
 
 Indice
 =================
