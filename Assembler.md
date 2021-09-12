@@ -11,8 +11,8 @@ Indice
    * [Suma De Vectores](#Suma_De_Vectores)
    * [Subrutinas](#Subrutinas)
    * [Parametros_Por_Valor](#Parametros_Por_Valor)
-   * [Instrucciones Logicas](#Instrucciones_Logicas)
-   * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
+   * [Parametros Por Referencia](#Prametros_Por_Referencia)
+   * [SWAP](SWAP)
 
 
 IF
