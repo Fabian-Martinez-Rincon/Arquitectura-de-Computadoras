@@ -3,7 +3,7 @@
 
 
 ORG 1000H
- CAD DB "FXCELENTe" 
+ CAD DB "FXCEELENTe" 
  CERO DB 0
  CARACTER DB "E"
  resultado DW ?
@@ -19,12 +19,12 @@ ORG 3000H
   ADD BX, 2 ;Me muevo en la pila
   MOV BX, [BX] ;Paso la direccion de la cadena
   LOOP: MOV CL, BYTE PTR [BX] ;El primer digito de la cadena
-  CMP CL, 0
+  CMP CL, 0 ;Corte para temrinar
   JZ TERMINO
-  CMP CL, AL
+  CMP CL, AL ;Comparo el caracter con nuestro dato
   JNZ CONTINUAR
-  INC DX
-  CONTINUAR: INC BX
+  INC DX   ;Nuestro contador
+  CONTINUAR: INC BX ;Continuo normal
    JMP LOOP
   INC BX
   
