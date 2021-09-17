@@ -30,18 +30,16 @@ END
 <td>
  
 
-```pascal
-Procedure preOrden ( a : arbol );
-begin //Input 1,22,3,4,55,67,7,0
-    if ( a<> nil ) then begin
-        write (a^.dato,'|');   
-        preOrden (a^.HI);
-        preOrden (a^.HD);
-    end;
-end;//Output 1,22,3,4,7,55,67
-```
-</td>
- <td>
+```Assembly
+ORG 1000H
+ MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
+ FIN DB ?
+ORG 2000H
+ MOV BX, OFFSET MENSAJE
+ MOV AL, OFFSET FIN - OFFSET MENSAJE
+ INT 7    
+ INT 0
+END
   
 ```pascal
 Procedure posOrden ( a : arbol );
