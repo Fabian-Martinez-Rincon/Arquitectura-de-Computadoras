@@ -1,18 +1,13 @@
-<h1 align="center"> 💻Assembler</h1>
+<h1 align="center"> 💻Interrupciones</h1>
+
+### Por Sofware
 
 
-Indice
-=================
-
-   * [If](#IF)
-   * [Potencias](#Potencias)
-   * [Suma De Elementos en una Tabla](#Suma_De_Elementos_En_Una_Tabla)
-   * [Menores o Iguales de x en una Tabla](#Menores_o_Iguales_de_X_en_una_Tabla)
-   * [Suma De Vectores](#Suma_De_Vectores)
-   * [Subrutinas](#Subrutinas)
-   * [Parametros_Por_Valor](#Parametros_Por_Valor)
-   * [Parametros Por Referencia](#Parametros_Por_Referencia)
-   * [SWAP](#SWAP)
-
+| Interrupcion | Funcion |
+| ------------- | ------------- |
+| INT 0  | Detiene el programa. Igual a HLT  |
+| INT 3  | Debug. No lo vamos a utilizar  |
+| INT 6  | Lee un caracter desde teclado  |
+| INT 7  | Imprime un string en pantalla  |
 
 
