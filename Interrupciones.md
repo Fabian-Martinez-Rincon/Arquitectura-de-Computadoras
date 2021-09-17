@@ -12,7 +12,7 @@
 
 <table>
 <tr>
-<td> En Orden </td> <td> Pos Orden </td><td> Pre Orden </td>
+<td> INT 6 </td> <td> INT 7 </td>
 </tr>
 <tr>
 <td>
@@ -41,16 +41,6 @@ ORG 2000H
  INT 0
 END
   
-```pascal
-Procedure posOrden ( a : arbol );
-begin //Input 1,22,2,44,6,77,5,4,3,0
-    if ( a<> nil ) then begin
-        preOrden (a^.HI);
-        preOrden (a^.HD);
-        write (a^.dato);
-    end;
-end;//Output 22,2,6,5,4,3,44,77,1
-```
 </td>
 </tr>
  
