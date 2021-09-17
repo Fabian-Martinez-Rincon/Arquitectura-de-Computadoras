@@ -11,3 +11,12 @@
 | INT 7  | Imprime un string en pantalla  |
 
 
+```Assembly
+ORG 1000H
+ LEIDO DB ?
+ORG 2000H
+ MOV BX, OFFSET LEIDO
+ INT 6    
+ INT 0
+END
+```
