@@ -29,7 +29,6 @@ END
 </td>
 <td>
  
-
 ```Assembly
 ORG 1000H
  MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
@@ -40,8 +39,10 @@ ORG 2000H
  INT 7    
  INT 0
 END
-  
+```
+ 
 </td>
+
 </tr>
  
 </table>
