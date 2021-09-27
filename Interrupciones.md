@@ -1,6 +1,13 @@
 <h1 align="center"> 💻Interrupciones</h1>
 
-### Por Sofware
+Indice
+======
+   * [Interrupciones por Software](#Interrupciones_por_Software)
+   * [Memoria E/S y PIO](#Memoria_E/S_y_PIO)
+   * [Interrupciones por Hardware](#Interrupciones_por_Hardware)
+
+Interrupciones_por_Software
+===========================
 
 
 | Interrupcion | Funcion |
@@ -48,5 +55,8 @@ END
 </table>
 
 
+Memoria_E/S_y_PIO
+=================
 
-
+Interrupciones_por_Hardware
+===========================
