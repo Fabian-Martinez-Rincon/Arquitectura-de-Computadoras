@@ -59,5 +59,6 @@ Instrucciones_De_Control_Y_Manejo_De_Interrupciones
 ASCII
 ====
 
-![image](https://user-images.githubusercontent.com/55964635/135182337-5d859a0c-1083-4dae-afca-bca675bb84ca.png)
+![image](https://user-images.githubusercontent.com/55964635/135326374-45ed0f97-3a29-4bfe-b6b5-657edadc0128.png)
+
 
