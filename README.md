@@ -14,6 +14,7 @@ Indice
    * [Saltos](#Saltos)
    * [Instrucciones Logicas](#Instrucciones_Logicas)
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
+   * [ASCII](#ASCII)
 
 
 Registros_Indice
@@ -54,3 +55,8 @@ Instrucciones_De_Control_Y_Manejo_De_Interrupciones
 ===================================================
 
 ![5 invertida](https://user-images.githubusercontent.com/55964635/132963323-c116eb1f-12fd-4124-ac96-28dfc96cbbba.png)
+
+ASCII
+====
+![image](https://user-images.githubusercontent.com/55964635/135182216-30868b64-b121-4da2-acfd-66d936154d73.png)
+
