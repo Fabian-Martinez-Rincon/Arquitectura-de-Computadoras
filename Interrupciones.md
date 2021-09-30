@@ -65,8 +65,8 @@ Como son iguales, necesito de un mecanismo para distinguirlas :
 - Ej. Escritura: Poner el valor 30 en la posicion 50H de E/S, ```OUT 50H, AL``` 
 
 Nos comunicamos con los dispositivos de E/S a través de dispositivos internos.
-![Arqui](https://user-images.githubusercontent.com/55964635/135499811-5b994852-1d26-410d-9e70-3c62d2a8a27a.png)
 
+<img src="https://user-images.githubusercontent.com/55964635/135499811-5b994852-1d26-410d-9e70-3c62d2a8a27a.png" width="550"/>
 
 Interrupciones_por_Hardware
 ===========================
