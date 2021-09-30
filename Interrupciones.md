@@ -65,18 +65,15 @@ Nos vamos a manejar con 4 dispositivos externos.
 - INT0.
 
 EJEMPLO : Contar las veces que se presionó la tecla F10 en DL
-```Assembly
-ORG 3000H
-;Subrutina que atiende a la F10
-CONTAR: INC DL
- 
- ;AVISAR AL PIC QUE TERMINAMOS!
- MOV AL, 20H
- OUT 20H, AL
- 
- ;VOLVEMOS
-IRET
 
+<table>
+<tr>
+<td> Parte 1 </td> <td> Parte 2 </td>
+</tr>
+<tr>
+<td>
+ 
+```Assembly
 ORG 2000H
  ;SELECCIONAR ID 10 PARA EL F10
  MOV AX, CONTAR
@@ -96,6 +93,27 @@ ORG 2000H
 INT 0
 END
 ```
+</td>
+<td>
+ 
+```Assembly
+ORG 3000H
+;Subrutina que atiende a la F10
+CONTAR: INC DL
+ 
+ ;AVISAR AL PIC QUE TERMINAMOS!
+ MOV AL, 20H
+ OUT 20H, AL
+ 
+ ;VOLVEMOS
+IRET
+```
+ 
+</td>
+
+</tr>
+ 
+</table>
 
 2) TIMER
 - INT1 
