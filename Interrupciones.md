@@ -124,6 +124,8 @@ END
  
 </table>
 
+Ej Entrada. Leer el estado de las llaves y prender las luces de aquellas llaves que esten en 1.
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
