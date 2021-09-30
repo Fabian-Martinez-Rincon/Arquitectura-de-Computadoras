@@ -158,6 +158,14 @@ Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. Avi
 
 ![image](https://user-images.githubusercontent.com/55964635/135541325-4613d44f-96d3-4132-b876-6656b3008503.png)
 
+### EOI (20H)
+- El ***PIC*** nos avisa que un dispositivo nos quiere interrumpir. Nosotros le avisamos que ya atendimos la interrupcion.
+- Antes de volver de la subrutina de la interrupcion debemos poner el valor 20H en el ***EOI***.
+
+```Assembly
+MOV AL, 20H
+OUT 20H, AL ;EOI = 20H
+```
 
 ***VECTOR DE INTERRUCIONES***
 - Va de la posición 0(0000H) a la 1023 (0400H)
@@ -166,8 +174,6 @@ Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. Avi
 - Seleccionar un ID es crucial ya que se usará para asociar una interrupción con una subrutina
 - Cuando ocurre una interrupcion la máquina toma el **ID** que elegimos y busca la dirección de la subrutina a ejecutar en la posición ```ID*4``` del vector de int.
 - Solo puede manejar 256 interrupciones ya que tengo 1024 casillas y cada interrupcion ocupa 4 casillas (1024 / 4 = 256)
-
-![image (4)](https://user-images.githubusercontent.com/55964635/135544468-8b10732d-0b62-4a0b-adae-afaa0b840284.png)
 
 
 
