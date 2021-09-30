@@ -156,7 +156,7 @@ Los dispositivos interrumpen al cpu a través del ***PIC***.
 
 Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. El pic avisa a la cpu que tiene que frenar
 
-EJEMPLO : Contar las veces que se presionó la tecla F10 en DL
+***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
 
 Vamos a realizar los siguientes pasos:
 
