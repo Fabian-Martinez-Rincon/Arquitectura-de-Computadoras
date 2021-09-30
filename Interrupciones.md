@@ -126,6 +126,39 @@ END
 
 Ej Entrada. Leer el estado de las llaves y prender las luces de aquellas llaves que esten en 1.
 
+<table>
+<tr>
+<td> </td> 
+</tr>
+<tr>
+<td>
+ 
+```Assembly
+ORG 2000H
+
+;CONFIGURAMOS PA (ENTRADA) Y PB (SALIDA)
+MOV AL, 11111111b
+OUT 32H, AL ;CA = 11111111
+MOV AL, 00000000B
+OUT 33H, AL ;CB = 00000000
+
+LOOP: IN AL, 30H ;PASO LO QUE TENNGO EN PA (LAS LLAVES)
+
+;MANDAR LA INFORMACION DE LAS LLAVES A LAS LUCES (PB)
+OUT 31H, AL ;MUESTRO LOS DATOS DE PA EN PB (LUCES)
+
+JMP LOOP
+INT 0
+
+END
+```
+</td>
+
+
+</tr>
+ 
+</table>
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
