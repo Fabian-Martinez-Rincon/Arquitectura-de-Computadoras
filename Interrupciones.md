@@ -62,6 +62,10 @@ Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
 - F10
+  - INT0 
 - TIMER
+  - INT1 
 - HANDSHAKE
+  - INT2 
 - CDMA
+  - INT3 
