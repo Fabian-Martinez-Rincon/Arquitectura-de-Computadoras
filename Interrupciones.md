@@ -155,16 +155,15 @@ PIC
 Los dispositivos interrumpen al cpu a través del ***PIC***.
 
 Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. El pic avisa a la cpu que tiene que frenar
+El pic se maneja desde la memoria de E/S así que para configurar haremos uso de ```IN``` y ```OUT```. Tambien permite configurarr el resto de cosas que nos quedaron pendientes. Las sentenicas ```CLI``` y ```STI``` bloquean y habilitan, respectivamente, las interrupciones. Cuando configuremos el ```PIC``` debemos ***siempre*** debemos hacerlo entre ```CLI``` y ```STI```
 
 ***VECTOR DE INTERRUCIONES***
 - Va de la posición 0(0000H) a la 1023 (0400H)
 - Consta de 1024 posiciones de memoria
 - Lo usamos para asociar las interrupciones con una subrutina a ejecutar
-
-![image (1)](https://user-images.githubusercontent.com/55964635/135538997-95976772-8530-4c62-ac1f-c206b97ad65c.png)
-
 - Seleccionar un ID es crucial ya que se usará para asociar una interrupción con una subrutina
 - Cuando ocurre una interrupcion la máquina toma el **ID** que elegimos y busca la dirección de la subrutina a ejecutar en la posición ```ID*4``` del vector de int.
+- Solo puede manejar 256 interrupciones ya que tengo 1024 casillas y cada interrupcion ocupa 4 casillas (1024 / 4 = 256)
 
 ***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
 
