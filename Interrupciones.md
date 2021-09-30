@@ -61,11 +61,11 @@ Memoria_E/S_y_PIO
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
-- F10
-  - INT0 
-- TIMER
-  - INT1 
-- HANDSHAKE
-  - INT2 
-- CDMA
-  - INT3 
+1) F10
+- INT0 
+2) TIMER
+- INT1 
+3) HANDSHAKE
+- INT2 
+4) CDMA
+- INT3 
