@@ -64,6 +64,8 @@ Como son iguales, necesito de un mecanismo para distinguirlas :
 - Ej. Lectura: Leer el dato que está en la posición 40H de E/S, ```IN AL, 40H```
 - Ej. Escritura: Poner el valor 30 en la posicion 50H de E/S, ```OUT 50H, AL``` 
 
+Nos comunicamos con los dispositivos de E/S a través de dispositivos internos.
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
