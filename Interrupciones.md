@@ -68,7 +68,7 @@ Nos comunicamos con los dispositivos de E/S a través de dispositivos internos.
 
 <img src="https://user-images.githubusercontent.com/55964635/135499811-5b994852-1d26-410d-9e70-3c62d2a8a27a.png" width="550"/>
 
-Cada uno de estos dispositivos internos se configuran, a través de la E/S y tienen asignado una zona que es fija en la misma.
+Cada uno de estos dispositivos internos se configuran, a través de la E/S y tienen asignado una zona de memoria fija (de E/S)
 
 Interrupciones_por_Hardware
 ===========================
