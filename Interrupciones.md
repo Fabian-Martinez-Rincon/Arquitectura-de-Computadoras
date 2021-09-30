@@ -156,6 +156,13 @@ Los dispositivos interrumpen al cpu a través del ***PIC***.
 
 Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. El pic avisa a la cpu que tiene que frenar
 
+***VECTOR DE INTERRUCIONES***
+Va de la posición 0(0000H) a la 1023 (0400H)
+
+![image (1)](https://user-images.githubusercontent.com/55964635/135538997-95976772-8530-4c62-ac1f-c206b97ad65c.png)
+
+
+
 ***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
 
 Vamos a realizar los siguientes pasos:
