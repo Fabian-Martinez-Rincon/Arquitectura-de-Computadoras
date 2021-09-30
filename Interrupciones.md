@@ -97,36 +97,22 @@ Ej Salida. Prender todas las luces
 
 <table>
 <tr>
-<td> </td> <td>  </td>
+<td> </td> 
 </tr>
 <tr>
 <td>
  
 ```Assembly
-ORG 1000H
- LEIDO DB ?
 ORG 2000H
- MOV BX, OFFSET LEIDO
- INT 6    
+ MOV AL, 0H
+ OUT 33H, AL ;CB = 00000000
+ MOV AL, 11111111B
+ OUT 31H, AL ;PB = 11111111
  INT 0
-END
+END 
 ```
 </td>
-<td>
- 
-```Assembly
-ORG 1000H
- MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
- FIN DB ?
-ORG 2000H
- MOV BX, OFFSET MENSAJE
- MOV AL, OFFSET FIN - OFFSET MENSAJE
- INT 7    
- INT 0
-END
-```
- 
-</td>
+
 
 </tr>
  
