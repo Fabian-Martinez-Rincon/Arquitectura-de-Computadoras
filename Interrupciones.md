@@ -75,6 +75,12 @@ PIO
 ===
 Es un puerto paralelo de E/S
 
+Contra de 2 puertos paralelos configurables.
+
+Ocupa 4 celdas en la memoria de E/S:
+
+- 2 de **datos** llamados ```PA Y PB```
+- 2 de **configuración** llamados ```CA Y CB```
 
 | Memoria | Dispositivos |
 | ------------- | ------------- |
