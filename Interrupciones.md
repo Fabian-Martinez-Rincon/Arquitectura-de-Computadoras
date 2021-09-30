@@ -68,6 +68,8 @@ Nos comunicamos con los dispositivos de E/S a través de dispositivos internos.
 
 <img src="https://user-images.githubusercontent.com/55964635/135499811-5b994852-1d26-410d-9e70-3c62d2a8a27a.png" width="550"/>
 
+Cada uno de estos dispositivos internos se configuran, a través de la E/S (Cada uno tiene asignado una zona de la memoria de E/S que es fija)
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
