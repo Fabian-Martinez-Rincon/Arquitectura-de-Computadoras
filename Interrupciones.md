@@ -3,7 +3,7 @@
 Indice
 ======
    * [Interrupciones por Software](#Interrupciones_por_Software)
-   * [Memoria E/S y PIO](#Memoria_E/S_y_PIO)
+   * [Memoria E/S y PIO](#Memoria_E_S_y_PIO)
    * [Interrupciones por Hardware](#Interrupciones_por_Hardware)
 
 Interrupciones_por_Software
@@ -55,7 +55,7 @@ END
 </table>
 
 
-Memoria_E/S_y_PIO
+Memoria_E_S_y_PIO
 =================
 
 La memoria E/S es igual a la memoria común!
