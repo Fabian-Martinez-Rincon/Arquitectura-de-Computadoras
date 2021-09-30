@@ -167,6 +167,13 @@ MOV AL, 20H
 OUT 20H, AL ;EOI = 20H
 ```
 
+### IMR (21H)
+- Nos permite definir qué interrupciones vamos a atender y cuáles ignorar.
+- 1 Significa deshabilitada, 0 habilitada
+
+![digitos](https://user-images.githubusercontent.com/55964635/135545444-4d719bb6-cced-40f8-bcc6-4ceb99ab42d9.png)
+
+
 ***VECTOR DE INTERRUCIONES***
 - Va de la posición 0(0000H) a la 1023 (0400H)
 - Consta de 1024 posiciones de memoria
