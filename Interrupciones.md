@@ -75,6 +75,9 @@ PIO
 ===
 Es un puerto paralelo de E/S
 
+<img src="https://user-images.githubusercontent.com/55964635/135502435-25d9266a-5465-46aa-8934-802bfb62856e.png" width="250"/>
+
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
