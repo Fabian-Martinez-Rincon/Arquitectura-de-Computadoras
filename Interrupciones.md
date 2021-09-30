@@ -100,12 +100,6 @@ MOV AL, 11111110b
 OUT 32H, AL ;CA = 11111110
 ```
 
-
-
-
-
-
-
 <table>
 <tr>
 <td> Ej Salida. Prender todas las luces </td> <td> Ej Entrada. Leer el estado de las llaves y prender las luces de aquellas llaves que esten en 1. </td>
@@ -156,7 +150,8 @@ Nos vamos a manejar con 4 dispositivos externos.
 ![HARDWAREOWO](https://user-images.githubusercontent.com/55964635/135530533-ba42a968-c565-410b-aa63-b1c2eb52aee3.png)
 
 
-1) F10
+F10
+===
 - INT0.
 
 EJEMPLO : Contar las veces que se presionó la tecla F10 en DL
@@ -212,9 +207,17 @@ IRET
 
 
 
-2) TIMER
+TIMER
+=====
+
 - INT1 
-3) HANDSHAKE
+
+HANDSHAKE
+=========
+
 - INT2 
-4) CDMA
+
+CDMA
+====
+
 - INT3 
