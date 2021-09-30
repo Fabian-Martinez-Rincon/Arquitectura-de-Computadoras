@@ -84,6 +84,12 @@ Es un puerto paralelo de E/S
 - Debemos configurar cada bit de datos como entrada o salida.
 - En los puertos de configuracion debemos poner un 0 para que ese bit en el puerto de datos sea de ```Salida``` y 1 para que sea de ```Entrada```
 
+Ej. Queremos que el ```PA``` tenga todos los bits como entrada excepto el menos significativo
+
+- Debemos configurar ```CA```
+- Todos en 1 menos el menos significativo (11111110)
+
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
