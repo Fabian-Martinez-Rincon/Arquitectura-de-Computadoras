@@ -156,11 +156,21 @@ Los dispositivos interrumpen al cpu a través del ***PIC***.
 
 Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. El pic avisa a la cpu que tiene que frenar
 
-F10
-===
-- INT0.
-
 EJEMPLO : Contar las veces que se presionó la tecla F10 en DL
+
+Vamos a realizar los siguientes pasos:
+
+- Escribir la subrutina que se ejecutará cuando se produzca la interrupcion (que finaliza con ```IRET```)
+- Elegir un ID de interrupción (cualquiera menos 0, 3, 6 o 7)
+- Poner la dirección de la subrutina en el ```Vector de Interrupciones```
+- Configurar ```PIC```
+  - Bloquear las interrupciones con la sentencia ```CLI```
+  - Poner el ID en el PIC para la interrupción que nos interesa
+  - Desenmascarar la interrupcion.
+  - Desbloquear las instrucciones con la sentencia ```STI``` 
+
+
+
 
 <table>
 <tr>
