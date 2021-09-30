@@ -4,7 +4,7 @@ Indice
 ======
    * [Interrupciones por Software](#Interrupciones_por_Software)
    * [Memoria E/S y PIO](#Memoria_E_S_y_PIO)
-      [PIO](#PIO)* 
+     * [PIO](#PIO) 
    * [Interrupciones por Hardware](#Interrupciones_por_Hardware)
 
 Interrupciones_por_Software
