@@ -63,6 +63,7 @@ Interrupciones_por_Hardware
 Nos vamos a manejar con 4 dispositivos externos.
 1) F10
 - INT0 
+EJEMPLO : Contar las veces que se presionó la tecla F10 en DL
 2) TIMER
 - INT1 
 3) HANDSHAKE
