@@ -112,7 +112,7 @@ Ej Salida. Prender todas las luces
 ORG 2000H
  MOV AL, 0H
  OUT 33H, AL ;CB = 00000000
- MOV AL, 11111111B
+ MOV AL, 11111111B ;Tambien se pueden usar hexa
  OUT 31H, AL ;PB = 11111111
  INT 0
 END 
