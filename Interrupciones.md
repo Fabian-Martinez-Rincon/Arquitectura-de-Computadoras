@@ -234,17 +234,3 @@ IRET
 
 
 
-TIMER
-=====
-
-- INT1 
-
-HANDSHAKE
-=========
-
-- INT2 
-
-CDMA
-====
-
-- INT3 
