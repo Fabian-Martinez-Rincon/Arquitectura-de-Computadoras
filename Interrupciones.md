@@ -152,6 +152,7 @@ Nos vamos a manejar con 4 dispositivos externos.
 
 PIC
 ===
+Los dispositivos interrumpen al cpu a través del ***PIC***
 
 F10
 ===
