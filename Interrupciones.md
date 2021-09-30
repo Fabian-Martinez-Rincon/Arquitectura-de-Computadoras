@@ -58,6 +58,10 @@ END
 Memoria_E/S_y_PIO
 =================
 
+La memoria E/S es igual a la memoria común!
+Como son iguales, necesito de un mecanismo para distinguirlas :
+- Para leer desde la memoria E/S usaremos ```IN```, para escribir en ella ```OUT```. Ambas instrucciones solo se pueden usar con el registro ```AL```
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
