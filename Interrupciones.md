@@ -65,6 +65,38 @@ Nos vamos a manejar con 4 dispositivos externos.
 - INT0.
 
 EJEMPLO : Contar las veces que se presionó la tecla F10 en DL
+```Assembly
+ORG 3000H
+;Subrutina que atiende a la F10
+CONTAR: INC DL
+ 
+ ;AVISAR AL PIC QUE TERMINAMOS!
+ MOV AL, 20H
+ OUT 20H, AL
+ 
+ ;VOLVEMOS
+IRET
+
+ORG 2000H
+ ;SELECCIONAR ID 10 PARA EL F10
+ MOV AX, CONTAR
+ MOV BX, 40
+ MOV [BX], AX ;EN LA PO 40 PONE EL 3000H
+
+ ;CONFIGURAMOS EL PIC
+ CLI
+ MOV AL, 11111110B
+ OUT 21H, AL
+ MOV AL, 10
+ OUT 24H, AL ;INT 0 = 10
+ STI
+ 
+ LOOP: JMP LOOP
+ 
+INT 0
+END
+```
+
 2) TIMER
 - INT1 
 3) HANDSHAKE
