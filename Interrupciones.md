@@ -156,6 +156,9 @@ Los dispositivos interrumpen al cpu a través del ***PIC***.
 
 Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. Avisa a la cpu que tiene que frenar, se maneja desde la memoria de E/S así que para configurar haremos uso de ```IN``` y ```OUT```. Tambien permite configurarr el resto de cosas que nos quedaron pendientes. Las sentenicas ```CLI``` y ```STI``` bloquean y habilitan, respectivamente, las interrupciones. Cuando configuremos el ```PIC``` ***siempre*** debemos hacerlo entre ```CLI``` y ```STI```
 
+![image (1)](https://user-images.githubusercontent.com/55964635/135541325-4613d44f-96d3-4132-b876-6656b3008503.png)
+
+
 ***VECTOR DE INTERRUCIONES***
 - Va de la posición 0(0000H) a la 1023 (0400H)
 - Consta de 1024 posiciones de memoria
