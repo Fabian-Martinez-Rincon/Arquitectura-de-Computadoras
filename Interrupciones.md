@@ -163,7 +163,7 @@ Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
 
-
+![HARDWAREOWO](https://user-images.githubusercontent.com/55964635/135530533-ba42a968-c565-410b-aa63-b1c2eb52aee3.png)
 
 
 1) F10
