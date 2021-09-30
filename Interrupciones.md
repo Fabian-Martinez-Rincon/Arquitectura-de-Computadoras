@@ -61,6 +61,8 @@ Memoria_E_S_y_PIO
 La memoria E/S es igual a la memoria común!
 Como son iguales, necesito de un mecanismo para distinguirlas :
 - Para leer desde la memoria E/S usaremos ```IN```, para escribir en ella ```OUT```. Ambas instrucciones ***solo se pueden usar*** con el registro ```AL```
+- Ej. Lectura: Leer el dato que está en la posición 40H de E/S, ```IN AL, 40H```
+- Ej. Escritura: Poner el valor 30 en la posicion 50H de E/S, ```OUT 50H, AL``` 
 
 Interrupciones_por_Hardware
 ===========================
