@@ -163,7 +163,8 @@ Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. El 
 
 ![image (1)](https://user-images.githubusercontent.com/55964635/135538997-95976772-8530-4c62-ac1f-c206b97ad65c.png)
 
-
+- Seleccionar un ID es crucial ya que se usará para asociar una interrupción con una subrutina
+- Cuando ocurre una interrupcion la máquina toma el **ID** que elegimos y busca la dirección de la subrutina a ejecutar en la posición ```ID*4``` del vector de int.
 
 ***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
 
