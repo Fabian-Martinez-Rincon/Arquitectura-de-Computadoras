@@ -80,6 +80,10 @@ Es un puerto paralelo de E/S
 | ------------- | ------------- |
 | ![](https://user-images.githubusercontent.com/55964635/135502435-25d9266a-5465-46aa-8934-802bfb62856e.png)  | ![](https://user-images.githubusercontent.com/55964635/135503806-465c0102-5639-454c-9c26-ceea721a70d0.png)  |
 
+- Cada selda (Tambien llamada registro) consta de 8 bits.
+- Debemos configurar cada bit de datos como entrada o salida.
+- En los puertos de configuracion debemos poner un 0 para que ese bit en el puerto de datos sea de ```Salida``` y 1 para que sea de ```Entrada```
+
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
