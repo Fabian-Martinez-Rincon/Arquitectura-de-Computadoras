@@ -60,3 +60,8 @@ Memoria_E/S_y_PIO
 
 Interrupciones_por_Hardware
 ===========================
+Nos vamos a manejar con 4 dispositivos externos.
+- F10
+- TIMER
+- HANDSHAKE
+- CDMA
