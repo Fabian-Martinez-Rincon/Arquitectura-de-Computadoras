@@ -75,10 +75,10 @@ PIO
 ===
 Es un puerto paralelo de E/S
 
-<img src="https://user-images.githubusercontent.com/55964635/135502435-25d9266a-5465-46aa-8934-802bfb62856e.png"/>
 
-
-<img src="https://user-images.githubusercontent.com/55964635/135503806-465c0102-5639-454c-9c26-ceea721a70d0.png" />
+| Memoria | Dispositivos |
+| ------------- | ------------- |
+| ![](https://user-images.githubusercontent.com/55964635/135502435-25d9266a-5465-46aa-8934-802bfb62856e.png)  | ![](https://user-images.githubusercontent.com/55964635/135503806-465c0102-5639-454c-9c26-ceea721a70d0.png)  |
 
 Interrupciones_por_Hardware
 ===========================
