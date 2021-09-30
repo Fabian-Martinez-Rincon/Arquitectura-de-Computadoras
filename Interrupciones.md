@@ -89,6 +89,10 @@ Ej. Queremos que el ```PA``` tenga todos los bits como entrada excepto el menos 
 - Debemos configurar ```CA```
 - Todos en 1 menos el menos significativo (11111110)
 
+```Assembly
+MOV AL, 11111110b
+OUT 32H, AL ;CA = 11111110
+```
 
 Interrupciones_por_Hardware
 ===========================
