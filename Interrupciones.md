@@ -162,6 +162,10 @@ END
 Interrupciones_por_Hardware
 ===========================
 Nos vamos a manejar con 4 dispositivos externos.
+
+
+
+
 1) F10
 - INT0.
 
