@@ -197,6 +197,18 @@ Es otro dispositivo de E/S como el F10. Se utiliza como reloj despertador para l
 
 ![regis](https://user-images.githubusercontent.com/55964635/135676832-dc98b7ef-7aec-401b-986b-de487e3d8ff3.png)
 
+```Assembly
+CLI
+ MOV AL, 11111101b ;Activamos el timer
+ OUT 21H, AL ; PIC: registro IMR
+ MOV AL, 10
+ OUT 25H, AL ; PIC: registro INT1 (Timer)
+ MOV AL, 10 ;ES 10, POR SI LO CAMBIO
+ OUT 11H, AL ; TIMER: registro COMP 
+ MOV AL, 0
+ OUT 10H, AL ; TIMER: registro CONT
+STI
+```
 
 F10
 ===
