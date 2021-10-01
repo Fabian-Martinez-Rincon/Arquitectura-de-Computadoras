@@ -193,6 +193,9 @@ TIMER
 =====
 Es otro dispositivo de E/S como el F10. Se utiliza como reloj despertador para la CPU. Se configura para contar una cantidad determinada de segundos y cuando finaliza la cuenta emite una interrupcion. Tiene dos registros ```CONT``` y ```COMP```, con direcciones de la memoria E/S ```10H``` y ```11H```, respectivamente
 
+![regis](https://user-images.githubusercontent.com/55964635/135676832-dc98b7ef-7aec-401b-986b-de487e3d8ff3.png)
+
+
 ***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
 
 Vamos a realizar los siguientes pasos:
