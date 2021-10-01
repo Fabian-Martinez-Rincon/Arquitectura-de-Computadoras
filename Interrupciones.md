@@ -211,8 +211,9 @@ Vamos a realizar los siguientes pasos:
 ```Assembly
 ORG 2000H
  ;SELECCIONAR ID 10 PARA EL F10
+  
+ ;CONFIGURAMOS EL VECTOR DE INTERRUPCIONES
  MOV AX, CONTAR ;AX = Dir de CONTAR(3000H)
- ;Pongo la dir en el vec de interrupciones.
  MOV BX, 40 ;10 * 4 en el Vec. de Int.
  MOV [BX], AX ;EN LA POSICION 40 PONE EL 3000H
 
