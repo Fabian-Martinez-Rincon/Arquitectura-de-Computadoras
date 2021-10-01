@@ -189,8 +189,9 @@ VECTOR_DE_INTERRUCIONES
 - Cuando ocurre una interrupcion la máquina toma el **ID** que elegimos y busca la dirección de la subrutina a ejecutar en la posición ```ID*4``` del vector de int.
 - Solo puede manejar 256 interrupciones ya que tengo 1024 casillas y cada interrupcion ocupa 4 casillas (1024 / 4 = 256)
 
-
-
+TIMER
+=====
+Es otro dispositivo de E/S como el F10. Se utiliza como reloj despertador para la CPU. Se configura para contar una cantidad determinada de segundos y cuando finaliza la cuenta emite una interrupcion. Tiene dos registros ```CONT``` y ```COMP```, con direcciones de la memoria E/S ```10H``` y ```11H```, respectivamente
 
 ***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
 
