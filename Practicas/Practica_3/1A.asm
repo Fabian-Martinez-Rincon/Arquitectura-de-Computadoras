@@ -1,0 +1,11 @@
+ORG 1000H; Memoria de datos
+ CB EQU 33h
+ PB EQU 31h
+
+ORG 2000H;Prog principal
+ MOV AL, 0
+ OUT CB, AL
+ MOV AL, 11000011B
+ OUT PB, AL
+ HLT
+END
