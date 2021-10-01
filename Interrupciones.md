@@ -10,6 +10,8 @@ Indice
      * [EOI (20H)](#EOI_20H)
      * [IMR (21H)](#IMR_21H)
      * [Vector de Interrupciones](#VECTOR_DE_INTERRUCIONES)
+     * [TIMER](#TIMER)
+     * [F10](#F10)
 
 Interrupciones_por_Software
 ===========================
@@ -196,7 +198,11 @@ Es otro dispositivo de E/S como el F10. Se utiliza como reloj despertador para l
 ![regis](https://user-images.githubusercontent.com/55964635/135676832-dc98b7ef-7aec-401b-986b-de487e3d8ff3.png)
 
 
-***EJEMPLO*** : Contar las veces que se presionó la tecla F10 en DL
+F10
+===
+
+
+Contar las veces que se presionó la tecla F10 en DL
 
 Vamos a realizar los siguientes pasos:
 
