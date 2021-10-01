@@ -7,6 +7,9 @@ Indice
      * [PIO](#PIO) 
    * [Interrupciones por Hardware](#Interrupciones_por_Hardware)
      * [PIC](#PIC) 
+     * [EOI (20H)](#EOI_20H)
+     * [IMR (21H)](#IMR_21H)
+     * [Vector de Interrupciones](#VECTOR_DE_INTERRUCIONES)
 
 Interrupciones_por_Software
 ===========================
@@ -158,7 +161,8 @@ Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. Avi
 
 ![image](https://user-images.githubusercontent.com/55964635/135541325-4613d44f-96d3-4132-b876-6656b3008503.png)
 
-### EOI (20H)
+EOI_20H
+=======
 - El ***PIC*** nos avisa que un dispositivo nos quiere interrumpir. Nosotros le avisamos que ya atendimos la interrupcion.
 - Antes de volver de la subrutina de la interrupcion debemos poner el valor 20H en el ***EOI***.
 
@@ -167,14 +171,17 @@ MOV AL, 20H
 OUT 20H, AL ;EOI = 20H
 ```
 
-### IMR (21H)
+IMR_21H
+=======
+
 - Nos permite definir qué interrupciones vamos a atender y cuáles ignorar.
 - 1 Significa deshabilitada, 0 habilitada
 
 ![digitos](https://user-images.githubusercontent.com/55964635/135545444-4d719bb6-cced-40f8-bcc6-4ceb99ab42d9.png)
 
+VECTOR_DE_INTERRUCIONES
+=======================
 
-***VECTOR DE INTERRUCIONES***
 - Va de la posición 0(0000H) a la 1023 (0400H)
 - Consta de 1024 posiciones de memoria
 - Lo usamos para asociar las interrupciones con una subrutina a ejecutar
