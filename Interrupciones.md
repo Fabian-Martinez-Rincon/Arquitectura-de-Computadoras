@@ -211,9 +211,10 @@ Vamos a realizar los siguientes pasos:
 ```Assembly
 ORG 2000H
  ;SELECCIONAR ID 10 PARA EL F10
- MOV AX, CONTAR
- MOV BX, 40
- MOV [BX], AX ;EN LA PO 40 PONE EL 3000H
+ MOV AX, CONTAR ;AX = Dir de CONTAR(3000H)
+ ;Pongo la dir en el vec de interrupciones.
+ MOV BX, 40 ;10 * 4 en el Vec. de Int.
+ MOV [BX], AX ;EN LA POSICION 40 PONE EL 3000H
 
  ;CONFIGURAMOS EL PIC
  CLI
@@ -223,7 +224,7 @@ ORG 2000H
  OUT 24H, AL ;ID 10(PUEDE SER CUALQUIERA)
  STI
  
- LOOP: JMP LOOP
+ LOOP: JMP LOOP ;LOOP INFINITO
  
 INT 0
 END
