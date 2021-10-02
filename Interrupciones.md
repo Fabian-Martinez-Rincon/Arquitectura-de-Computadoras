@@ -297,7 +297,7 @@ Es una abstracción de la impresora, la impresora va a generar una comunicación
 
 <table>
 <tr>
-<td> IMPRIMIR POR CONSULTA DE ESTADO </td> <td> Parte 2 </td>
+<td> IMPRIMIR POR CONSULTA DE ESTADO </td> <td> IMPRIMIR POR INTERRUPCION </td>
 </tr>
 <tr>
 <td>
