@@ -450,6 +450,9 @@ Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***P
  - ¿Cómo configuramos el ***PB*** a partir de ***CB***?                 ```Todos de salida!```
  - Consultaremos constantemente si está libre                           ```Chequear si el bit Busy = 0```
  - Cuando la impresora esté libre mandamos el caracter a ***PB*** (31H)
+ - Hasta que no mandemos el bit de Strobe en 1 no se va a imprimir!
+ - Después de enviar el Strobe en 1, debemos volver a ponerlo en 0. 
+ - ```DEL PUNTO 3 AL 6 DEBEMOS REPETIRLO PARA CADA CARACTER```
 
 
 
