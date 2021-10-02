@@ -444,6 +444,13 @@ Impresora_Por_Pio
 - ```Bit 0 (busy)```: 1 si está ocupada la impresora, 0 si está libre. (ENTRADA)
 - ```Bit 1 (stribe)```: seteando el bit en 1 le avisamos a la impresora que dejamos un caracter en ***DATO*** para que lo imprima. (SALIDA)
 
+Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***PIO***.
+
+ - ¿Cómo configuramos el ***PA*** a partir de ***CA***?
+ - ¿Cómo configuramos el ***PB*** a partir de ***CB***?
+
+
+
 ```Assembly
 ORG 1000H
  MENSAJE DB "HOLJJJJJJJA"
