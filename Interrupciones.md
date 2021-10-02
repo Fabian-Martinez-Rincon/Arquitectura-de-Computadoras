@@ -293,6 +293,15 @@ Es una abstracción de la impresora, la impresora va a generar una comunicación
 | ------------- | ------------- |
 | ![END](https://user-images.githubusercontent.com/55964635/135723748-3e604d0f-e4ef-4a28-9438-574f2b2ac7e5.png) | ![SALIDA2](https://user-images.githubusercontent.com/55964635/135723760-77c8c089-5720-419c-a9e2-ddc02008959b.png)  |
 
+
+
+<table>
+<tr>
+<td> IMPRIMIR POR CONSULTA DE ESTADO </td> <td> Parte 2 </td>
+</tr>
+<tr>
+<td>
+ 
 ```Assembly
 HAND_DATO EQU 40H
 HAND_ESTADO EQU 41H
@@ -323,8 +332,27 @@ JNZ POLL
 INT 0
 END
 ```
+</td>
+<td>
+ 
+```Assembly
+ORG 3000H
+;Subrutina que atiende a la F10
+CONTAR: INC DL
+ 
+ ;AVISAR AL PIC QUE TERMINAMOS!
+ MOV AL, 20H
+ OUT 20H, AL
+ 
+ ;VOLVEMOS
+IRET
+```
+ 
+</td>
 
-
+</tr>
+ 
+</table>
 
 
 
