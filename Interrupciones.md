@@ -13,7 +13,7 @@ Indice
      * [TIMER](#TIMER)
      * [F10](#F10)
    * [Handshake](#HANDSHAKE)
-   * [Impresora por PIO](#Impresolar_Por_Pio)
+   * [Impresora por PIO](#Impresora_Por_Pio)
 
 Interrupciones_por_Software
 ===========================
@@ -428,5 +428,5 @@ IRET
 </table>
 
 
-Impresolar_Por_Pio
+Impresora_Por_Pio
 ==================
