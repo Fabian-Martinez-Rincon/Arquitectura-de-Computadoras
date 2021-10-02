@@ -284,4 +284,4 @@ IRET
 
 HANDSHAKE
 =========
-
+Es una abstracción de la impresora, la impresora va a generar una comunicación con este. Nos interrumpe a través del pic
