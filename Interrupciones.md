@@ -13,7 +13,8 @@ Indice
      * [TIMER](#TIMER)
      * [F10](#F10)
    * [Handshake](#HANDSHAKE)
-     * [Por Consulta de Estado](#)
+     * [Por Consulta de Estado](#IMPRIMIR_POR_CONSULTA_DE_ESTADO)
+     * [Por interrupción](#IMPRIMIR POR INTERRUPCION)
    * [Impresora por PIO](#Impresora_Por_Pio)
 
 Interrupciones_por_Software
@@ -297,7 +298,7 @@ Es una abstracción de la impresora, la impresora va a generar una comunicación
 
 
 
-IMPRIMIR POR CONSULTA DE ESTADO
+IMPRIMIR_POR_CONSULTA_DE_ESTADO
 ===============================
 
 <table>
