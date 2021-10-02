@@ -301,7 +301,7 @@ IMPRIMIR POR CONSULTA DE ESTADO
 
 <table>
 <tr>
-<td> PROGRAMA PRINCIPAL </td> <td> DATOS </td>
+<td> PROGRAMA PRINCIPAL </td> <td> DATOS </td> <td> FUNCIONAMIENTO </td>
 </tr>
 <tr>
 <td>
@@ -342,7 +342,12 @@ ORG 1000H
 ```
  
 </td>
+<td>
+  
+  ![Tiempo](https://user-images.githubusercontent.com/55964635/135734418-4ba8d65b-a24e-4796-8adf-cdf9ac7e0c4d.gif)
 
+</td>
+  
 </tr>
  
 </table>
