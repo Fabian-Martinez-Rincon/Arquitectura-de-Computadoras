@@ -513,7 +513,7 @@ END
 </td>
 <td>
  
-![ARQUI2](https://user-images.githubusercontent.com/55964635/135734185-796851bb-f2ca-4ead-b117-534b29cda2a0.gif)
+![ARGGGG](https://user-images.githubusercontent.com/55964635/135734492-46596c0f-072d-4d64-8e5e-ada58d98e03e.gif)
 
  
 </td>
