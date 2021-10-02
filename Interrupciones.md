@@ -431,9 +431,11 @@ IRET
 Impresora_Por_Pio
 ==================
 
-![PIOOO](https://user-images.githubusercontent.com/55964635/135732891-d87e8191-ff93-4993-bbba-8c30026d8ba3.png)
 
 
+| Memoria | Dispositivos |
+| ------------- | ------------- |
+| ![](https://user-images.githubusercontent.com/55964635/135502435-25d9266a-5465-46aa-8934-802bfb62856e.png)  | ![PIOOO](https://user-images.githubusercontent.com/55964635/135732891-d87e8191-ff93-4993-bbba-8c30026d8ba3.png)  |
 
 ```Assembly
 ORG 1000H
