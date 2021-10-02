@@ -346,3 +346,6 @@ ORG 1000H
  
 </table>
 
+IMPRIMIR POR INTERRUPCION
+=========================
+
