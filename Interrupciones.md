@@ -300,13 +300,20 @@ IMPRIMIR POR CONSULTA DE ESTADO
 
  
 ```Assembly
-HAND_DATO EQU 40H
-HAND_ESTADO EQU 41H
 
-ORG 1000H
- MENSAJE DB "HOLA"
- FIN DB ?
  
+
+```
+
+
+<table>
+<tr>
+<td> PROGRAMA PRINCIPAL </td> <td> DATOS </td>
+</tr>
+<tr>
+<td>
+ 
+```Assembly
 ORG 2000H
 ;CONFIGURO EL HANDSHAKE PARA EL POOLING
 IN AL, HAND_ESTADO
@@ -329,7 +336,21 @@ JNZ POLL
 INT 0
 END
 ```
+</td>
+<td>
+ 
+```Assembly
+HAND_DATO EQU 40H
+HAND_ESTADO EQU 41H
 
+ORG 1000H
+ MENSAJE DB "HOLA"
+ FIN DB ?
+```
+ 
+</td>
 
-
+</tr>
+ 
+</table>
 
