@@ -298,14 +298,6 @@ Es una abstracción de la impresora, la impresora va a generar una comunicación
 IMPRIMIR POR CONSULTA DE ESTADO
 ===============================
 
- 
-```Assembly
-
- 
-
-```
-
-
 <table>
 <tr>
 <td> PROGRAMA PRINCIPAL </td> <td> DATOS </td>
