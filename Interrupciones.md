@@ -437,6 +437,13 @@ Impresora_Por_Pio
 | ------------- | ------------- |
 | ![](https://user-images.githubusercontent.com/55964635/135502435-25d9266a-5465-46aa-8934-802bfb62856e.png)  | ![PIOOO](https://user-images.githubusercontent.com/55964635/135732891-d87e8191-ff93-4993-bbba-8c30026d8ba3.png)  |
 
+***Registro de Estado***: Veamos cuáles bits del registro ***estado*** son de ***entrada*** y cuáles de ***salida***..
+
+![busi2](https://user-images.githubusercontent.com/55964635/135733045-2efba02b-9c90-4c3d-bdab-540019f16e9f.png)
+
+- ```Bit 0 (busy)```: 1 si está ocupada la impresora, 0 si está libre. (ENTRADA)
+- ```Bit 1 (stribe)```: seteando el bit en 1 le avisamos a la impresora que dejamos un caracter en ***DATO*** para que lo imprima. (SALIDA)
+
 ```Assembly
 ORG 1000H
  MENSAJE DB "HOLJJJJJJJA"
