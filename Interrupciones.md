@@ -288,6 +288,14 @@ Es una abstracción de la impresora, la impresora va a generar una comunicación
 
 ![handd](https://user-images.githubusercontent.com/55964635/135723314-5acbdad3-3f7a-4b89-b4bc-fd52c1dc2406.png)
 
+***ESTADO***: Tiene 8 bits como todas las celdas de memoria. Estos bits tienen diferentes significados dependiendo de si los pusimos en ```ENTRADA``` o ```SALIDA```.
+| ENTRADA | SALIDA |
+| ------------- | ------------- |
+| ![END](https://user-images.githubusercontent.com/55964635/135723748-3e604d0f-e4ef-4a28-9438-574f2b2ac7e5.png) | ![SALIDA2](https://user-images.githubusercontent.com/55964635/135723760-77c8c089-5720-419c-a9e2-ddc02008959b.png)  |
+
+
+
+
 
 
 
