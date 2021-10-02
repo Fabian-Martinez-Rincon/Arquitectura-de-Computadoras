@@ -13,6 +13,7 @@ Indice
      * [TIMER](#TIMER)
      * [F10](#F10)
    * [Handshake](#HANDSHAKE)
+     * [Por Consulta de Estado](#)
    * [Impresora por PIO](#Impresora_Por_Pio)
 
 Interrupciones_por_Software
