@@ -12,7 +12,7 @@ Indice
      * [Vector de Interrupciones](#VECTOR_DE_INTERRUCIONES)
      * [TIMER](#TIMER)
      * [F10](#F10)
-     * [Handshake](#HANDSHAKE)
+   * [Handshake](#HANDSHAKE)
 
 Interrupciones_por_Software
 ===========================
@@ -295,12 +295,9 @@ Es una abstracción de la impresora, la impresora va a generar una comunicación
 
 
 
-<table>
-<tr>
-<td> IMPRIMIR POR CONSULTA DE ESTADO </td> <td> IMPRIMIR POR INTERRUPCION </td>
-</tr>
-<tr>
-<td>
+IMPRIMIR POR CONSULTA DE ESTADO
+===============================
+
  
 ```Assembly
 HAND_DATO EQU 40H
@@ -332,27 +329,7 @@ JNZ POLL
 INT 0
 END
 ```
-</td>
-<td>
- 
-```Assembly
-ORG 3000H
-;Subrutina que atiende a la F10
-CONTAR: INC DL
- 
- ;AVISAR AL PIC QUE TERMINAMOS!
- MOV AL, 20H
- OUT 20H, AL
- 
- ;VOLVEMOS
-IRET
-```
- 
-</td>
 
-</tr>
- 
-</table>
 
 
 
