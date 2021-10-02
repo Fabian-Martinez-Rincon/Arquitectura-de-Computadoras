@@ -446,8 +446,10 @@ Impresora_Por_Pio
 
 Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***PIO***.
 
- - ¿Cómo configuramos el ***PA*** a partir de ***CA***?
- - ¿Cómo configuramos el ***PB*** a partir de ***CB***?
+ - ¿Cómo configuramos el ***PA*** a partir de ***CA***?                 ```Strobe en 0 (salida) y Busy en 1(entrada)```
+ - ¿Cómo configuramos el ***PB*** a partir de ***CB***?                 ```Todos de salida!```
+ - Consultaremos constantemente si está libre                           ```Chequear si el bit Busy = 0```
+ - Cuando la impresora esté libre mandamos el caracter a ***PB*** (31H)
 
 
 
