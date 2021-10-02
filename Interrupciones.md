@@ -456,23 +456,33 @@ Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***P
 
 
 
+
+
+
+<table>
+<tr>
+<td> PROGRAMA PRINCIPAL </td> <td> FUNCIONAMIENTO </td>
+</tr>
+<tr>
+<td>
+ 
 ```Assembly
 ORG 1000H
- MENSAJE DB "HOLJJJJJJJA"
+ MENSAJE DB "AQUITECTURA"
  FIN DB ?
 
 ORG 2000H
 MOV AL, 11111101B ;STROBE DE SALIDA, BUSY DE ENTRADA
-OUT 32H, AL ;CA
+OUT 32H, AL       ;CA
 
-MOV AL, 0 ; TODOS DE SALIDA
-OUT 33H, AL ;CB
+MOV AL, 0         ;TODOS DE SALIDA
+OUT 33H, AL       ;CB
 
 ;RECORREMOS EL STRING
 MOV BX, OFFSET MENSAJE
 POLL: IN AL, 30H
   AND AL, 1
-  JNZ POLL ;MIENTRAS NO ESTE LIBRE, SIGO CONSULTANDO
+  JNZ POLL       ;MIENTRAS NO ESTE LIBRE, SIGO CONSULTANDO
   
   ;LA IMPRESORA ESTA LIBRE
   MOV AL, [BX]
@@ -480,7 +490,7 @@ POLL: IN AL, 30H
   
   ;MANDO STROBE EN 1
   IN AL, 30H
-  OR AL, 2 ;TOMAMOS EL ESTADO
+  OR AL, 2      ;TOMAMOS EL ESTADO
   OUT 30H, AL
   
   ;MANDO STROBE EN 0
@@ -495,3 +505,14 @@ POLL: IN AL, 30H
 INT 0
 END
 ```
+</td>
+<td>
+ 
+![ARQUI2](https://user-images.githubusercontent.com/55964635/135734185-796851bb-f2ca-4ead-b117-534b29cda2a0.gif)
+
+ 
+</td>
+
+</tr>
+ 
+</table>
