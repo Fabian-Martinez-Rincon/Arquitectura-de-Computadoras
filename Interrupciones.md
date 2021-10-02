@@ -284,4 +284,10 @@ IRET
 
 HANDSHAKE
 =========
-Es una abstracción de la impresora, la impresora va a generar una comunicación con este. Nos interrumpe a través del pic
+Es una abstracción de la impresora, la impresora va a generar una comunicación con este. Nos interrumpe a través del pic.
+
+![handd](https://user-images.githubusercontent.com/55964635/135723314-5acbdad3-3f7a-4b89-b4bc-fd52c1dc2406.png)
+
+
+
+
