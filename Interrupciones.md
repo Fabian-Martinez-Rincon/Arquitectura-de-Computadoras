@@ -14,7 +14,7 @@ Indice
      * [F10](#F10)
    * [Handshake](#HANDSHAKE)
      * [Por Consulta de Estado](#IMPRIMIR_POR_CONSULTA_DE_ESTADO)
-     * [Por interrupción](#IMPRIMIR POR INTERRUPCION)
+     * [Por interrupción](#IMPRIMIR_POR_INTERRUPCION)
    * [Impresora por PIO](#Impresora_Por_Pio)
 
 Interrupciones_por_Software
@@ -354,7 +354,7 @@ ORG 1000H
  
 </table>
 
-IMPRIMIR POR INTERRUPCION
+IMPRIMIR_POR_INTERRUPCION
 =========================
 
 <table>
