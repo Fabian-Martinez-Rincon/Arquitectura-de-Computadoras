@@ -2,6 +2,8 @@
 
 - [Pila, Subrutinas y Parametros](/Assembler.md)
 - [Interrupciones](/Interrupciones.md)
+- [Practica 2 Importante](/Practica1.md)
+- [Practica 3 Importante](/Practica2.md)
 
 Indice
 =================
