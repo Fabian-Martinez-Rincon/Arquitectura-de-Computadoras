@@ -14,11 +14,13 @@ Ejercicios
 
 5 ) Modificar el programa anterior agregando una subrutina llamada ES_NUM que verifique si el caracter ingresado es realmente un número. De no serlo, el programa debe mostrar el mensaje “CARACTER NO VALIDO”. La subrutina debe recibir el código del caracter por referencia desde el programa principal y debe devolver vía registro el valor 0FFH en caso de tratarse de un número o el valor 00H en caso contrario. Tener en cuenta que el código del “0” es 30H y el del “9” es 39H. [Resolucion](#Ejercicio_5)
 
-6 )  Escribir un programa que solicite el ingreso de un número (de un dígito) por teclado y muestre en pantalla dicho número expresado en letras. Luego que solicite el ingreso de otro y así sucesivamente. Se debe finalizar la ejecución al ingresarse en dos vueltas consecutivas el número cero. [Resolucion](#Ejercicio_6)
+6 )  Escribir un programa que solicite el ingreso de un número (de un dígito) por teclado y muestre en pantalla dicho número expresado en letras. Luego que solicite el ingreso de otro y así sucesivamente. Se debe finalizar la ejecución al ingresarse en dos vueltas consecutivas el número cero. [Resolución](#Ejercicio_6)
 
-7 )  Escribir un programa que efectúe la suma de dos números (de un dígito cada uno) ingresados por teclado y muestre el resultado en la pantalla de comandos. Recordar que el código de cada caracter ingresado no coincide con el número que representa y que el resultado puede necesitar ser expresado con 2 dígitos. [Resolucion](#Ejercicio_7)
+7 )  Escribir un programa que efectúe la suma de dos números (de un dígito cada uno) ingresados por teclado y muestre el resultado en la pantalla de comandos. Recordar que el código de cada caracter ingresado no coincide con el número que representa y que el resultado puede necesitar ser expresado con 2 dígitos. [Resolución](#Ejercicio_7)
 
 8 ) Escribir un programa que efectúe la resta de dos números (de un dígito cada uno) ingresados por teclado y muestre el resultado en la pantalla de comandos. Antes de visualizarlo el programa debe verificar si el resultado es positivo o negativo y anteponer al valor el signo correspondiente. [Resolución](#Ejercicio_8)
+
+9 ) Escribir un programa que aguarde el ingreso de una clave de cuatro caracteres por teclado sin visualizarla en pantalla. En caso de coincidir con una clave predefinida (y guardada en memoria) que muestre el mensaje "Acceso permitido", caso contrario el mensaje "Acceso denegado". [Resolución](#Ejercicio_9)
 
 Ejercicio_1
 ===========
@@ -284,4 +286,69 @@ ORG 2000H
  INT 0
 END
 
+```
+Ejercicio_9
+===========
+```Assembly
+ORG 1000H
+MSJ DB "INGRESE UN NUMERO:"
+FIN DB ?
+CONTRA DB "AB"
+CONTRA_PARTE2 DB "CZ"
+CANT DB 4H
+
+MENSAJE DB "CORRECTA"
+FIN_MENSAJE DB ?
+MENSAJE2 DB "INCORRECTA"
+FIN_MENSAJE2 DB ?
+
+ORG 3000H
+ LEER_CONTRA:MOV BX, SP
+ ADD BX,2
+ BUCLE: MOV CL,[BX]
+ MOV DX, BX
+ MOV BX, OFFSET NUM
+ INT 6
+ MOV AL, 1
+ INT 7
+ 
+ CMP CL,NUM
+ JNZ INCORRECTO
+ 
+ MOV BX, DX
+ INC BX
+ DEC CANT
+ JNZ BUCLE
+ 
+ CMP CANT,0
+ JZ CUMPLE
+ 
+ INCORRECTO: MOV BX, OFFSET MENSAJE2
+ MOV AL, OFFSET FIN_MENSAJE2 - OFFSET MENSAJE2
+ INT 7 
+ JMP TERMINAR
+ 
+ 
+ CUMPLE:MOV BX, OFFSET MENSAJE
+ MOV AL, OFFSET FIN_MENSAJE - OFFSET MENSAJE
+ INT 7 
+ JMP TERMINAR
+ 
+TERMINAR: RET
+
+ORG 1500H
+NUM DB ?
+
+ORG 2000H
+MOV BX, OFFSET MSJ
+MOV AL, OFFSET FIN-OFFSET MSJ
+INT 7
+MOV BX, CONTRA_PARTE2
+PUSH BX
+MOV BX, CONTRA
+PUSH BX
+CALL LEER_CONTRA
+
+INT 0
+END
 ```
