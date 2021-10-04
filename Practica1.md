@@ -243,6 +243,7 @@ END
 ```
 
 Ejercicio_8
+===========
 ```Assembly
 ORG 1000H
  MSJ DB "INGRESE UN NUMERO:"
@@ -265,10 +266,10 @@ ORG 2000H
  INT 6                         ;LEO EL NUM2
  MOV AL, NUM1 
  
- CMP AL, NUM2                  ;
- JS NUM_NO_OK                     ; SI ES MENOR QUE 9
- SUB AL, NUM2
- JMP NUM_OK
+ CMP AL, NUM2                  ;SI EL RESULTADO DA NEGATIVO
+ JS NUM_NO_OK                  
+ SUB AL, NUM2                  ;SINO, ES UNA RESTA NORMAL
+ JMP NUM_OK                    ;IMPRIMO EL NUMERO
  
  NUM_NO_OK: MOV AL, NUM2
  SUB AL, NUM1               
