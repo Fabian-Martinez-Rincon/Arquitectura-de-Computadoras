@@ -1,7 +1,7 @@
-<h1 align="center"> 💻Assembler</h1>
+<h1 align="center"> 💻Practica 2</h1>
 
 
-Indice
+Ejercicios
 =================
 
    * [1) Implementar un programa en el lenguaje assembler que muestre en la pantalla de comandos un mensaje previamente almacenado en memoria de datos, aplicando la interrupción por software INT 7](#IF)
