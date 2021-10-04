@@ -241,3 +241,45 @@ ORG 2000H
  INT 0
 END
 ```
+
+Ejercicio_8
+```Assembly
+ORG 1000H
+ MSJ DB "INGRESE UN NUMERO:"
+ FIN DB ?
+ ORG 1500H
+ NUM1 DB ?
+ NUM2 DB ?
+ RES_D DB "0"                  ; DOCENA DEL RESULTADO 
+ RES_U DB ?                    ; UNIDAD DEL RESULTADO
+
+ORG 2000H
+ MOV BX, OFFSET MSJ
+ MOV AL, OFFSET FIN-OFFSET MSJ
+ INT 7                         ;IMPRIMO EL MENSAJE
+ MOV BX, OFFSET NUM1
+ INT 6                         ;LEO EL NUM1
+ MOV BX, OFFSET MSJ
+ INT 7                         ;PIDO OTRO NUMERO
+ MOV BX, OFFSET NUM2
+ INT 6                         ;LEO EL NUM2
+ MOV AL, NUM1 
+ 
+ CMP AL, NUM2                  ;
+ JS NUM_NO_OK                     ; SI ES MENOR QUE 9
+ SUB AL, NUM2
+ JMP NUM_OK
+ 
+ NUM_NO_OK: MOV AL, NUM2
+ SUB AL, NUM1               
+ MOV RES_D, 2DH                     ;PASA DE SER "0" A "-"
+ 
+ NUM_OK: ADD AL, 30H
+ MOV RES_U, AL         
+ MOV BX, OFFSET RES_D          ; IMPRIMO 2 CARACTERES
+ MOV AL, 2
+ INT 7
+ INT 0
+END
+
+```
