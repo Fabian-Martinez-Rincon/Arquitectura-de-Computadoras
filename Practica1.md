@@ -80,7 +80,7 @@ ORG 2000H
  MOV BX, OFFSET MSJ  ;PARA IMPRIMIR SIEMPRE TIENE SER EL REGISTRO BX
  MOV AL, OFFSET FIN-OFFSET MSJ
  INT 7               ;IMPRIMO EL MENSAJE NORMAL 
- MOV DX, OFFSET NUM  ;PARA TOMAR EL VALOR PUEDE SER CUALQUIER REGISTRO
+ MOV BX, OFFSET NUM  ;PARA TOMAR EL VALOR PUEDE SER CUALQUIER REGISTRO
  INT 6               ;INGRESO UN VALOR POR TECLADO Y LO CARGO A NUM
  MOV AL, 1           ;AL INDICA LA CANTIDAD DE CARACTERES
  INT 7
@@ -88,3 +88,17 @@ ORG 2000H
  INT 0
 END
 ```
+
+Responder brevemente:
+
+a ) Con referencia a la interrupción ***INT 7***, ¿Qué se almacena en los registros BX y AL?
+
+En BX se almacena la direccion de memoria en donde comienza el string, y en AL se almacena la cantidad de caracteres que voy a imprimir.
+
+b ) Con referencia a la interrupción ***INT 6***, ¿Qué se almacena en BX?
+
+En BX se tiene la dirección de memoria donde se va a guardar el carácter el caracter leido.
+
+c ) En el programa anterior, ¿Qué hace la segunda interrupción INT 7? ¿Qué queda almacenado en el registro CL? 
+
+Como en bx, quedo guardado la direccion del numero que ingresamos, luego a AL, mando 1 para que solo me imprima el caracter leido. En el registro CL queda el codigo ASCII del caracter leido.
