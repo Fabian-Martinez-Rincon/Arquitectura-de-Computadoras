@@ -10,6 +10,9 @@ Ejercicios
 
 3 ) Escribir un programa que muestre en pantalla las letras del abecedario, sin espacios, intercalandolo mayúsculas y minúsculas (AaBb...), sin incluir texto en la memoria de datos del programa. Tener en cuenta que el código de "A" es 41H, el de "a" es 61H y que el resto de los codigos son correlativos según el abecedario [Resolucion](#Ejercicio_3)
 
+4 ) Escribir un programa que solicite el ingreso de un número (de un digito) por teclado e inmediatamente lo muestre en la pantalla de comandos, haciendo uso de las interrupciones por software INT 6 e INT 7. [Resolucion](#Ejercicio_4)
+
+
 
 Ejercicio_1
 ===========
@@ -62,6 +65,26 @@ ORG 2000H
  INC MAY            ;PASO AL SIGUIENTE CARACTER
  CMP MAY, 5BH       ;CARACTER SIGUIENTE A LA Z (ASI TOMO LA Z)
  JNZ PROX           ;MIENTRAS NO LLEGUE AL CARACTER, AVANZO
+ INT 0
+END
+```
+Ejercicio_4
+===========
+```Assembly
+ORG 1000H
+ MSJ DB "INGRESE UN NUMERO:"
+ FIN DB ?
+ORG 1500H
+ NUM DB ?
+ORG 2000H
+ MOV BX, OFFSET MSJ  ;PARA IMPRIMIR SIEMPRE TIENE SER EL REGISTRO BX
+ MOV AL, OFFSET FIN-OFFSET MSJ
+ INT 7               ;IMPRIMO EL MENSAJE NORMAL 
+ MOV DX, OFFSET NUM  ;PARA TOMAR EL VALOR PUEDE SER CUALQUIER REGISTRO
+ INT 6               ;INGRESO UN VALOR POR TECLADO Y LO CARGO A NUM
+ MOV AL, 1           ;AL INDICA LA CANTIDAD DE CARACTERES
+ INT 7
+ MOV CL, NUM
  INT 0
 END
 ```
