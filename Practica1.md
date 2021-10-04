@@ -12,6 +12,8 @@ Ejercicios
 
 4 ) Escribir un programa que solicite el ingreso de un número (de un digito) por teclado e inmediatamente lo muestre en la pantalla de comandos, haciendo uso de las interrupciones por software INT 6 e INT 7. [Resolucion](#Ejercicio_4)
 
+5 ) Modificar el programa anterior agregando una subrutina llamada ES_NUM que verifique si el caracter ingresado es realmente un número. De no serlo, el programa debe mostrar el mensaje “CARACTER NO VALIDO”. La subrutina debe recibir el código del caracter por referencia desde el programa principal y debe devolver vía registro el valor 0FFH en caso de tratarse de un número o el valor 00H en caso contrario. Tener en cuenta que el código del “0” es 30H y el del “9” es 
+39H
 
 
 Ejercicio_1
@@ -102,3 +104,47 @@ En BX se tiene la dirección de memoria donde se va a guardar el carácter el ca
 c ) En el programa anterior, ¿Qué hace la segunda interrupción INT 7? ¿Qué queda almacenado en el registro CL? 
 
 Como en bx, quedo guardado la direccion del numero que ingresamos, luego a AL, mando 1 para que solo me imprima el caracter leido. En el registro CL queda el codigo ASCII del caracter leido.
+
+Ejercicio_5
+===========
+```Assembly
+ORG 1000H
+ MENSAJE DB "INGRESE UN NUMERO: "
+ FIN DB ?
+ MENSAJE2 DB "CARACTER NO VALIDO"
+ FIN2 DB ?
+ NUEVE DB 39H
+ORG 1500H    ;ESTA PUEDE SER CUALQUIER DIRECCION, LO PONEMOS POR COMODIDAD
+ NUM DB ?
+ 
+ORG 3000H
+ ES_NUM:INT 6
+ CMP NUM,30H
+ JS NO_ES      ;SI EL VALOR ES MENOR AL 0, NO ES VALIDO
+ CMP  NUM,40H  ;SI EL VALOR ES MAYOR A 9, TAMPOCO ES VALIDO
+ JNS NO_ES
+ 
+ MOV DX,0FFH   ;MANDO ESTE VALOR PARA INDICAR QUE ES CORRECTO
+ MOV AL, 1     ;IMPRIMO SOLO 1 CARACTER
+ INT 7
+ JMP TERMINO   ;TERMINO NORMAL
+ 
+ NO_ES: MOV DX, 00H       ;MANDO EL VALOR E IMPRIMO EL MENSAJE
+ MOV BX, OFFSET MENSAJE2
+ MOV AL, OFFSET FIN2-OFFSET MENSAJE2
+ INT 7
+ 
+TERMINO: RET
+
+ORG 2000H 
+ MOV BX, OFFSET MENSAJE
+ MOV AL, OFFSET FIN-OFFSET MENSAJE
+ INT 7
+ 
+ MOV BX, OFFSET NUM
+ CALL ES_NUM
+ 
+ MOV CL, NUM ;MANDO EL CARACTER/NUMERO INGRESADO
+ INT 0
+END
+```
