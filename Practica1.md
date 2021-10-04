@@ -14,6 +14,9 @@ Ejercicios
 
 5 ) Modificar el programa anterior agregando una subrutina llamada ES_NUM que verifique si el caracter ingresado es realmente un número. De no serlo, el programa debe mostrar el mensaje “CARACTER NO VALIDO”. La subrutina debe recibir el código del caracter por referencia desde el programa principal y debe devolver vía registro el valor 0FFH en caso de tratarse de un número o el valor 00H en caso contrario. Tener en cuenta que el código del “0” es 30H y el del “9” es 39H. [Resolucion](#Ejercicio_5)
 
+6 )  Escribir un programa que solicite el ingreso de un número (de un dígito) por teclado y muestre en pantalla dicho número expresado en letras. Luego que solicite el ingreso de otro y así sucesivamente. Se debe finalizar la ejecución al ingresarse en dos vueltas consecutivas el número cero. 
+
+
 
 Ejercicio_1
 ===========
@@ -145,5 +148,56 @@ ORG 2000H
  
  MOV CL, NUM ;MANDO EL CARACTER/NUMERO INGRESADO
  INT 0
+END
+```
+Ejercicio_6
+===========
+```Assembly
+ORG 1000H
+ CERO DB "CERO " ; Todos los nombres tienen 6 caracteres para 
+      DB "UNO " ; facilitar posicionarnos al imprimir el nombre del numero
+      DB "DOS "
+      DB "TRES "
+      DB "CUATRO"
+      DB "CINCO "
+      DB "SEIS "
+      DB "SIETE "
+      DB "OCHO "
+      DB "NUEVE "
+ MSJ DB "INGRESE UN NUMERO:"
+ FIN DB ?
+ 
+ORG 1500H
+ NUM DB ?
+ 
+ORG 2000H
+ MOV CL, 0                      ; CONT 0 DE FORMA CONSECUTIVA
+ OTRO: MOV BX, OFFSET MSJ
+ MOV AL, OFFSET FIN-OFFSET MSJ
+ INT 7                          ; IMPRIMO EL MENSAJE
+ 
+ MOV BX, OFFSET NUM
+ INT 6                          ; LEO UN CARACTER
+ CMP NUM, 30H                   ; COMPARO CON 0
+ JNZ NO_CERO
+ 
+ INC CL                         ; VOY A NRO 1
+ JMP SEGUIR
+ 
+ NO_CERO:MOV CL, 0              ;REINICIO EL CONTADOR DE 0 CONSECUTIVOS
+ 
+ SEGUIR: MOV BX, OFFSET CERO 
+  MOV AL, 6                     ;IMPRIMO SIEMPRE 6 CARACTERES
+ 
+ LOOP: CMP NUM, 30H
+  JZ IMPRIME                    ;SI ENCONTRE EL NOMBRE, IMPRIMO
+   ADD BX, 6                    ;AVANZO DE NOMBRE
+   DEC NUM                      ;AL LLEGAR AL NUMERO 0, ESTARA POSICIONADO
+  JMP LOOP
+  
+ IMPRIME:INT 7
+  CMP CL, 2
+  JNZ OTRO                      ; HASTA QUE SE INGRESE DOS VECES SEGUIDAS EL "0" CERO
+ INT 0 
 END
 ```
