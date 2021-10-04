@@ -4,8 +4,8 @@
 Indice
 =================
 
-   * [If](#IF)
-   * [Potencias](#Potencias)
+   * [1) Implementar un programa en el lenguaje assembler que muestre en la pantalla de comandos un mensaje previamente almacenado en memoria de datos, aplicando la interrupción por software INT 7](#IF)
+   * [2) Escribir un programa que muestre en pantalla todos los caracteres disponibles, comenzando con el caracter cuyo código es el número 01H](#Potencias)
    * [Suma De Elementos en una Tabla](#Suma_De_Elementos_En_Una_Tabla)
    * [Menores o Iguales de x en una Tabla](#Menores_o_Iguales_de_X_en_una_Tabla)
    * [Suma De Vectores](#Suma_De_Vectores)
