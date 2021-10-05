@@ -11,6 +11,9 @@ b ) Escribir un programa que verifique si la llave de más a la izquierda está 
 
 c ) Escribir un programa que permite encender y apagar las luces mediante las llaves. El programa no deberá terminar nunca, y continuamente revisar el estado de las llaves, y actualizar de forma consecuente el estado de las luces. La actualización se realiza simplemente prendiendo la luz i si la llave i correspondiente está encendida (valor 1), y apagándola en caso contrario. Por ejemplo, si solo la primera llave está encendida, entonces solo la primera luz se debe quedar encendida. [Resolución](#Ejercicio_1c)
 
+d ) Escribir un programa que implemente un encendido y apagado sincronizado de las luces. Un contador, que inicializa en cero, se incrementa en uno una vez por segundo. Por cada incremento, se muestra a través de las luces, prendiendo solo aquellas luces donde el valor de las llaves es 1. Entonces, primero se enciende solo la luz de más a la derecha, correspondiente al patrón 00000001. Luego se continúa con los patrones 00000010, 00000011, y así sucesivamente. El programa termina al llegar al patrón 
+11111111. [Resolución](#Ejercicio_1d)
+
 Ejercicio_1a
 ============
 ```Assembly
@@ -77,4 +80,9 @@ POLL: IN AL, PA   ; MIRO COMO ESTAN LAS LLAVES
 OUT PB, AL        ; MUESTRO EL VALOR DE LAS LLAVES EN LAS LUCES
 JMP POLL          ; LOOP INFINITO
 END
+```
+Ejercicio_1d
+============
+```Assembly
+
 ```
