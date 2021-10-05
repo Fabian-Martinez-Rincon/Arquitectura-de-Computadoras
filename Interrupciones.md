@@ -462,6 +462,7 @@ Impresora_Por_Pio
 
 - ```Bit 0 (busy)```: 1 si está ocupada la impresora, 0 si está libre. (ENTRADA)
 - ```Bit 1 (strobe)```: seteando el bit en 1 le avisamos a la impresora que dejamos un caracter en ***DATO*** para que lo imprima. (SALIDA)
+- Cuando la impresora esta llena, manda automaticamente un 1 al ```PA```
 
 Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***PIO***.
 
@@ -482,6 +483,15 @@ MOV AL, 0         ;TODOS DE SALIDA
 OUT 33H, AL       ;CB
  ```
 
+```Assembly
+;RECORREMOS EL STRING
+MOV BX, OFFSET MENSAJE
+POLL: IN AL, 30H         ; CHEQUEAMOS EL ULTIMO BIT EN PA
+  AND AL, 1              ; CUANDO ESTA EN 0, SIGNIFICA QUE ESTA LIBRE LA IMPRESORA
+  JNZ POLL               ; MIENTRAS NO ESTE LIBRE, SIGO CONSULTANDO
+
+
+```
 
 
 
