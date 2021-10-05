@@ -17,6 +17,11 @@ d ) Escribir un programa que implemente un encendido y apagado sincronizado de l
 e ) Escribir un programa que encienda una luz a la vez, de las ocho conectadas al puerto paralelo del microprocesador a través de la PIO, en el siguiente orden de bits: 0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-..., es decir, 00000001, 00000010, 00000100, etc. Cada luz debe estar 
 encendida durante un segundo. El programa nunca termina. [Resolución](#Ejercicio_1d)
 
+2 ) Ejecutar los programas en la configuración P1 C1 del simulador. En esta configuración, el puerto de datos de la impresora se conecta al puerto PB del PIO, y los bits de busy 
+y strobe de la misma se conectan a los bits 0 y 1 respectivamente del puerto PA. Presionar F5 para mostrar la salida en papel. El papel se puede blanquear ingresando el comando BI.
+
+a ) Escribir un programa para imprimir la letra “A” utilizando la impresora a través de la PIO. [Resolución](#Ejercicio_2a)
+
 Ejercicio_1a
 ============
 ```Assembly
@@ -208,3 +213,5 @@ ORG 2000H
 
 END
 ```
+Ejercicio_2a
+============
