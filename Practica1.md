@@ -440,7 +440,7 @@ ORG 2000H
 INT 0
 END
 ```
-Ejercicio_11
+Ejercicio_12
 ============
 ```Assembly
 ORG 1000H
