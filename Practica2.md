@@ -22,6 +22,8 @@ y strobe de la misma se conectan a los bits 0 y 1 respectivamente del puerto PA.
 
 a ) Escribir un programa para imprimir la letra “A” utilizando la impresora a través de la PIO. [Resolución](#Ejercicio_2a)
 
+b ) Escribir un programa para imprimir el mensaje “ORGANIZACION Y ARQUITECTURA DE COMPUTADORAS” utilizando la impresora a través de la PIO.[Resolución](#Ejercicio_2b)
+
 Ejercicio_1a
 ============
 ```Assembly
