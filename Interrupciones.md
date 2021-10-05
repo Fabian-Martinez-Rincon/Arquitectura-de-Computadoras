@@ -473,7 +473,14 @@ Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***P
  - Después de enviar el Strobe en 1, debemos volver a ponerlo en 0. 
  - ```DEL PUNTO 3 AL 6 DEBEMOS REPETIRLO PARA CADA CARACTER```
 
+ ```Assembly
+;CONFIGURACION BASE DEL PIO
+MOV AL, 11111101B ;STROBE DE SALIDA, BUSY DE ENTRADA
+OUT 32H, AL       ;CA
 
+MOV AL, 0         ;TODOS DE SALIDA
+OUT 33H, AL       ;CB
+ ```
 
 
 
