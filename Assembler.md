@@ -13,6 +13,7 @@ Indice
    * [Parametros_Por_Valor](#Parametros_Por_Valor)
    * [Parametros Por Referencia](#Parametros_Por_Referencia)
    * [SWAP](#SWAP)
+   * [SUMA DE TODA LA TABLA ES PAR](#Suma_tabla_par)
 
 
 IF
@@ -506,3 +507,42 @@ END
 </tr>
  
 </table>
+
+Suma_tabla_par
+==============
+```Assembly
+ORG 1000H
+  TABLA DB 2,4,6,8,10,12,14,16,18,20
+  FIN DB ? 
+  MENSAJE DB "PAR  "
+  FIN1 DB ?
+  MENSAJE2 DB "IMPAR"
+  FIN2 DB ?
+ORG 2000H
+  MOV DL, 0  ;Pongo el registro AL en 0
+  MOV CL, OFFSET FIN-OFFSET TABLA ;Resta ambas direcciones
+  
+  MOV BX, OFFSET TABLA 
+  SUMA: ADD DL, [BX]
+  INC BX 
+  DEC CL 
+  JNZ SUMA 
+  
+  AND DL, 1H
+  JZ PAR
+  MOV BX, OFFSET MENSAJE2
+  MOV AL, OFFSET FIN2 - OFFSET MENSAJE2
+  INT 7  
+  
+  JMP TERMINA
+  
+  
+  
+  PAR: MOV BX, OFFSET MENSAJE
+  MOV AL, OFFSET FIN1 - OFFSET MENSAJE
+  INT 7  
+  
+  TERMINA: INT 0
+END
+; El resultado final es 6E (110 en decimal) 
+```
