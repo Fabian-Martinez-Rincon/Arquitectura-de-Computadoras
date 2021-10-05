@@ -167,6 +167,9 @@ Es el intermediario entre los dispositivos que quieren interrumpir y la cpu. Avi
 
 ![image](https://user-images.githubusercontent.com/55964635/135541325-4613d44f-96d3-4132-b876-6656b3008503.png)
 
+![interrupciones](https://user-images.githubusercontent.com/55964635/135951746-8e5972a0-17c8-4dbc-a2f8-bb353370186a.png)
+
+
 EOI_20H
 =======
 - El ***PIC*** nos avisa que un dispositivo nos quiere interrumpir. Nosotros le avisamos que ya atendimos la interrupcion.
