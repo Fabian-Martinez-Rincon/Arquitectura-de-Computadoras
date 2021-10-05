@@ -38,7 +38,7 @@ c ) Escribir un programa que imprime “UNIVERSIDAD NACIONAL DE LA PLATA” en l
 
 d) Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los almacene en memoria. Una vez ingresados, que los envíe a la impresora a través del HAND-SHAKE, en primer lugar tal cual fueron ingresados y a continuación en sentido inverso. Utilizar el HAND-SHAKE en modo consulta de estado. ¿Qué diferencias encuentra con el ejercicio 2c? [Resolución](#Ejercicio_3d)
 
-e ) Idem d ) , pero ahora utilizar el HAND-SHAKE en modo interrupciones. 
+e ) Idem d ) , pero ahora utilizar el HAND-SHAKE en modo interrupciones. [Resolución](#Ejercicio_3e)
 
 Ejercicio_1a
 ============
