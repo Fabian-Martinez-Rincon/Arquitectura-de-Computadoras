@@ -191,6 +191,12 @@ IMR_21H
 VECTOR_DE_INTERRUCIONES
 =======================
 
+Hemos visto que existen dos tipos de interrupciones, por hardware y por software, que son necesarios por
+razones distintas. En las interrupciones por hardware, el que interrumpe es un dispositivo y la CPU pasa el
+control a una subrutina especial llamada manejador de interrupciones para atenderlo. En las que son por software,
+el que interrumpe es el mismo programa, y la CPU pasa el control al sistema operativo que lo atiende ejecutando
+una subrutina de sistema.
+
 - Va de la posición 0(0000H) a la 1023 (0400H)
 - Consta de 1024 posiciones de memoria
 - Lo usamos para asociar las interrupciones con una subrutina a ejecutar
