@@ -7,6 +7,8 @@ Ejercicios
 
 a ) Escribir un programa que encienda las luces con el patrón 11000011, o sea, solo las primeras y las últimas dos luces deben prenderse, y el resto deben apagarse. [Resolución](#Ejercicio_1a)
 
+b ) Escribir un programa que verifique si la llave de más a la izquierda está prendida. Si es así, mostrar en pantalla el mensaje “Llave prendida”, y de lo contrario mostrar “Llave apagada”. Solo importa el valor de la llave de más a la izquierda (bit más significativo). Recordar que las llaves se manejan con las teclas 0-7. [Resolucion](#Ejercicio_1b)
+
 Ejercicio_1a
 ============
 ```Assembly
@@ -23,4 +25,8 @@ ORG 2000H
  OUT PB, AL      ;IMPRIMO PATRON
  INT 0
 END
+```
+Ejercicio_1b
+============
+```Assembly
 ```
