@@ -28,6 +28,10 @@ c ) Escribir un programa que solicita el ingreso de cinco caracteres por teclado
 
 d ) Escribir un programa que solicite ingresar caracteres por teclado y que recién al presionar la tecla F10 los envíe a la impresora a través de la PIO. No es necesario mostrar los caracteres en la pantalla. [Resolución](#Ejercicio_2d)
 
+3 ) Uso de la impresora a través del HAND-SHAKE. Ejecutar los programas en configuración P1 C2
+
+a ) Escribir un programa que imprime “INGENIERIA E INFORMATICA” en la impresora a través del HAND-SHAKE. La comunicación se establece por consulta de estado (polling). ¿Qué diferencias encuentra con el ejercicio 2b? [Resolución](#Ejercicio_3a)
+
 Ejercicio_1a
 ============
 ```Assembly
@@ -449,3 +453,5 @@ ORG 2000H
 INT 0
 END
 ```
+Ejercicio_3a
+============
