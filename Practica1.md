@@ -26,6 +26,8 @@ Ejercicios
 
 11 ) Escribir un programa que permita seleccionar una letra del abecedario al azar. El código de la letra debe generarse en un registro que incremente su valor desde el código de A hasta el de Z continuamente. La letra debe quedar seleccionada al presionarse la tecla F10 y debe mostrarse de inmediato en la pantalla de comandos. [Resolución](#Ejercicio_11)
 
+12 ) Implementar a través de un programa un reloj segundero que muestre en pantalla los segundos transcurridos (00-59 seg) desde el inicio de la ejecución. [Resolución](#Ejercicio_12)
+
 Ejercicio_1
 ===========
 ```Assembly
