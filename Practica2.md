@@ -488,6 +488,16 @@ ORG 2000H
  INT 0
 END
 ```
+Ejercicio_3b
+============
+El handshake con respecto al pio:
+
+El hanshake sabe hacer algunas funciones que no sabe hacer el pio (La cpu no necesita realizar algunas tareas). Con el hanshake puedo trabajar por interrupciones tambien, cosa que no puedo con el pio.
+
+El pio con respecto al handshake:
+
+El pio sirve para varios dispositivos (No con la impresora nada mas), es como un modulo general, en cambio en el handshake solo puedo usar la impresora, es como un modulo dedicado a la impresora. La pio es mas general. Si solo pienso en la impresora, no tengo ventajas con respecto al handshake, ya que este tiene funciones extras.
+
 Ejercicio_3c
 ============
 ```Assembly
