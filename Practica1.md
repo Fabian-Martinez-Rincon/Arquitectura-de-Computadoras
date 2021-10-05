@@ -494,12 +494,11 @@ ORG 2000H
  MOV AL, 10
  OUT 25H, AL ; PIC: registro INT1 (Timer)
  MOV AL, 1
- OUT 11H, AL ; TIMER: registro COMP (No se cual es)
+ OUT 11H, AL ; TIMER: registro COMP 
  MOV AL, 0
  OUT 10H, AL ; TIMER: registro CONT
- 
- 
  STI
+ 
  LAZO: JMP LAZO
 END
 ```
