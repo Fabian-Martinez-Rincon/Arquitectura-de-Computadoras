@@ -28,6 +28,8 @@ Ejercicios
 
 12 ) Implementar a través de un programa un reloj segundero que muestre en pantalla los segundos transcurridos (00-59 seg) desde el inicio de la ejecución. [Resolución](#Ejercicio_12)
 
+15 ) Escribir un programa que implemente un conteo regresivo a partir de un valor ingresado desde el teclado. El conteo debe comenzar al presionarse la tecla F10. El tiempo transcurrido debe mostrarse en pantalla, actualizándose el valor cada segundo. [Resolución](#Ejercicio_15)
+
 Ejercicio_1
 ===========
 ```Assembly
@@ -500,5 +502,61 @@ ORG 2000H
  STI
  
  LAZO: JMP LAZO
+END
+```
+Ejercicio_15
+============
+```Assembly
+ORG 3000H
+;Subrutina que atiende a la F10
+CONTAR: INT 6
+ MOV AL, 1 
+ MOV DX, LEIDO
+ 
+ DECREMENTAR: INT 7
+ DEC LEIDO
+ CMP LEIDO, 30H
+ JNZ DECREMENTAR
+ 
+ MOV AL, 0
+ 
+ ;AVISAR AL PIC QUE TERMINAMOS!
+ OUT 10H, AL
+ MOV AL, 20H
+ OUT 20H, AL
+
+ ;VOLVEMOS
+IRET
+
+ORG 1000H
+ LEIDO DB ?
+ FIN DB ?
+
+ORG 2000H
+ ;SELECCIONAR ID 10 PARA EL F10
+  
+ ;CONFIGURAMOS EL VECTOR DE INTERRUPCIONES
+ MOV AX, CONTAR ;AX = Dir de CONTAR(3000H)
+ MOV BX, 40 ;10 * 4 en el Vec. de Int.
+ MOV [BX], AX ;EN LA POSICION 40 PONE EL 3000H
+
+ ;CONFIGURAMOS EL PIC
+ CLI
+ MOV AL, 11111100B ;Configuramos solo el INT0 (F10) Y EL TIMER (F11)
+ OUT 21H, AL  ;IMR
+ MOV AL, 10
+ OUT 24H, AL ;ID 10(PUEDE SER CUALQUIERA)
+ INC AL ;MANDAMOS LA ID 11 PARA EL TIMER
+ OUT 25H, AL 
+ MOV AL, 10 ;ES 10, POR SI LO CAMBIO
+ OUT 11H, AL ; TIMER: registro COMP 
+ MOV AL, 0
+ OUT 10H, AL ; TIMER: registro CONT
+ STI
+ 
+ MOV BX, OFFSET LEIDO
+ LOOP: JMP LOOP ;LOOP INFINITO
+ 
+INT 0
 END
 ```
