@@ -14,6 +14,9 @@ c ) Escribir un programa que permite encender y apagar las luces mediante las ll
 d ) Escribir un programa que implemente un encendido y apagado sincronizado de las luces. Un contador, que inicializa en cero, se incrementa en uno una vez por segundo. Por cada incremento, se muestra a través de las luces, prendiendo solo aquellas luces donde el valor de las llaves es 1. Entonces, primero se enciende solo la luz de más a la derecha, correspondiente al patrón 00000001. Luego se continúa con los patrones 00000010, 00000011, y así sucesivamente. El programa termina al llegar al patrón 
 11111111. [Resolución](#Ejercicio_1d)
 
+e ) Escribir un programa que encienda una luz a la vez, de las ocho conectadas al puerto paralelo del microprocesador a través de la PIO, en el siguiente orden de bits: 0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-..., es decir, 00000001, 00000010, 00000100, etc. Cada luz debe estar 
+encendida durante un segundo. El programa nunca termina. [Resolución](#Ejercicio_1d)
+
 Ejercicio_1a
 ============
 ```Assembly
@@ -135,4 +138,73 @@ ORG 2000H
 
 END
 
+```
+Ejercicio_1d
+============
+```Assembly
+PIC EQU 20H
+TIMER EQU 10H
+PIO EQU 30H
+N_CLK EQU 10
+
+ORG 40
+ IP_CLK DW RUT_CLK
+ 
+ORG 1000H
+ PATRON DB 1
+ FINAL DB 0
+ REVERSO DB 0
+ VALOR DB 0
+
+ORG 1500H
+ TABLA DB 1,2,4,8,16,32,64,128
+ 
+ORG 3000H
+ RUT_CLK:  CMP REVERSO, 1
+  JZ MODO_REVERSO
+  MOV CL, BYTE PTR [BX]
+  INC BX
+  CMP BYTE PTR [BX], 128    ;COMPARO CON 10000000B
+  JNZ LUCES                 ;MIENTRAS NO LLEGUE AL ULTIMO, SALTO
+  MOV REVERSO, 1
+  JMP LUCES
+  
+  MODO_REVERSO: MOV CL, BYTE PTR [BX]
+  DEC BX
+  CMP BYTE PTR [BX], 1 ;CUANDO LLEGO A 1, DESACTIVO EL REVERSO
+  JNZ LUCES
+  MOV REVERSO, 0
+  
+  
+  
+  LUCES: MOV AL, CL
+   OUT PIO+1, AL      ; PB IMPRIME EL PATRON DE LAS LUCES
+   MOV AL, 0          
+   OUT TIMER, AL      ; REINICIO LOS SEGUNDOS
+   MOV AL, 20H    ; VUELVO NORMAL
+   OUT PIC, AL
+ IRET
+ 
+ORG 2000H
+ MOV BX, OFFSET TABLA
+ 
+ CLI
+ MOV AL, 0FDH
+ OUT PIC+1, AL   ;ACTIVO EL TIMER EN ISMR
+ 
+ MOV AL, N_CLK   ;PASO LA ID 10
+ 
+ OUT PIC+5, AL   ;PONGO LA ID EN INT1: TIMER
+ MOV AL, 1
+ OUT TIMER+1, AL ;PONGO UN 1 EN EL COMP (SEGUNDOS)
+ MOV AL, 0
+ OUT PIO+3, AL   ;CONFIGURO PB PARA QUE SEAN TODAS DE SALIDA (LUCES)
+ OUT PIO+1, AL   ; INICIO LAS LUCES EN 0
+ OUT TIMER, AL   ; INICIO EL CONTADOR EN 0
+ STI
+ 
+ LAZO: JMP LAZO
+ INT 0
+
+END
 ```
