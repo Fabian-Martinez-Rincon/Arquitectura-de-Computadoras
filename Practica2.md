@@ -29,4 +29,31 @@ END
 Ejercicio_1b
 ============
 ```Assembly
+CA EQU 32h
+PA EQU 30h
+
+ORG 1000H
+ PRENDIDA DB "Llave prendida"
+ APAGADA DB "Llave apagada"
+ FIN_APAGADA DB ?
+
+ORG 2000H
+ MOV AL, 0FFh
+ OUT CA, AL     ;TODO SALIDA
+ IN AL, PA
+ ; poner en 0 todos los bits menos el más sig
+ AND AL, 80h;1000 0000
+ ; si es 0
+ CMP AL, 0
+ JZ ESTA_APAGADA
+ ; esta prendida
+ MOV BX, OFFSET PRENDIDA
+ MOV AL,OFFSET APAGADA - OFFSET prendida
+ JMP FIN
+ 
+ ESTA_APAGADA: MOV BX, OFFSET APAGADA
+ MOV AL, OFFSET FIN_APAGADA - OFFSET APAGADA
+ FIN: INT 7 ; imprimir
+ HLT
+END
 ```
