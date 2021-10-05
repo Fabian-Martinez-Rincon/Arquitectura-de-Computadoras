@@ -36,7 +36,7 @@ b ) ¿Cuál es la ventaja en utilizar el HAND-SHAKE con respecto al PIO para com
 
 c ) Escribir un programa que imprime “UNIVERSIDAD NACIONAL DE LA PLATA” en la impresora a través del HAND-SHAKE. La comunicación se establece por interrupciones emitidas desde el HANDSHAKE cada vez que la impresora se desocupa. [Resolución](#Ejercicio_3c)
 
-d) Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los almacene en memoria. Una vez ingresados, que los envíe a la impresora a través del HAND-SHAKE, en primer lugar tal cual fueron ingresados y a continuación en sentido inverso. Utilizar el HAND-SHAKE en modo consulta de estado. ¿Qué diferencias encuentra con el ejercicio 2c?
+d) Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los almacene en memoria. Una vez ingresados, que los envíe a la impresora a través del HAND-SHAKE, en primer lugar tal cual fueron ingresados y a continuación en sentido inverso. Utilizar el HAND-SHAKE en modo consulta de estado. ¿Qué diferencias encuentra con el ejercicio 2c? [Resolución](#Ejercicio_3d)
 
 Ejercicio_1a
 ============
@@ -538,7 +538,7 @@ ORG 2000H
 INT 0
 END
 ```
-Ejercicio_1d
+Ejercicio_3d
 ============
 ```Assembly
 ORG 1000H
