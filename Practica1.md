@@ -24,6 +24,8 @@ Ejercicios
 
 10 ) Escribir un programa que, mientras ejecuta un lazo infinito, cuente el número de veces que se presiona la tecla F10 y acumule este valor en el registro DX. [Resolución](#Ejercicio_10)
 
+11 ) Escribir un programa que permita seleccionar una letra del abecedario al azar. El código de la letra debe generarse en un registro que incremente su valor desde el código de A hasta el de Z continuamente. La letra debe quedar seleccionada al presionarse la tecla F10 y debe mostrarse de inmediato en la pantalla de comandos. [Resolución](#Ejercicio_11)
+
 Ejercicio_1
 ===========
 ```Assembly
@@ -398,3 +400,43 @@ INT0
 b) Cuáles de estos registros son programables y cómo trabaja la instrucción OUT.
 
 c) Qué hacen y para qué se usan las instrucciones CLI y STI.
+
+Ejercicio_11
+============
+```Assembly
+ORG 3000H
+CONTAR: INT 7
+ MOV AL, 20H
+ OUT 20H, AL
+IRET
+
+ORG 1000H
+CARACTER DB "A"
+
+ORG 2000H
+;CONFIGURO EL VECTOR DE INTERRUPCIONES
+ MOV AX, CONTAR 
+ MOV BX, 40 
+ MOV [BX], AX 
+
+ 
+ CLI
+ MOV AL, 11111110B      ;ACTIVO EL F10
+ OUT 21H, AL            ;MANDO AL SMR LOS DATOS
+ MOV AL, 10             ;ID 10
+ OUT 24H, AL            ;MANDO LA ID A INT0
+ STI
+ 
+ MOV BX, OFFSET CARACTER
+ 
+ REINICIAR: MOV BYTE PTR [BX],40H
+ 
+ LOOP: INC BYTE PTR [BX];AUMENTO EL CARACTER
+ MOV AL,1
+ MOV AH,0
+ CMP BYTE PTR [BX],5AH  ;SI LLEGO A LA Z, REINICIO
+ JZ REINICIAR
+ JMP LOOP 
+INT 0
+END
+```
