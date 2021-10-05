@@ -26,6 +26,8 @@ b ) Escribir un programa para imprimir el mensaje “ORGANIZACION Y ARQUITECTURA
 
 c ) Escribir un programa que solicita el ingreso de cinco caracteres por teclado y los envía de a uno por vez a la impresora a través de la PIO a medida que se van ingresando. No es necesario mostrar los caracteres en la pantalla. [Resolución](#Ejercicio_2c)
 
+d ) Escribir un programa que solicite ingresar caracteres por teclado y que recién al presionar la tecla F10 los envíe a la impresora a través de la PIO. No es necesario mostrar los caracteres en la pantalla. [Resolución](#Ejercicio_2d)
+
 Ejercicio_1a
 ============
 ```Assembly
