@@ -382,3 +382,19 @@ ORG 3000H
  IRET
 END
 ```
+
+Explicar detalladamente:
+
+a) La función de los registros del PIC: ISR, IRR, IMR, INT0-INT7, EOI. Indicar la dirección de cada uno.
+
+ISR: Sus bits indican si se está atendiendo la interrupción de algún dispositivo. Sólo importan los 4 bits menos significativos.
+
+IRR: Sus bits indican qué dispositivos están solicitando una interrupción. Si el bit N vale 1, entonces el dispositivo conectado a la línea INTN está haciendo una solicitud. Sólo importan los 4 bits menos significativos.
+
+IMR: sus bits indican qué líneas de interrupción están habilitadas. Si el bit N vale 1, las interrupciones del dispositivo conectado a la línea INTN serán ignoradas. Si vale 0, las interrupciones del dispositivo serán atendidas en algún momento. Sólo importan los 4 bits menos significativos
+
+INT0
+
+b) Cuáles de estos registros son programables y cómo trabaja la instrucción OUT.
+
+c) Qué hacen y para qué se usan las instrucciones CLI y STI.
