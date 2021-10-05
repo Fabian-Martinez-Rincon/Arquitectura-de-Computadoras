@@ -22,7 +22,7 @@ y strobe de la misma se conectan a los bits 0 y 1 respectivamente del puerto PA.
 
 a ) Escribir un programa para imprimir la letra “A” utilizando la impresora a través de la PIO. [Resolución](#Ejercicio_2a)
 
-b ) Escribir un programa para imprimir el mensaje “ORGANIZACION Y ARQUITECTURA DE COMPUTADORAS” utilizando la impresora a través de la PIO.[Resolución](#Ejercicio_2b)
+b ) Escribir un programa para imprimir el mensaje “ORGANIZACION Y ARQUITECTURA DE COMPUTADORAS” utilizando la impresora a través de la PIO. [Resolución](#Ejercicio_2b)
 
 Ejercicio_1a
 ============
@@ -250,6 +250,58 @@ ORG 2000H
  IN AL, PA
  OR AL, 02h; 00000010b
  OUT PA, AL
+ INT 0
+END
+```
+Ejercicio_2b
+============
+```Assembly
+PIO EQU 30H
+
+ORG 1000H
+ MSJ DB "CONCEPTOS DE "
+     DB "ARQUITECTURA DE "
+     DB "COMPUTADORAS"
+ FIN DB ?
+ 
+ORG 2000H
+ ; INICIALIZACION PIO PARA IMPRESORA
+ ; CA
+ MOV AL, 0FDH     ;1111 1101B
+ OUT PIO+2, AL    ;STROBE DE SALIDA, BUSY DE ENTRADA
+ 
+ ; CB
+ MOV AL, 0
+ OUT PIO+3, AL   ;TODOS DE SALIDA
+ 
+ ; Strobe
+ IN AL, PIO
+ AND AL, 0FDH
+ OUT PIO, AL    ; PONGO EN 0 EL STROBE
+ 
+ ; FIN INICIALIZACION
+ MOV BX, OFFSET MSJ
+ MOV CL, OFFSET FIN-OFFSET MSJ
+ POLL: IN AL, PIO
+ AND AL, 1
+ JNZ POLL
+ 
+ ; Enviar carácter
+ MOV AL, [BX]
+ OUT PIO+1, AL
+ 
+ ; Pulso STROBE
+ IN AL, PIO
+ OR AL, 02H     ;ACTIVO EL STROBE
+ OUT PIO, AL    ;MUESTRO EL STROBE
+ 
+ ; Reiniciar STROBE
+ IN AL, PIO
+ AND AL, 0FDH
+ OUT PIO, AL
+ INC BX ;Mover el puntero de la cadena
+ DEC CL
+ JNZ POLL ; Verificar fin de la cadena
  INT 0
 END
 ```
