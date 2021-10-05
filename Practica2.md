@@ -32,6 +32,9 @@ d ) Escribir un programa que solicite ingresar caracteres por teclado y que reci
 
 a ) Escribir un programa que imprime “INGENIERIA E INFORMATICA” en la impresora a través del HAND-SHAKE. La comunicación se establece por consulta de estado (polling). ¿Qué diferencias encuentra con el ejercicio 2b? [Resolución](#Ejercicio_3a)
 
+b ) ¿Cuál es la ventaja en utilizar el HAND-SHAKE con respecto al PIO para comunicarse con la impresora? Sacando eso de lado, ¿Qué ventajas tiene el PIO, en general, con respecto al HANDSHAKE? [Resolución](#Ejercicio_3b)
+
+
 Ejercicio_1a
 ============
 ```Assembly
