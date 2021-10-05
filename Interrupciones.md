@@ -461,7 +461,7 @@ Impresora_Por_Pio
 ![busi2](https://user-images.githubusercontent.com/55964635/135733045-2efba02b-9c90-4c3d-bdab-540019f16e9f.png)
 
 - ```Bit 0 (busy)```: 1 si está ocupada la impresora, 0 si está libre. (ENTRADA)
-- ```Bit 1 (stribe)```: seteando el bit en 1 le avisamos a la impresora que dejamos un caracter en ***DATO*** para que lo imprima. (SALIDA)
+- ```Bit 1 (strobe)```: seteando el bit en 1 le avisamos a la impresora que dejamos un caracter en ***DATO*** para que lo imprima. (SALIDA)
 
 Ejemplo: Escribir un programa que envíe datos a la impresora a través del ***PIO***.
 
