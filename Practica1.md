@@ -22,7 +22,7 @@ Ejercicios
 
 9 ) Escribir un programa que aguarde el ingreso de una clave de cuatro caracteres por teclado sin visualizarla en pantalla. En caso de coincidir con una clave predefinida (y guardada en memoria) que muestre el mensaje "Acceso permitido", caso contrario el mensaje "Acceso denegado". [Resolución](#Ejercicio_9)
 
-10 ) Escribir un programa que, mientras ejecuta un lazo infinito, cuente el número de veces que se presiona la tecla F10 y acumule este valor en el registro DX.
+10 ) Escribir un programa que, mientras ejecuta un lazo infinito, cuente el número de veces que se presiona la tecla F10 y acumule este valor en el registro DX. [Resolución](#Ejercicio_10)
 
 Ejercicio_1
 ===========
@@ -354,3 +354,5 @@ CALL LEER_CONTRA
 INT 0
 END
 ```
+Ejercicio_10
+============
