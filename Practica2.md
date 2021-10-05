@@ -34,6 +34,8 @@ a ) Escribir un programa que imprime “INGENIERIA E INFORMATICA” en la impres
 
 b ) ¿Cuál es la ventaja en utilizar el HAND-SHAKE con respecto al PIO para comunicarse con la impresora? Sacando eso de lado, ¿Qué ventajas tiene el PIO, en general, con respecto al HANDSHAKE? [Resolución](#Ejercicio_3b)
 
+c ) Escribir un programa que imprime “UNIVERSIDAD NACIONAL DE LA PLATA” en la impresora a través del HAND-SHAKE. La comunicación se establece por interrupciones emitidas desde el HANDSHAKE cada vez que la impresora se desocupa. [Resolución](#Ejercicio_3c)
+
 
 Ejercicio_1a
 ============
@@ -483,3 +485,5 @@ ORG 2000H
  INT 0
 END
 ```
+Ejercicio_3c
+============
