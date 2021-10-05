@@ -24,6 +24,8 @@ a ) Escribir un programa para imprimir la letra “A” utilizando la impresora 
 
 b ) Escribir un programa para imprimir el mensaje “ORGANIZACION Y ARQUITECTURA DE COMPUTADORAS” utilizando la impresora a través de la PIO. [Resolución](#Ejercicio_2b)
 
+c ) Escribir un programa que solicita el ingreso de cinco caracteres por teclado y los envía de a uno por vez a la impresora a través de la PIO a medida que se van ingresando. No es necesario mostrar los caracteres en la pantalla. [Resolución](#Ejercicio_2c)
+
 Ejercicio_1a
 ============
 ```Assembly
@@ -304,4 +306,9 @@ ORG 2000H
  JNZ POLL ; Verificar fin de la cadena
  INT 0
 END
+```
+Ejercicio_2c
+============
+```Assembly
+
 ```
