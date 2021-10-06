@@ -1,9 +1,10 @@
 <h1 align="center"> 💻Arquitectura De Computadoras </h1>
 
-- [Pila, Subrutinas y Parametros](/Assembler.md)
-- [Interrupciones](/Interrupciones.md)
-- [Practica 2 Importante](/Practica1.md)
-- [Practica 3 Importante](/Practica2.md)
+- [Pila, Subrutinas y Parametros](/Documentos/Assembler.md)
+- [Interrupciones](/Documentos/Interrupciones.md)
+- [Practica 2 Importante](/Documentos/Practica1.md)
+- [Practica 3 Importante](/Documentos/Practica2.md)
+- [Teoria (Para el Primer Parcial)](/Documentos/Teoria1.md)
 
 Indice
 =================
