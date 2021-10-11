@@ -28,8 +28,6 @@
 
 #### 3) Que tecnicas puede utilizar una CPU para realizar operaciones de E/S
 
-#### 4) Que tareas se pueden realizar con un CDMA?
-
 <h1 align="Preguntas random"> 💻Preguntas</h1>
 
 #### 1) Explicar qué se transfiere al IP y desde donde al ejecutarse la instrucción ret.
