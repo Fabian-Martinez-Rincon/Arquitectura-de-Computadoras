@@ -1,5 +1,37 @@
 <h1 align="center"> 💻Preguntas</h1>
 
+## Sobre procedimientos y funciones.
+
+#### 1) Cuáles son los métodos de pasaje de argumentos a procedimientos/funciones que conoce?
+
+#### 2) Que es una pila?
+
+#### 3) Que hardware utilizaremos con una pila?
+
+#### 4) Describa el funcionamiento de la pila.
+
+## Solo interrupciones.
+
+#### 1) Explique la secuencia de acciones que suceden ante un pedido de interrupción de la CPU
+
+#### 2) Que funciones posee un PIC?
+
+#### 3) Que son las interrupciones por software? Como se usan?
+
+#### 4) Cuando hay múltiples interrupciones, como puedo controlarlas?
+
+## Sobre E/S.
+
+#### 1) Que diferencias existen entre la E/S mapeada en memoria y la E/S aislada en una computadora?
+
+#### 2) Como es la estructura de un modo de E/S. Describa y grafique
+
+#### 3) Que tecnicas puede utilizar una CPU para realizar operaciones de E/S
+
+#### 4) Que tareas se pueden realizar con un CDMA?
+
+<h1 align="Preguntas random"> 💻Preguntas</h1>
+
 #### 1) Explicar qué se transfiere al IP y desde donde al ejecutarse la instrucción ret.
 
 #### 2) Explicar qué indican los registros ISR e IRR del controlador de interrupciones en el siguiente formato
