@@ -32,6 +32,10 @@ Por_Valor
 
 Por_Referencia
 --------------
+- Aca es pasada la dirección de la variable y no su valor.
+- Es necesario cuando hay que modificar el valor del parámetro (Retorno)
+- En general menos eficiente que pasar por valor. Tenemos la dir y hay que acceder a memoria para buscar el dato.
+- Pero más eficiente cuando hay que transferir un arreglo datos entre proc. Asi se pasa la dir del arreglo.
 
 Funcionamiento_de_la_pila
 =========================
