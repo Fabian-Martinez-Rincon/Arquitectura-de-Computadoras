@@ -19,6 +19,12 @@ Subrutinas
 Pasaje_de_parametros
 ====================
 
+- Procedimientos (subrutinas), en general requieren datos de entrada y proveen datos de salida.
+- Parametros son estos datos pasados a y desde el procedimiento.
+- Estos parámetros pueden ser pasados de dos maneras
+  - Por Valor
+  - Por Referencia 
+
 Funcionamiento_de_la_pila
 =========================
 
