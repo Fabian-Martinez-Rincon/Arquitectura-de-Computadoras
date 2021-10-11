@@ -6,6 +6,7 @@ Indice
    * [Pasaje de parámetros](#Pasaje_de_parametros)
      * [Por valor](#Por_Valor)
      * [Por Referencia](#Por_Referencia)
+     * [Donde se pasan los Parámetros](#Donde_Pasan_Los_Parametros)
    * [Funcionamiento de la pila](#Funcionamiento_de_la_pila)
    * [PUSH/POP](#Push_Pop)
 
@@ -36,6 +37,18 @@ Por_Referencia
 - Es necesario cuando hay que modificar el valor del parámetro (Retorno)
 - En general menos eficiente que pasar por valor. Tenemos la dir y hay que acceder a memoria para buscar el dato.
 - Pero más eficiente cuando hay que transferir un arreglo datos entre proc. Asi se pasa la dir del arreglo.
+
+Donde_Pasan_Los_Parametros
+--------------------------
+#### Vía Registros
+- El número de registros es la principal limitación.
+- Es importante documentar que registros se usan
+
+#### Vía Memoria
+- Variables definidas en el programa ("Globales")
+- Se usa un área definida de memoria (RAM)
+- Difísil de estandarizar
+
 
 Funcionamiento_de_la_pila
 =========================
