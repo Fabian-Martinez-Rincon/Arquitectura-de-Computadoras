@@ -30,3 +30,5 @@
 #### 11) ¿Qué información brinda el registro ISR del PIC?
 
 #### 12) ¿Qué información se almacena en al pila al atenderse un pedido de interrupción?
+
+#### 13) Si el registro IMR tiene el valor F0H ¿Bajo qué condición el registro ISR puede tener el valor 05H? Justifique.
