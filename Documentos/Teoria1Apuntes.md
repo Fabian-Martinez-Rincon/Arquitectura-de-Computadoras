@@ -2,8 +2,8 @@
 
 Indice
 ======
-   * [Programas](#Interrupciones_por_Software)
-   * [Subrutinas](#Memoria_E_S_y_PIO)
-   * [Pasaje de parámetros](#Interrupciones_por_Hardware)
-   * [Funcionamiento de la pila](#HANDSHAKE)
-   * [PUSH/POP](#Impresora_Por_Pio)
+   * [Programas](#Programas)
+   * [Subrutinas](#Subrutinas)
+   * [Pasaje de parámetros](#Pasaje_de_parametros)
+   * [Funcionamiento de la pila](#Funcionamiento_de_la_pila)
+   * [PUSH/POP](#Push_Pop)
