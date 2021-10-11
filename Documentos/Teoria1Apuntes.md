@@ -47,11 +47,25 @@ Donde_Pasan_Los_Parametros
 #### Vía Memoria
 - Variables definidas en el programa ("Globales")
 - Se usa un área definida de memoria (RAM)
-- Difísil de estandarizar
+- Difícil de estandarizar (En una variable llamada cachito (Casi ni se usa))
 
+#### Vía pila (stack) 
+- Es el método más ampliamente usado.
+- La pila (o stack) es una zona de memoria (RAM) destinada a este uso específico.
+- Lo usa la mayoría de los lenguajes de alto nivel.
+- Independientemente de memoria y registros.
+- Hay que comprender bien como funciona porque la pila es usada por el usuario y por el sistema
+- Aunque es más complicado, en general los registros son recursos muy preciados.
 
 Funcionamiento_de_la_pila
 =========================
+
+#### Zona de memoria destinada a un uso específico.
+- Uso del sistema: Salva la dirección de retorno cuando es llamada una subrutina o se produce una interrupción de hardware
+- Uso del usuario: Pasaje de parámetros
+
+#### Cada vez que se ejecuta un programa, el solo inicializa el registro SP apuntado por la pila.
+- El simulador inicia SP = 8000H
 
 Push_Pop
 ========
