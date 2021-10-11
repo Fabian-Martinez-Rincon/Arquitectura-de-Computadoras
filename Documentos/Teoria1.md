@@ -10,7 +10,7 @@
 
 #### 4) Describa el funcionamiento de la pila.
 
-## Solo interrupciones.
+## Sobre interrupciones.
 
 #### 1) Explique la secuencia de acciones que suceden ante un pedido de interrupción de la CPU
 
