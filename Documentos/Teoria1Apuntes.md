@@ -15,6 +15,7 @@ Subrutinas
 ==========
 
 3000H = Ditinta a 2000H (programa principal). La subrutina no debe sobre escribir otras zonas del programa.
+
 Pasaje_de_parametros
 ====================
 
