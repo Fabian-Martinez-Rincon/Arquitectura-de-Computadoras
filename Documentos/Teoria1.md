@@ -20,4 +20,13 @@
 
 #### 8) ¿Cómo determina el microprocesador msx88 la direccion de comienzo de una rutina de interrupción?
 - A - Las subrutinas de interrupción comienzan siempre en la dirección 3000H
-- 
+- B - La dirección de comienzo es la que resulta de multiplicar por 4 el valor almacenado en un registro determinado del PIC.
+- C - La dirección de comienzo es la dirección almacenada a partir de la celda cuya dirección resulta de multiplicar por 4 el valor de un registro determinado del PIC.
+
+#### 9) ¿Ante qué evento el dispositivo de handshake conectado a la impresora del entorno msx88 emite una interrupción al PIC?
+
+#### 10) Explicar brevemente en qué consiste el uso de la impresora vía handshaking por consulta de estado.
+
+#### 11) ¿Qué información brinda el registro ISR del PIC?
+
+
