@@ -11,6 +11,7 @@ Indice
    * [PUSH/POP](#Push_Pop)
    * [Interrupciones](#Interrupciones)
      * [Por Hardware](#Por_Hardware) 
+     * [Por Software](#Por_Software) 
 
 
 Subrutinas
@@ -92,3 +93,7 @@ Por_Hardware
 - El sistema de cómputo tiene que manejar estos eventos externos ***no planeados*** o ***asincronicos***
 - No están relacionadas con el proceso en ejecución en ese momento.
 - Son conocidad como ***interrupt request***
+
+Por_Software
+------------
+- Muchos procesadores tienen instrucciones explícitas que afectan el estado del procesador en la misma manera que int por hardware. Generalmente usadas para hacer llamadas a funciones del SO. Esta característica permite que las subrutinas del sistema se carguen en cualquier lugar.
