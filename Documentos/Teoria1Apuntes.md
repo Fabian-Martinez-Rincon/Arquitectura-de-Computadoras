@@ -10,6 +10,7 @@ Indice
    * [Funcionamiento de la pila](#Funcionamiento_de_la_pila)
    * [PUSH/POP](#Push_Pop)
    * [Interrupciones](#Interrupciones)
+     * [Por Hardware](#Por_Hardware) 
 
 
 Subrutinas
@@ -83,3 +84,11 @@ Interrupciones
   - El procesador malgasta tiempo preguntando contínuamente si hay algún dato disponible.
   - Hay que esperar a los dispositivos más lentos.
 - Mejor solución: Cuando un dispositivo necesita la atención del procesador, envía una señal para avisarle, es decir produce una interrupción. Este mecanismo permite alterar la secuencia normal de procesamiento. Recordar otros mecanismos (jmp, call).
+
+Por_Hardware
+------------
+- Son las generadas por dispositivos de E/S.
+- Son las "verdaderas" interrupciones.
+- El sistema de cómputo tiene que manejar estos eventos externos "no planeados" ó "asincronicos"
+- No están relacionadas con el proceso en ejecución en ese momento.
+- Son conocidad como ***interrupt request***
