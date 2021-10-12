@@ -9,6 +9,7 @@ Indice
      * [Donde se pasan los Parámetros](#Donde_Pasan_Los_Parametros)
    * [Funcionamiento de la pila](#Funcionamiento_de_la_pila)
    * [PUSH/POP](#Push_Pop)
+   * [Interrupciones](#Interrupciones)
 
 
 Subrutinas
@@ -72,3 +73,8 @@ Push_Pop
 - PUSH: Apila datos. El SP apunta al unico dato almacenado, por lo tanto primero se decrementa y luego almacena el dato.
 - POP: Desapila datos. Desapila el dato y luego incrementa el SP. Operación inversa a la anterior.
 - PUSH y POP apilan y desapilan datos de 16 bits (2 bytes)
+
+Interrupciones
+==============
+- La funcionalidad dentro de un sistema de cómputo es implementada por hardware que ayuda al procesador
+- Cada dispositivo opera a su propio ritmo, pero hay necesidad de sincronizar la operación del procesador con estos dispositivos.
