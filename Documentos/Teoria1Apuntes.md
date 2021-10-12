@@ -69,3 +69,6 @@ Funcionamiento_de_la_pila
 
 Push_Pop
 ========
+- PUSH: Apila datos. El SP apunta al unico dato almacenado, por lo tanto primero se decrementa y luego almacena el dato.
+- POP: Desapila datos. Desapila el dato y luego incrementa el SP. Operación inversa a la anterior.
+- PUSH y POP apilan y desapilan datos de 16 bits (2 bytes)
