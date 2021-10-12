@@ -101,3 +101,8 @@ Por_Software
 - Sib más cortas que Call.
 - Hay sistemas que no permiten hacer una llamada directa a una dirección de la función del SO, pues es una zona reservada.
 - Se pueden reubicar fácilmente.
+
+Que_pasa_si_no_las_tuviera?
+---------------------------
+- Al cargar un programa habría que ***mirar*** todas las llamadas al BIOS y SO y remplazar en el código las direcciones de todas estas funciones invocadas.
+- Además es una manera de llamar a funciones cuyo código no está en el programa principal (como los procedimientos en Pascal o las subrutinas que escribimos en assembler)
