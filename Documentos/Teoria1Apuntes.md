@@ -118,3 +118,11 @@ Ciclo_de_Interrupción
   - Guarda su contexto (próxima instrucción a ejecutar y otros)
   - Carga el PC con la dirección de comienzo de una rutina de gestión de interrupción.
   - Finalizada la rutina de gestrión el procesador retoma la ejecución del programa del usuario en el punto de interrupción.   
+
+Escenario_de_trabajo
+--------------------
+- El procesador tiene una única entrada de interrupciones.
+- ¿Cómo solucionamos tener varias entradas de interrupciones?
+- Existe un dispositivo: controlador de interrupciones (PIC)
+- Interrupciones priorizadas.
+- Interrupciones vectorizadas
