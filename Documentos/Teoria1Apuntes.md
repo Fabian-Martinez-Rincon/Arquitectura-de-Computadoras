@@ -1,4 +1,4 @@
-<h1 align="center"> 💻Preguntas</h1>
+<h1 align="center"> 💻Teoria</h1>
 
 Indice
 ======
