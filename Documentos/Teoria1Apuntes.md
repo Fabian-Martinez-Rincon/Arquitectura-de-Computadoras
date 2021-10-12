@@ -106,3 +106,15 @@ Que_pasa_si_no_las_tuviera?
 ---------------------------
 - Al cargar un programa habría que ***mirar*** todas las llamadas al BIOS y SO y remplazar en el código las direcciones de todas estas funciones invocadas.
 - Además es una manera de llamar a funciones cuyo código no está en el programa principal (como los procedimientos en Pascal o las subrutinas que escribimos en assembler)
+
+Ciclo_de_Interrupción
+---------------------
+- Añadido al ciclo de instrucción.
+- El procesador comprueba sise ha generado alguna interrupción
+  - Indicada por la presencia de una señal de interrupción.
+- Si no hay señales de interrupción, capta la siguiente instrucción.
+- Si hay alguna interrupción pendiente:
+  - Se suspende la ejecución del programa en curso.
+  - Guarda su contexto (próxima instrucción a ejecutar y otros)
+  - Carga el PC con la dirección de comienzo de una rutina de gestión de interrupción.
+  - Finalizada la rutina de gestrión el procesador retoma la ejecución del programa del usuario en el punto de interrupción.   
