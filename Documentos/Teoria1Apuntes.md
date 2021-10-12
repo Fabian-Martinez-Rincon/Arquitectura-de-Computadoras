@@ -97,3 +97,7 @@ Por_Hardware
 Por_Software
 ------------
 - Muchos procesadores tienen instrucciones explícitas que afectan el estado del procesador en la misma manera que int por hardware. Generalmente usadas para hacer llamadas a funciones del SO. Esta característica permite que las subrutinas del sistema se carguen en cualquier lugar.
+- No requieren conocer la dirección de la rutina en tiempo de ejecución.
+- Sib más cortas que Call.
+- Hay sistemas que no permiten hacer una llamada directa a una dirección de la función del SO, pues es una zona reservada.
+- Se pueden reubicar fácilmente.
