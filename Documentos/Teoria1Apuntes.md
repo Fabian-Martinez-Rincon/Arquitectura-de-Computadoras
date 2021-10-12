@@ -78,3 +78,8 @@ Interrupciones
 ==============
 - La funcionalidad dentro de un sistema de cómputo es implementada por hardware que ayuda al procesador
 - Cada dispositivo opera a su propio ritmo, pero hay necesidad de sincronizar la operación del procesador con estos dispositivos.
+- Una solución: El procesador pregunta a cada dispositivo su estado (si hay dato disponible). Cuando el dato está disponible el procesador puede leerlo y procesarlo. (Polling)
+- Desventaja:
+  - El procesador malgasta tiempo preguntando contínuamente si hay algún dato disponible.
+  - Hay que esperar a los dispositivos más lentos.
+- Mejor solución: Cuando un dispositivo necesita la atención del procesador, envía una señal para avisarle, es decir produce una interrupción. Este mecanismo permite alterar la secuencia normal de procesamiento. Recordar otros mecanismos (jmp, call).
