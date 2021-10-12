@@ -88,7 +88,7 @@ Interrupciones
 Por_Hardware
 ------------
 - Son las generadas por dispositivos de E/S.
-- Son las "verdaderas" interrupciones.
-- El sistema de cómputo tiene que manejar estos eventos externos "no planeados" ó "asincronicos"
+- Son las ***verdaderas*** interrupciones.
+- El sistema de cómputo tiene que manejar estos eventos externos ***no planeados*** o ***asincronicos***
 - No están relacionadas con el proceso en ejecución en ese momento.
 - Son conocidad como ***interrupt request***
