@@ -6,6 +6,8 @@
 - [Practica 3 Importante](/Documentos/Practica2.md)
 - [Teoria (Para el Primer Parcial)](/Documentos/Teoria1.md)
 - [Teoria Apuntes](/Documentos/Teoria1Apuntes.md)
+- [Risc](/Documentos/Risc.md)
+- [Practica 4 Importante](/Documentos/Practica4.md)
 
 Indice
 =================
