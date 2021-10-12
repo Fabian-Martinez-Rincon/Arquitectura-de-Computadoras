@@ -12,6 +12,7 @@ Indice
    * [Interrupciones](#Interrupciones)
      * [Por Hardware](#Por_Hardware) 
      * [Por Software](#Por_Software) 
+     * [Funcionamiento](#Funcionamiento)
 
 
 Subrutinas
@@ -126,3 +127,17 @@ Escenario_de_trabajo
 - Existe un dispositivo: controlador de interrupciones (PIC)
 - Interrupciones priorizadas.
 - Interrupciones vectorizadas
+
+Funcionamiento
+--------------
+#### 1) El PIC recibe un pedido de interrupción de un dispositivo externo y prioriza éste con otros pedidos que pueden llegar o estar pendientes.
+
+#### 2) Un pedido de interrupción es enviado al procesador, por la línea INTR.
+
+#### 3) El procesador contesta por la línea INTA y solicita un puntero de 8 bits para la tabla
+
+#### 4) El procesador recibe el puntero y lo usa para acceder a la tabla de vectores (direcciones) donde se encuentra la dirección del servicio.
+
+#### 5) Accede a la tabla y obtiene la dirección buscada.
+
+#### 6) Salva en la pila la dirección actual, los flags y salta a la dirección del servicio.
