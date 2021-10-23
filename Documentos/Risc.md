@@ -41,13 +41,7 @@ Write_Back
 - Se almacena el resultado ***(si lo hay)*** en los registros
 
 
-| Interrupcion | Funcion |
-| ------------- | ------------- |
-| ![image](https://user-images.githubusercontent.com/55964635/138571333-979edb35-72b2-4fb8-88bd-7ada6bd71af4.png) | Detiene el programa. Igual a HLT  |
-| ![image](https://user-images.githubusercontent.com/55964635/138571428-4c9b5905-5a6e-4bbf-8c7b-f927dc841262.png)  | Debug. No lo vamos a utilizar  |
-| ![image](https://user-images.githubusercontent.com/55964635/138571346-2e5ee125-ee18-4e7c-b417-ceb2986e5bf6.png) | Lee un caracter desde teclado  |
-| ![image](https://user-images.githubusercontent.com/55964635/138571400-e324f2a6-efc4-49cb-8c65-b29418fd2026.png) | Imprime un string en pantalla  |
-| ![image](https://user-images.githubusercontent.com/55964635/138571376-4b6c4dd6-5f55-4386-a123-88c3533bca3e.png)  | Imprime un string en pantalla  |
+
 
 <table>
 <tr>
@@ -56,29 +50,14 @@ Write_Back
 <tr>
 <td>
  
-```Assembly
-ORG 1000H
- LEIDO DB ?
-ORG 2000H
- MOV BX, OFFSET LEIDO
- INT 6    
- INT 0
-END
-```
+![if](https://user-images.githubusercontent.com/55964635/138571830-e84e64ad-3720-4abf-96cb-dff21fa88120.png)
+
+  
 </td>
 <td>
  
-```Assembly
-ORG 1000H
- MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
- FIN DB ?
-ORG 2000H
- MOV BX, OFFSET MENSAJE
- MOV AL, OFFSET FIN - OFFSET MENSAJE
- INT 7    
- INT 0
-END
-```
+TEXTO
+
  
 </td>
 
@@ -86,30 +65,13 @@ END
   
 <tr>
 <td>
- 
-```Assembly
-ORG 1000H
- LEIDO DB ?
-ORG 2000H
- MOV BX, OFFSET LEIDO
- INT 6    
- INT 0
-END
-```
+  
+![ID](https://user-images.githubusercontent.com/55964635/138571834-3aceb35f-500d-47f2-b236-2b1dd4600a34.png)
+  
 </td>
 <td>
  
-```Assembly
-ORG 1000H
- MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
- FIN DB ?
-ORG 2000H
- MOV BX, OFFSET MENSAJE
- MOV AL, OFFSET FIN - OFFSET MENSAJE
- INT 7    
- INT 0
-END
-```
+TEXTO
  
 </td>
 
@@ -118,29 +80,29 @@ END
 <tr>
 <td>
  
-```Assembly
-ORG 1000H
- LEIDO DB ?
-ORG 2000H
- MOV BX, OFFSET LEIDO
- INT 6    
- INT 0
-END
-```
+![EX](https://user-images.githubusercontent.com/55964635/138571858-3e9bb33b-1038-414a-915f-213a92fc7652.png)
+
+ 
+  
 </td>
 <td>
  
-```Assembly
-ORG 1000H
- MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
- FIN DB ?
-ORG 2000H
- MOV BX, OFFSET MENSAJE
- MOV AL, OFFSET FIN - OFFSET MENSAJE
- INT 7    
- INT 0
-END
-```
+TEXTO
+ 
+</td>
+
+</tr>
+
+<tr>
+<td>
+  
+ ![ME](https://user-images.githubusercontent.com/55964635/138571868-6e02dbbd-f576-4d33-a165-c52618c1dd16.png)
+
+
+</td>
+<td>
+ 
+TEXTO
  
 </td>
 
@@ -149,60 +111,13 @@ END
 <tr>
 <td>
  
-```Assembly
-ORG 1000H
- LEIDO DB ?
-ORG 2000H
- MOV BX, OFFSET LEIDO
- INT 6    
- INT 0
-END
-```
-</td>
-<td>
- 
-```Assembly
-ORG 1000H
- MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
- FIN DB ?
-ORG 2000H
- MOV BX, OFFSET MENSAJE
- MOV AL, OFFSET FIN - OFFSET MENSAJE
- INT 7    
- INT 0
-END
-```
- 
-</td>
+![WB](https://user-images.githubusercontent.com/55964635/138571875-ba381a67-ea8c-44f3-98d0-c1f5e69b9d75.png)
 
-</tr>
-
-<tr>
-<td>
- 
-```Assembly
-ORG 1000H
- LEIDO DB ?
-ORG 2000H
- MOV BX, OFFSET LEIDO
- INT 6    
- INT 0
-END
-```
+  
 </td>
 <td>
  
-```Assembly
-ORG 1000H
- MENSAJE DB "ARQUITECTURA DE COMPUTADORAS"
- FIN DB ?
-ORG 2000H
- MOV BX, OFFSET MENSAJE
- MOV AL, OFFSET FIN - OFFSET MENSAJE
- INT 7    
- INT 0
-END
-```
+TEXTO
  
 </td>
 
