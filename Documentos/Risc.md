@@ -27,9 +27,14 @@ Instruction_Decoding
 
 Execution
 ---------
+- Si es una instrucción de cómputo, se ejecuta en la ALU
+- Si es un acceso a memoria, se calcula la dirección efectiva
+- Si es un salto, se realiza (se modifica el registro PC)
 
 Memory_access
 -------------
+- Si es un acceso a memoria, se lee/escribe el dato
 
 Write_Back
 ----------
+- Se almacena el resultado ***(si lo hay)*** en los registros
