@@ -38,3 +38,11 @@ Memory_access
 Write_Back
 ----------
 - Se almacena el resultado ***(si lo hay)*** en los registros
+
+
+| Interrupcion | Funcion |
+| ------------- | ------------- |
+| ![image](https://user-images.githubusercontent.com/55964635/138571266-37ebd734-e752-455d-bd36-431565fab869.png) | Detiene el programa. Igual a HLT  |
+| INT 3  | Debug. No lo vamos a utilizar  |
+| INT 6  | Lee un caracter desde teclado  |
+| INT 7  | Imprime un string en pantalla  |
