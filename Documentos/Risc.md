@@ -3,6 +3,7 @@
 Indice
 ======
    * [Fases de una instrucción](#Fases_de_una_instruccion)
+   * [Atascos](#Atascos)
 
 
 Fases_de_una_instruccion
