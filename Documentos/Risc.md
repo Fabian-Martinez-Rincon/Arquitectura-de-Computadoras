@@ -15,6 +15,8 @@ Las instrucciones se organizan en ***fases*** de manera que esto sea posible
 
 Instruction_Fetch
 -----------------
+- Se accede a memoria por la instrucción
+- Se incrementa el PC (antes conocido como el IP)
 
 
 Instruction_Decoding
