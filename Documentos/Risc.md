@@ -42,7 +42,8 @@ Write_Back
 
 | Interrupcion | Funcion |
 | ------------- | ------------- |
-| ![image](https://user-images.githubusercontent.com/55964635/138571266-37ebd734-e752-455d-bd36-431565fab869.png) | Detiene el programa. Igual a HLT  |
-| INT 3  | Debug. No lo vamos a utilizar  |
-| INT 6  | Lee un caracter desde teclado  |
-| INT 7  | Imprime un string en pantalla  |
+| ![image](https://user-images.githubusercontent.com/55964635/138571333-979edb35-72b2-4fb8-88bd-7ada6bd71af4.png) | Detiene el programa. Igual a HLT  |
+| ![image](https://user-images.githubusercontent.com/55964635/138571428-4c9b5905-5a6e-4bbf-8c7b-f927dc841262.png)  | Debug. No lo vamos a utilizar  |
+| ![image](https://user-images.githubusercontent.com/55964635/138571346-2e5ee125-ee18-4e7c-b417-ceb2986e5bf6.png) | Lee un caracter desde teclado  |
+| ![image](https://user-images.githubusercontent.com/55964635/138571400-e324f2a6-efc4-49cb-8c65-b29418fd2026.png) | Imprime un string en pantalla  |
+| ![image](https://user-images.githubusercontent.com/55964635/138571376-4b6c4dd6-5f55-4386-a123-88c3533bca3e.png)  | Imprime un string en pantalla  |
