@@ -2,6 +2,7 @@
 
 Indice
 ======
+   * [Intercambio de datos](#Intercambio)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Instrucciones](#Instrucciones)
      * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
@@ -11,6 +12,20 @@ Indice
      * [De Transferencia de control](#Instrucciones_de_Transferencia_de_control)
      * [Control](#Instrucciones_control)
 
+
+Intercambio
+===========
+```s
+.data
+    A: .word 1
+    B: .word 2
+.code
+    ld r1, A(r0)
+    ld r2, B(r0)
+    sd r2, A(r0)
+    sd r1, B(r0)
+halt
+```
 
 Fases_de_una_instruccion
 ========================
@@ -110,10 +125,11 @@ Las instrucciones se organizan en ***fases*** de manera que esto sea posible
 </td>
 
 </tr>
-  
+   
 
- 
 </table>
+
+
 
 Instrucciones_de_Transferencia_de_datos
 =======================================
