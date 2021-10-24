@@ -3,12 +3,13 @@
 Indice
 ======
    * [Fases de una instrucción](#Fases_de_una_instruccion)
-   * [Instrucciones de Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
-   * [Instrucciones Aritmeticas](#Instrucciones_Aritmeticas)
-   * [Instrucciones Logicas](#Instrucciones_Logicas)
-   * [Instrucciones de desplazamiento de bits](#Instrucciones_de_desplazamiento_de_bits)
-   * [Instrucciones de Transferencia de control](#Instrucciones_de_Transferencia_de_control)
-   * [Instrucciones control](#Instrucciones_control)
+   * [Instrucciones](#Instrucciones)
+     * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
+     * [Aritmeticas](#Instrucciones_Aritmeticas)
+     * [Logicas](#Instrucciones_Logicas)
+     * [De desplazamiento de bits](#Instrucciones_de_desplazamiento_de_bits)
+     * [De Transferencia de control](#Instrucciones_de_Transferencia_de_control)
+     * [Control](#Instrucciones_control)
 
 
 Fases_de_una_instruccion
