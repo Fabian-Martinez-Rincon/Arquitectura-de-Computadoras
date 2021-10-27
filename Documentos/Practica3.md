@@ -56,3 +56,28 @@ Ejecutar nuevamente el programa anterior con la opción Enable Forwarding habili
     bnez r2, loop
 halt
 ```
+
+a ) Ejecutar el programa con Forwarding habilitado y responder:
+
+- ¿Por qué se presentan atascos tipo RAW?
+- Branch Taken es otro tipo de atasco que aparece. ¿Qué significa? ¿Por qué se produce?
+- ¿Cuántos CPI tiene la ejecución de este programa? Tomar nota del número de ciclos, cantidad de instrucciones y CPI.
+
+b ) Ejecutar ahora el programa deshabilitando el Forwarding y responder:
+
+- ¿Qué instrucciones generan los atascos tipo RAW y por qué? ¿En qué etapa del cauce se produce el atasco en cada caso y durante cuántos ciclos?
+- Los Branch Taken Stalls se siguen generando. ¿Qué cantidad de ciclos dura este atasco en cada vuelta del lazo ***loop***?
+ 
+Comparar con la ejecución con Forwarding y explicar la diferencia.
+
+- ¿Cuántos CPI tiene la ejecución del programa en este caso? Comparar número de ciclos, cantidad de instrucciones y CPI con el caso con Forwarding.
+
+c ) Reordenar las instrucciones para que la cantidad de RAW sea „0‟ en la ejecución del programa (Forwarding habilitado)
+
+d ) Modificar el programa para que almacene en un arreglo en memoria de datos los contenidos parciales del registro r1 ¿Qué significado tienen los elementos de la tabla que se genera?
+
+
+
+
+
+
