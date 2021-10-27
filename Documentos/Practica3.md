@@ -99,3 +99,28 @@ d ) Modificar el programa para que almacene en un arreglo en memoria de datos lo
 fin: halt
 ```
 
+a ) Ejecutar en simulador con Forwarding habilitado. ¿Qué tarea realiza? ¿Cuál es el resultado y dónde queda indicado?
+
+b) Re-Ejecutar el programa con la opción Configure/Enable Branch Target Buffer habilitada. Explicar la ventaja de usar este método y cómo trabaja.
+
+c) Confeccionar una tabla que compare número de ciclos, CPI, RAWs y Branch Taken Stalls para los dos casos anteriores.
+
+5) El siguiente programa multiplica por 2 los elementos de un arreglo llamado datos y genera un nuevo arreglo llamado res. Ejecutar el programa en el simulador winmips64 con la opción Delay Slot habilitada.
+
+```s
+.data
+    cant: .word 8
+    datos: .word 1, 2, 3, 4, 5, 6, 7, 8
+    res: .word 0
+.code
+    dadd r1, r0, r0
+    ld r2, cant(r0)
+    loop: ld r3, datos(r1)
+    daddi r2, r2, -1
+    dsll r3, r3, 1
+    sd r3, res(r1)
+    daddi r1, r1, 8
+    bnez r2, loop
+    nop
+halt
+```
