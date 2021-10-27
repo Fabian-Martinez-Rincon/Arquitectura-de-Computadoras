@@ -126,6 +126,9 @@ halt
 ```
 
 a ) ¿Qué efecto tiene habilitar la opción Delay Slot (salto retardado)?.
+
 b ) ¿Con qué fin se incluye la instrucción NOP? ¿Qué sucedería si no estuviera?.
+
 c ) Tomar nota de la cantidad de ciclos, la cantidad de instrucciones y los CPI luego de ejecutar el programa.
+
 d ) Modificar el programa para aprovechar el „Delay Slot‟ ejecutando una instrucción útil. Simular y comparar número de ciclos, instrucciones y CPI obtenidos con los de la versión anterior.
