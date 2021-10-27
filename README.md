@@ -2,12 +2,12 @@
 
 - [Pila, Subrutinas y Parametros](/Documentos/Assembler.md)
 - [Interrupciones](/Documentos/Interrupciones.md)
+- [Risc](/Documentos/Risc.md)
 - [Practica 2 Importante](/Documentos/Practica1.md)
 - [Practica 3 Importante](/Documentos/Practica2.md)
+- [Practica 4 Importante](/Documentos/Practica4.md)
 - [Teoria (Para el Primer Parcial)](/Documentos/Teoria1.md)
 - [Teoria Apuntes](/Documentos/Teoria1Apuntes.md)
-- [Risc](/Documentos/Risc.md)
-- [Practica 4 Importante](/Documentos/Practica4.md)
 
 Indice
 =================
