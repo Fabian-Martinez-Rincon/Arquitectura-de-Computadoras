@@ -139,4 +139,4 @@ d ) Modificar el programa para aprovechar el „Delay Slot‟ ejecutando una ins
 
 El resultado debe almacenarse en una dirección etiquetada CANT. El programa debe generar además otro arreglo llamado RES cuyos elementos sean ceros y unos. Un „1‟ indicará que el entero correspondiente en el arreglo TABLA es mayor que X, mientras que un „0‟ indicará que es menor o igual.
 
-8) * Escribir un programa que multiplique dos números enteros utilizando sumas repetidas (similar a Ejercicio 6 o 7 de la Práctica 1). El programa debe estar optimizado para su ejecución con la opción Delay Slot habilitada
+8 ) Escribir un programa que multiplique dos números enteros utilizando sumas repetidas (similar a Ejercicio 6 o 7 de la Práctica 1). El programa debe estar optimizado para su ejecución con la opción Delay Slot habilitada
