@@ -14,7 +14,7 @@ e) xori r6, r6, 0xffffffffffffffff
 ```
 
 
-2 ) El siguiente programa intercambia el contenido de dos palabras de la memoria de datos, etiquetadas A y B.
+2 ) El siguiente programa intercambia el contenido de dos palabras de la memoria de datos, etiquetadas A y B. [Resolución](#Ejercicio_2)
 
 ```s
 .data
@@ -42,7 +42,7 @@ Ejecutar nuevamente el programa anterior con la opción Enable Forwarding habili
 - ¿Qué indica el color de los registros en la ventana ***Register*** durante la ejecución?
 - ¿Cuál es el promedio de Ciclos Por Instruccion ***(CPI)*** en este caso? Comparar con el anterior
 
-3 ) Analizar el siguiente programa con el simulador MIPS64:
+3 ) Analizar el siguiente programa con el simulador MIPS64:  [Resolución](#Ejercicio_3)
 
 ```s
 .data
@@ -77,7 +77,7 @@ c ) Reordenar las instrucciones para que la cantidad de RAW sea „0‟ en la ej
 d ) Modificar el programa para que almacene en un arreglo en memoria de datos los contenidos parciales del registro r1 ¿Qué significado tienen los elementos de la tabla que se genera?
 
 
-4 ) Dado el siguiente programa
+4 ) Dado el siguiente programa [Resolución](#Ejercicio_4)
 
 ```s
 .data
@@ -105,7 +105,7 @@ b) Re-Ejecutar el programa con la opción Configure/Enable Branch Target Buffer 
 
 c) Confeccionar una tabla que compare número de ciclos, CPI, RAWs y Branch Taken Stalls para los dos casos anteriores.
 
-5 ) El siguiente programa multiplica por 2 los elementos de un arreglo llamado datos y genera un nuevo arreglo llamado res. Ejecutar el programa en el simulador winmips64 con la opción Delay Slot habilitada.
+5 ) El siguiente programa multiplica por 2 los elementos de un arreglo llamado datos y genera un nuevo arreglo llamado res. Ejecutar el programa en el simulador winmips64 con la opción Delay Slot habilitada. [Resolución](#Ejercicio_5)
 
 ```s
 .data
@@ -133,10 +133,37 @@ c ) Tomar nota de la cantidad de ciclos, la cantidad de instrucciones y los CPI 
 
 d ) Modificar el programa para aprovechar el „Delay Slot‟ ejecutando una instrucción útil. Simular y comparar número de ciclos, instrucciones y CPI obtenidos con los de la versión anterior.
 
-6 ) Escribir un programa que lea tres números enteros A, B y C de la memoria de datos y determine cuántos de ellos son iguales entre sí (0, 2 o 3). El resultado debe quedar almacenado en la dirección de memoria D.
+6 ) Escribir un programa que lea tres números enteros A, B y C de la memoria de datos y determine cuántos de ellos son iguales entre sí (0, 2 o 3). El resultado debe quedar almacenado en la dirección de memoria D. [Resolución](#Ejercicio_6)
 
-7 ) Escribir un programa que recorra una TABLA de diez números enteros y determine cuántos elementos son mayores que X. 
+7 ) Escribir un programa que recorra una TABLA de diez números enteros y determine cuántos elementos son mayores que X. [Resolución](#Ejercicio_7)
 
 El resultado debe almacenarse en una dirección etiquetada CANT. El programa debe generar además otro arreglo llamado RES cuyos elementos sean ceros y unos. Un „1‟ indicará que el entero correspondiente en el arreglo TABLA es mayor que X, mientras que un „0‟ indicará que es menor o igual.
 
-8 ) Escribir un programa que multiplique dos números enteros utilizando sumas repetidas (similar a Ejercicio 6 o 7 de la Práctica 1). El programa debe estar optimizado para su ejecución con la opción Delay Slot habilitada
+8 ) Escribir un programa que multiplique dos números enteros utilizando sumas repetidas (similar a Ejercicio 6 o 7 de la Práctica 1). El programa debe estar optimizado para su ejecución con la opción Delay Slot habilitada. [Resolución](#Ejercicio_8)
+
+
+Ejercicio_1
+===========
+
+Ejercicio_2
+===========
+
+Ejercicio_3
+===========
+
+Ejercicio_4
+===========
+
+Ejercicio_5
+===========
+
+Ejercicio_6
+===========
+
+Ejercicio_7
+===========
+
+Ejercicio_8
+===========
+
+
