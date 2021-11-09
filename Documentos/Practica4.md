@@ -18,6 +18,16 @@
     halt
 ```
 
+```a)``` Tomar nota de la cantidad de ciclos, instrucciones y CPI luego de la ejecución del programa.
+
+```b)``` ¿Cuántos atascos por dependencia de datos se generan? Observar en cada caso cuál es el dato en conflicto y las instrucciones involucradas.
+
+```c)``` ¿Por qué se producen los atascos estructurales? Observar cuales son las instrucciones que los generan y en qué etapas del pipeline aparecen.
+
+```d)``` Modificar el programa agregando la instrucción ```mul.d f1, f2, f1``` entre las instrucciones ```add.d y mul.d```. Repetir la ejecución y observar los resultados. ¿Por qué aparece un atasco tipo ***WAR***?
+
+```e)```
+
 <h1 align="center">Ejercicios</h1>
 
 
