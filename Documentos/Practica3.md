@@ -1,4 +1,6 @@
-<h1 align="center"> 💻Practica 4 Segmentación de cauce en procesador RISC</h1>
+<h1 align="center"> 💻Practica 4 </h1>
+
+<h1 align="center"> Segmentación de cauce en procesador RISC</h1>
 
 
 Ejercicios
