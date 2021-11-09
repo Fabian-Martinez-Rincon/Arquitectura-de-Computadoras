@@ -175,6 +175,27 @@ Aparecen atascos de tipo ***RAW (Read After Write)*** causado por una dependenci
 
 El ***CPI*** de la ejecución de este programa es de 2.2
 
+<table>
+<tr>
+<td> Ejecución </td> <td> Funciones </td>
+</tr>
+<tr>
+<td>
+ 
+![image](https://user-images.githubusercontent.com/55964635/140979278-78e2e908-83cc-4ee5-9544-b9d857686baa.png)
+    
+</td>
+<td>
+ 
+
+Ciclos por instrucción (CPI) = 2,2
+    
+Espera por dependencia de datos (RAW) = 2
+ 
+</td>
+</tr>
+ 
+</table>
 
 Ejercicio_2b
 ============
