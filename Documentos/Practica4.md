@@ -36,6 +36,11 @@ Pista: la superficie de un triángulo se calcula como:
 
 ```Superficie = (base x altura) / 2```
 
+```4)``` El índice de masa corporal (IMC) es una medida de asociación entre el peso y la talla de un individuo.
+
+Se calcula a partir del peso (expresado en kilogramos, por ejemplo: 75,7 kg) y la  estatura (expresada en metros, por ejemplo 1,73 m), usando la fórmula:
+
+```IMG = PESO / (ESTATURA)^2```
 
 
 
