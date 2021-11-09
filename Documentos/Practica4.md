@@ -66,15 +66,15 @@ La siguiente tabla muestra la convención empleada para nombrar a los 32 registr
 
 | Registros | Nombres | ¿Para que se los utiliza? | ¿Preservado? |
 | :---         |     :---:      |          ---: |     ---: |
-| r0   | Infrapeso     | 1    | |
-| r1     | Normal       | 2      | |
-| r2-r3     | Sobrepeso       | 3      | |
-| r4-r7     | Obeso       | 4      | |
-| r8-r15     | Obeso       | 4      | |
-| r16-r23     | Obeso       | 4      | |
-| r24-r25     | Obeso       | 4      | |
-| r26-r27     | Obeso       | 4      | |
-| R28     | Obeso       | 4      | |
-| R29     | Obeso       | 4      | |
-| R30     | Obeso       | 4      | |
-| R31     | Obeso       | 4      | |
+| r0   | $zero     | 1    | |
+| r1     | $at       | 2      | |
+| r2-r3     | $v0-$v1       | 3      | |
+| r4-r7     | $a0-$a3       | 4      | |
+| r8-r15     | $t0-$t7      | 4      | |
+| r16-r23     | $s0-$s7       | 4      | |
+| r24-r25     | $t8-$t9       | 4      | |
+| r26-r27     | $k0-$k1      | 4      | |
+| R28     | $gp       | 4      | |
+| R29     | $sp       | 4      | |
+| R30     | $fp       | 4      | |
+| R31     | $ra       | 4      | |
