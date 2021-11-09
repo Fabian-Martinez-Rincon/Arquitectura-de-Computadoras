@@ -28,6 +28,18 @@
 
 ```e)``` Explicar por qué colocando un ***NOP*** antes de la suma, se soluciona el ***RAW*** de la instrucción ***ADD*** y como consecuencia se elimina el ***WAR***. 
 
+```2)``` Es posible convertir valores enteros almacenados en alguno de los registros ```r1-r31``` a su representación equivalente en punto flotante y viceversa. Describa la funcionalidad de las instrucciones ***mtc1, cvt.1.d, cvt.d.1 y mfc1***.
+
+```3)``` Escribir un programa que calcule la superficie de un triángulo rectángulo de base 5,85 cm y altura 13,47 cm.
+
+Pista: la superficie de un triángulo se calcula como: 
+
+```Superficie = (base x altura) / 2```
+
+
+
+
+
 <h1 align="center">Ejercicios</h1>
 
 
