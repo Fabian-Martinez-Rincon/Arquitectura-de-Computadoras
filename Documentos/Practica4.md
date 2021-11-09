@@ -48,6 +48,13 @@ De acuerdo al valor calculado con este índice, puede clasificarse el estado nut
 
 Escriba un programa que dado el peso y la estatura de una persona calcule su IMC y lo guarde en la dirección etiquetada ***IMC***. También deberá guardar en la dirección etiquetada ```estado``` un valor según la siguiente tabla:
 
+| IMC | Clasificación | Valor guardado |
+| :---         |     :---:      |          ---: |
+| < 18,5   | Infrapeso     | 1    |
+| < 25     | Normal       | 2      |
+| < 30     | Sobrepeso       | 3      |
+| >=30     | Obeso       | 4      |
+
 
 <h1 align="center">Ejercicios</h1>
 
