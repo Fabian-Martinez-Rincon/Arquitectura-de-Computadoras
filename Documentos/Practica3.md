@@ -14,7 +14,7 @@ e) xori r6, r6, 0xffffffffffffffff
 ```
 
 
-2 ) El siguiente programa intercambia el contenido de dos palabras de la memoria de datos, etiquetadas A y B. [Resolución](#Ejercicio_2)
+2 ) El siguiente programa intercambia el contenido de dos palabras de la memoria de datos, etiquetadas A y B. 
 
 ```s
 .data
@@ -152,8 +152,12 @@ Ejercicio_1
 # xori r6, r6, 0xffffffffffffffff  R6 = R6 XOR 0xffffffffffffffff
 ```
 
-Ejercicio_2
-===========
+Ejercicio_2a
+============
+
+Ejercicio_2b
+============
+
 
 Ejercicio_3
 ===========
