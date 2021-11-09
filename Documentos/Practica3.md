@@ -155,6 +155,8 @@ Ejercicio_1
 Ejercicio_2a
 ============
 
+- ¿Qué instrucción está generando atascos ***(stalls)*** en el cause ***(ó pipeline)*** y por qué?
+
 La instrucción ```SD R2, A(r0)``` almacena en la dirección de memoria ***A*** el valor contenido en el registro ***R2***, mientras que la instrucción  anterior ```LD R2, B(r0)``` carga desde la dirección de memoria ***B*** el contenido de esa posición en el registro ***R2***.
 
 Cuando fordwarding no está habilitado la instrucción ```SD R2, A(r0)``` que en la etapa ***ID*** trata de leer el contenido de ***R2***, pero dicho contenido no estará disponible hasta que la instrucción anterior ```LD R2, B(r0)``` llegue a la etapa ***WB***.
@@ -165,6 +167,7 @@ Tener en cuenta que en la primera mitad de la etapa ***WB*** se escribe el conte
 
 ![image](https://user-images.githubusercontent.com/55964635/140976382-6b7297b5-732f-42e8-ad5b-c9b1ee52a9ea.png)
 
+- Branch Taken es otro tipo de atasco que aparece. ¿Qué significa? ¿Por qué se produce?
 
 
 Ejercicio_2b
