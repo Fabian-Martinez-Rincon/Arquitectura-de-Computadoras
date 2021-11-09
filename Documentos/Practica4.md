@@ -42,7 +42,11 @@ Se calcula a partir del peso (expresado en kilogramos, por ejemplo: 75,7 kg) y l
 
 ```IMG = PESO / (ESTATURA)^2```
 
+De acuerdo al valor calculado con este índice, puede clasificarse el estado nutricional de una persona en:
 
+***Infrapeso*** (IMC < 18,5), ***Normal*** (18,5 ≤ IMC < 25), ***Sobrepeso*** (25 ≤ IMC < 30) y ***Obeso*** (IMC ≥ 30).
+
+Escriba un programa que dado el peso y la estatura de una persona calcule su IMC y lo guarde en la dirección etiquetada ***IMC***. También deberá guardar en la dirección etiquetada ```estado``` un valor según la siguiente tabla:
 
 
 <h1 align="center">Ejercicios</h1>
