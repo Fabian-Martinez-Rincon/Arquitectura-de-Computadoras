@@ -56,7 +56,6 @@ Escriba un programa que dado el peso y la estatura de una persona calcule su IMC
 | >=30     | Obeso       | 4      |
 
 
-<h1 align="center">Ejercicios</h1>
 
 ```5)``` El procesador MIPS64 posee 32 registros, de 64 bits cada uno, llamados r0 a r31 (también conocidos como $0 a $31).
 
@@ -78,3 +77,10 @@ La siguiente tabla muestra la convención empleada para nombrar a los 32 registr
 | R29     | $sp       | 4      | |
 | R30     | $fp       | 4      | |
 | R31     | $ra       | 4      | |
+
+Complete la tabla anterior explicando el uso que normalmente se le da cada uno de los registros nombrados. Marque en la columna ```“¿Preservado?”``` si el valor de cada grupo de registros debe ser preservado luego de realizada una llamada a una subrutina. Puede encontrar información útil en el apunte Programando sobre MIPS64
+
+```6)``` Como ya se observó anteriormente, muchas instrucciones que normalmente forman parte del repertorio de un procesador con arquitectura CISC no existen en el MIPS64. En particular, el soporte para la invocación a subrutinas es mucho más simple que el provisto en la arquitectura x86 (pero no por ello menos potente). El siguiente programa muestra un ejemplo de invocación a una subrutina.
+
+
+<h1 align="center">Ejercicios</h1>
