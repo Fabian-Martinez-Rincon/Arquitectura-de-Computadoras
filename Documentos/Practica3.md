@@ -2,9 +2,6 @@
 
 <h1 align="center"> Segmentación de cauce en procesador RISC</h1>
 
-
-Ejercicios
-==========
 1 ) Muchas instrucciones comunes en procesadores con arquitectura CISC no forman parte del repertorio de instrucciones del MIPS64, pero pueden implementarse haciendo uso de una única instrucción. Evaluar las siguientes instrucciones, indicar qué tarea realizan y cuál seria su equivalente en el lenguaje assembly del x86. [Resolución](#Ejercicio_1)
 
 ```s
