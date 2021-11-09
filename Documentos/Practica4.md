@@ -1,4 +1,6 @@
-<h1 align="center">💻Practica 5 Instrucciones de Punto Flotante y pasaje de parámetros</h1>
+<h1 align="center">💻Practica 5 </h1>
+
+<h1 align="center">Instrucciones de Punto Flotante y pasaje de parámetros</h1>
 
 ```1)``` Simular el siguiente programa de suma de números en punto flotante y analizar minuciosamente la ejecución paso a paso. Inhabilitar Delay Slot y mantener habilitado Forwarding.
 
