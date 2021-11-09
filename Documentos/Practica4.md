@@ -104,4 +104,48 @@ a_la_potencia: daddi $v0, $zero, 1
     terminar: jr $ra
 ```
 
+```a)``` ¿Qué hace el programa? ¿Cómo está estructurado el código del mismo?
+
+```b)```  ¿Qué acciones produce la instrucción ***jal***? ¿Y la instrucción ***jr***?
+
+```c)``` ¿Qué valor se almacena en el registro ***$ra***? ¿Qué función cumplen los registros ***$a0*** y ***$a1***? ¿Y el registro ***$v0***?
+
+```d)``` ¿Qué sucedería si la subrutina a_la_potencia necesitara invocar a otra subrutina para realizar la multiplicación, por ejemplo, en lugar de usar la instrucción ***dmul***? ¿Cómo sabría cada una de las subrutinas a que dirección de memoria deben retornar?
+
+```7)``` Escriba una subrutina que reciba como parámetros un número positivo M de 64 bits, la dirección del comienzo de una tabla que contenga valores numéricos de 64 bits sin signo y la cantidad de valores almacenados en dicha tabla. La subrutina debe retornar la cantidad de valores mayores que M contenidos en la tabla.
+
+```8)``` Escriba una subrutina que reciba como parámetros las direcciones del comienzo de dos cadenas terminadas en cero y retorne la posición en la que las dos cadenas difieren. En caso de que las dos cadenas sean idénticas, debe retornar -1.
+
+```9)``` Escriba la subrutina ES_VOCAL, que determina si un carácter es vocal o no, ya sea mayúscula o minúscula. La rutina debe recibir el carácter y debe retornar el valor 1 si el carácter es una vocal, o 0 en caso contrario.
+
+```10)``` Usando la subrutina escrita en el ejercicio anterior, escribir la subrutina ***CONTAR_VOC***, que recibe una cadena terminada en cero , y devuelve la cantidad de vocales que tiene esa cadena.
+
+```11)``` Escribir una subrutina que reciba como argumento una tabla de números terminada en 0. La subrutina debe contar la cantidad de números que son impares en la tabla, esta condición se debe verificar usando una subrutina es_impar. La subrutina es_impar debe devolver 1 si el número es impar y 0 si no lo es.
+
+```12)``` El siguiente programa espera usar una subrutina que calcule en forma recursiva el factorial de un número entero:
+
+```s
+data
+    valor: .word 10
+    result: .word 0
+.text
+    daddi $sp, $zero, 0x400 ; Inicializa puntero al tope de la pila
+    (1)
+    ld $a0, valor($zero)
+    jal factorial
+    sd $v0, result($zero)
+    halt
+factorial: ...
+...
+```
+
+(1) La configuración inicial de la arquitectura del WinMIPS64 establece que el procesador posee un bus de direcciones de 10 bits para la memoria de datos. Por lo tanto, la mayor dirección dentro de la memoria de datos será de 2^10 = 1024 = 400 sub 16
+
+```a)``` Implemente la subrutina factorial definida en forma recursiva. Tenga presente que el factorial de un número entero n se calcula como el producto de los números enteros entre 1 y n inclusive:
+
+```factorial(n) = n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1```
+
+```b)``` ¿Es posible escribir la subrutina factorial sin utilizar una pila? Justifique.
+
+
 <h1 align="center">Ejercicios</h1>
