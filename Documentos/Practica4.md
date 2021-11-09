@@ -58,4 +58,23 @@ Escriba un programa que dado el peso y la estatura de una persona calcule su IMC
 
 <h1 align="center">Ejercicios</h1>
 
+```5)``` El procesador MIPS64 posee 32 registros, de 64 bits cada uno, llamados r0 a r31 (también conocidos como $0 a $31).
 
+Sin embargo, resulta más conveniente para los programadores darles nombres más significativos a esos registros.
+
+La siguiente tabla muestra la convención empleada para nombrar a los 32 registros mencionados:
+
+| Registros | Nombres | ¿Para que se los utiliza? | ¿Preservado? |
+| :---         |     :---:      |          ---: |     ---: |
+| r0   | Infrapeso     | 1    | |
+| r1     | Normal       | 2      | |
+| r2-r3     | Sobrepeso       | 3      | |
+| r4-r7     | Obeso       | 4      | |
+| r8-r15     | Obeso       | 4      | |
+| r16-r23     | Obeso       | 4      | |
+| r24-r25     | Obeso       | 4      | |
+| r26-r27     | Obeso       | 4      | |
+| R28     | Obeso       | 4      | |
+| R29     | Obeso       | 4      | |
+| R30     | Obeso       | 4      | |
+| R31     | Obeso       | 4      | |
