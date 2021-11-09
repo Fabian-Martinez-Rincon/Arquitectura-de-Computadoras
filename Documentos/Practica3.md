@@ -163,6 +163,9 @@ Y debido a esto se genera un atasco en la etapa ***ID*** donde se procesa la ins
 
 Tener en cuenta que en la primera mitad de la etapa ***WB*** se escribe el contenido en ***R2*** y en el segundo ***RAW*** se lee el contenido de dicho registro.
 
+![image](https://user-images.githubusercontent.com/55964635/140976382-6b7297b5-732f-42e8-ad5b-c9b1ee52a9ea.png)
+
+
 
 Ejercicio_2b
 ============
