@@ -200,6 +200,10 @@ Espera por dependencia de datos (RAW) = 2
 Ejercicio_2b
 ============
 
+Con la opción forwarding habilitada el dato contenido en el registro R2 podrá ser leído por la instrucción ```SD R2, A(r0)``` cuando la instrucción ```LD R2, B(r0)``` se encuentra finalizando la etapa ***MEM***. La instrucción ```SD R2, A(r0)``` no tiene que esperar a que la instrucción ```LD R2, B(r0)``` salga de la etapa ***WB***. De esta manera no aparecen atascos del tipo ***RAW***.
+
+![image](https://user-images.githubusercontent.com/55964635/140980974-2d170779-38ae-4b28-8594-03465e485b71.png)
+
 
 Ejercicio_3
 ===========
