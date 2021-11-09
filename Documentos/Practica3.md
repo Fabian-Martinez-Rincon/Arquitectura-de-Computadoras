@@ -171,6 +171,11 @@ Tener en cuenta que en la primera mitad de la etapa ***WB*** se escribe el conte
 
 Aparecen atascos de tipo ***RAW (Read After Write)*** causado por una dependencia de datos, en este caso intenta leer un dato antes que esté guardado en el registro. Serán dos atascos, equivalentes a dos ciclos hasta que ```LD R2, B(r0)``` salga de la estapa ***WB***.
 
+- ¿Cuántos CPI tiene la ejecución de este programa? Tomar nota del número de ciclos, cantidad de instrucciones y CPI.
+
+El ***CPI*** de la ejecución de este programa es de 2.2
+
+
 Ejercicio_2b
 ============
 
