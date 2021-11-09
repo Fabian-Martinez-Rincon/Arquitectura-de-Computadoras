@@ -6,6 +6,8 @@
 - [Practica 2 Importante](/Documentos/Practica1.md)
 - [Practica 3 Importante](/Documentos/Practica2.md)
 - [Practica 4 Importante](/Documentos/Practica3.md)
+- [Practica 5 Importante](/Documentos/Practica4.md)
+- [Practica 6 Importante](/Documentos/Practica5.md)
 - [Teoria (Para el Primer Parcial)](/Documentos/Teoria1.md)
 - [Teoria Apuntes](/Documentos/Teoria1Apuntes.md)
 
