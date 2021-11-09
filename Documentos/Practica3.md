@@ -169,6 +169,7 @@ Tener en cuenta que en la primera mitad de la etapa ***WB*** se escribe el conte
 
 - Branch Taken es otro tipo de atasco que aparece. ¿Qué significa? ¿Por qué se produce?
 
+Aparecen atascos de tipo ***RAW (Read After Write)*** causado por una dependencia de datos, en este caso intenta leer un dato antes que esté guardado en el registro. Serán dos atascos, equivalentes a dos ciclos hasta que ```LD R2, B(r0)``` salga de la estapa ***WB***.
 
 Ejercicio_2b
 ============
