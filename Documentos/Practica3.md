@@ -155,6 +155,15 @@ Ejercicio_1
 Ejercicio_2a
 ============
 
+La instrucción ```SD R2, A(r0)``` almacena en la dirección de memoria ***A*** el valor contenido en el registro ***R2***, mientras que la instrucción  anterior ```LD R2, B(r0)``` carga desde la dirección de memoria ***B*** el contenido de esa posición en el registro ***R2***.
+
+Cuando fordwarding no está habilitado la instrucción ```SD R2, A(r0)``` que en la etapa ***ID*** trata de leer el contenido de ***R2***, pero dicho contenido no estará disponible hasta que la instrucción anterior ```LD R2, B(r0)``` llegue a la etapa ***WB***.
+
+Y debido a esto se genera un atasco en la etapa ***ID*** donde se procesa la instrucción ```SD R2, A(r0)``` retrasando la salida de la etapa ***(con RAWs)*** a la espera del contenido del registro. Esto además genera que la instrucción posterior ```SD R1, B(r0)``` deba permanecer en la etapa ***IF*** sin poder avanzar a la etapa ***ID*** (el pipeline se detuvo) como se puede ver en la imagen.
+
+Tener en cuenta que en la primera mitad de la etapa ***WB*** se escribe el contenido en ***R2*** y en el segundo ***RAW*** se lee el contenido de dicho registro.
+
+
 Ejercicio_2b
 ============
 
