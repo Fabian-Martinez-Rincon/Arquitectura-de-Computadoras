@@ -82,5 +82,26 @@ Complete la tabla anterior explicando el uso que normalmente se le da cada uno d
 
 ```6)``` Como ya se observó anteriormente, muchas instrucciones que normalmente forman parte del repertorio de un procesador con arquitectura CISC no existen en el MIPS64. En particular, el soporte para la invocación a subrutinas es mucho más simple que el provisto en la arquitectura x86 (pero no por ello menos potente). El siguiente programa muestra un ejemplo de invocación a una subrutina.
 
+```s
+.data
+    valor1: .word 16
+    valor2: .word 4
+    result: .word 0
+    
+.text
+    ld $a0, valor1($zero)
+    ld $a1, valor2($zero)
+    jal a_la_potencia
+    sd $v0, result($zero)
+    halt
+
+a_la_potencia: daddi $v0, $zero, 1
+    lazo: slt $t1, $a1, $zero
+    bnez $t1, terminar
+    daddi $a1, $a1, -1
+    dmul $v0, $v0, $a0
+    j lazo
+    terminar: jr $ra
+```
 
 <h1 align="center">Ejercicios</h1>
