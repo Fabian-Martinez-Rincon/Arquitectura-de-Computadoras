@@ -36,6 +36,10 @@ No entendi una poronga
 Atascos
 =======
 
+Se pueden dar en situaciones que impiden a la siguiente instruccion que se ejecute en el ciclo que le corresponde.
+
+Los queremos evitar a toda costa. Si tenemos atascos significa que una instruccion esta estancada esperando algo de una instruccion anterior.
+
 Estructurales
 -------------
 
