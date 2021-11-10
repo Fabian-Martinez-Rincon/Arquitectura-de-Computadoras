@@ -71,9 +71,9 @@ Comparar con la ejecución con Forwarding y explicar la diferencia.
 
 - ¿Cuántos CPI tiene la ejecución del programa en este caso? Comparar número de ciclos, cantidad de instrucciones y CPI con el caso con Forwarding.
 
-c ) Reordenar las instrucciones para que la cantidad de RAW sea „0‟ en la ejecución del programa (Forwarding habilitado)
+c ) Reordenar las instrucciones para que la cantidad de RAW sea „0‟ en la ejecución del programa (Forwarding habilitado) [Resolución](#Ejercicio_3c)
 
-d ) Modificar el programa para que almacene en un arreglo en memoria de datos los contenidos parciales del registro r1 ¿Qué significado tienen los elementos de la tabla que se genera?
+d ) Modificar el programa para que almacene en un arreglo en memoria de datos los contenidos parciales del registro r1 ¿Qué significado tienen los elementos de la tabla que se genera? [Resolución](#Ejercicio_3d)
 
 
 4 ) Dado el siguiente programa [Resolución](#Ejercicio_4)
@@ -247,7 +247,11 @@ Esta diferencia tiene su causa en la instrucción condicional que es la que est�
 
 ```a completar```
 
+Ejercicio_3c
+============
 
+Ejercicio_3d
+============
 
 Ejercicio_4
 ===========
