@@ -110,3 +110,13 @@ demora: daddi $t0, $t0, -1                  ; Esto genera una infinidad de RAW y
     bnez $t0, demora                        ; ¡hay que hacer tiempo igualmente!
     j loop
 ```
+
+```9)``` Escriba un programa que le permita dibujar en la pantalla gráfica de la terminal. Deberá mostrar un cursor (representado por un punto de un color particular) que pueda desplazarse por la pantalla usando las teclas ‘a’, ‘s’, ‘d’ y ‘w’ para ir a la izquierda, abajo, a la derecha y arriba respectivamente. Usando la barra espaciadora se alternará entre modo desplazamiento (el cursor pasa por arriba de lo dibujado sin alterarlo) y modo dibujo (cada punto por el que el cursor pasa quedará pintado del color seleccionado). Las teclas del ‘1’ al ‘8’ se usarán para elegir uno entre los ocho colores disponibles para pintar.
+
+```Observaciones: ``` Para poder implementar este programa, se necesitará almacenar en la memoria la imagen completa de la
+pantalla gráfica. 
+
+Si cada punto está representado por un byte, se necesitarán 50x50x1 = 2500 bytes. El simulador WinMIPS64 viene configurado para usar un bus de datos de 10 bits, por lo que la memoria disponible estará acotada a 2^10=1024 bytes. Para poder almacenar la imagen, será necesario configurar el simulador para usar un bus de datos de 12 bits, ya que 2^12=4096 bytes, los que si resultarán suficientes. La configuración se logra yendo al menú “Configure -> Architecture” y poniendo “Data Address Bus” en 12 bits en lugar de los 10 bits que trae por defecto.
+
+![image](https://user-images.githubusercontent.com/55964635/141035436-6e5567fe-2165-4925-9c18-b1481c46473c.png)
+
