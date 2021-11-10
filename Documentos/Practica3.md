@@ -239,6 +239,16 @@ Y la instrucción ```BNEZ R2,loop``` (ver registro ***R2*** coloreado en gris), 
 
 - Los Branch Taken Stalls se siguen generando. ¿Qué cantidad de ciclos dura este atasco en cada vuelta del lazo ***‘loop’***? Comparar con la ejecución con Forwarding y explicar la diferencia.
 
+Con forwarding deshabilitada, Los atascos por Branch Taken Stalls duran 2 ciclos en cada vuelta del lazo loop, mientras que con dicha opción habilitada se reducen a 1 ciclo por vuelta de lazo.
+
+Esta diferencia tiene su causa en la instrucción condicional que es la que está generando los atascos ***RAW;*** entonces al disminuir la cantidad de ***RAWs*** producidos por esta, también disminuyen los ciclos de espera de la instrucción siguiente, que además se dejara de ejecutar si la condicional así se lo indica al procesador.
+
+- ¿Cuántos CPI tiene la ejecución del programa en este caso? Comparar número de ciclos, cantidad de instrucciones y CPI con el caso con Forwarding.
+
+```a completar```
+
+
+
 Ejercicio_4
 ===========
 
