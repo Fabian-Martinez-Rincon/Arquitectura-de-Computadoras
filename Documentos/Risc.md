@@ -4,6 +4,9 @@ Indice
 ======
    * [Instrucciones](#Instrucciones)
    * [Atascos](#Atascos)
+     * [Estructurales](#Estructurales) 
+     * [Dependencia_de_Datos](#Dependencia_de_Datos)
+     * [Dependencia_de_Control](#Dependencia_de_Control)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
@@ -46,12 +49,6 @@ Veamos cómo nos manejamos con variables.
   SD R1, A(R0)
 ```
 
-
-
-
-Activar_Forwarding
-==================
-No entendi una poronga
 
 Atascos
 =======
