@@ -30,7 +30,7 @@ halt
 
 Activar_Forwarding
 ==================
-
+No entendi una poronga
 
 Fases_de_una_instruccion
 ========================
