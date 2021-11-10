@@ -56,3 +56,13 @@ data
     sd $t0, 0($s6)                  ; CONTROL recibe 5 y produce el dibujo del punto
     halt
 ```
+
+```7)``` Se desea realizar la demostración de la transformación de un carácter codificado en ASCII a su visualización en una matriz de puntos con 7 columnas y 9 filas. Escriba un programa que realice tal demostración, solicitando el ingreso por teclado de un carácter para luego mostrarlo en la pantalla gráfica de la terminal.
+
+El "8" se representa como: 
+
+![image](https://user-images.githubusercontent.com/55964635/141034358-d29c5f5e-4f04-480c-8885-0219aca8140a.png)
+
+
+
+
