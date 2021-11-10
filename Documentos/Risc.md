@@ -8,6 +8,7 @@ Indice
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
+     * [Multiplicación](#Multiplicacion)
    * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
    * [Aritmeticas](#Instrucciones_Aritmeticas)
    * [Logicas](#Instrucciones_Logicas)
