@@ -172,12 +172,22 @@ Veamos cómo nos manejamos con variables.
 
 ```s
 .data                     ; LD R1, A (R0)
-  A:. word 5              ; R1 = variable en dir. de A + 0
-  B:. word 8
+  A: .word 5              ; R1 = variable en dir. de A + 0
+  B: .word 8
 .code
   LD R1, A(R0)
 ```
 
+- Para guardar un valor en memoria se utiliza el mismo mecanismo de desplazamiento
+- La sintaxis es ***SD "REGISTRO ORIGEN", "VARIABLE" (DESPLAZAMIENTO)***
+
+```s
+.data                     ; SD R1, A (R0)
+  A: .word 0              ; RES = VALOR DE R1 EN VARIABLE EN DIR. DE A + 0
+.code
+  DADDI R1, R0, 5
+  SD R1, A(R0)
+```
   
 Instrucciones_de_Transferencia_de_datos
 =======================================
