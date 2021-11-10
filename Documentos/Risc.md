@@ -3,10 +3,11 @@
 Indice
 ======
    * [Instrucciones](#Instrucciones)
-   * [Intercambio de datos](#Intercambio)
    * [Activar Forwarding](#Activar_Forwarding)
    * [Atascos](#Atascos)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
+   * [Codigos](#Codigos)
+     * [Intercambio de datos](#Intercambio)
    * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
    * [Aritmeticas](#Instrucciones_Aritmeticas)
    * [Logicas](#Instrucciones_Logicas)
@@ -45,19 +46,7 @@ Veamos cómo nos manejamos con variables.
 ```
 
 
-Intercambio
-===========
-```s
-.data
-    A: .word 1
-    B: .word 2
-.code
-    ld r1, A(r0)
-    ld r2, B(r0)
-    sd r2, A(r0)
-    sd r1, B(r0)
-halt
-```
+
 
 Activar_Forwarding
 ==================
@@ -189,8 +178,23 @@ Las instrucciones se organizan en ***fases*** de manera que esto sea posible
 
 </table>
 
-
+Codigos
+=======
   
+Intercambio
+-----------
+```s
+.data
+    A: .word 1
+    B: .word 2
+.code
+    ld r1, A(r0)
+    ld r2, B(r0)
+    sd r2, A(r0)
+    sd r1, B(r0)
+halt
+```
+
 Instrucciones_de_Transferencia_de_datos
 =======================================
 
