@@ -76,7 +76,7 @@ c ) Reordenar las instrucciones para que la cantidad de RAW sea „0‟ en la ej
 d ) Modificar el programa para que almacene en un arreglo en memoria de datos los contenidos parciales del registro r1 ¿Qué significado tienen los elementos de la tabla que se genera? [Resolución](#Ejercicio_3d)
 
 
-4 ) Dado el siguiente programa [Resolución](#Ejercicio_4)
+4 ) Dado el siguiente programa 
 
 ```s
 .data
@@ -98,11 +98,11 @@ d ) Modificar el programa para que almacene en un arreglo en memoria de datos lo
 fin: halt
 ```
 
-a ) Ejecutar en simulador con Forwarding habilitado. ¿Qué tarea realiza? ¿Cuál es el resultado y dónde queda indicado?
+a ) Ejecutar en simulador con Forwarding habilitado. ¿Qué tarea realiza? ¿Cuál es el resultado y dónde queda indicado? [Resolución](#Ejercicio_4a)
 
-b) Re-Ejecutar el programa con la opción Configure/Enable Branch Target Buffer habilitada. Explicar la ventaja de usar este método y cómo trabaja.
+b) Re-Ejecutar el programa con la opción Configure/Enable Branch Target Buffer habilitada. Explicar la ventaja de usar este método y cómo trabaja. [Resolución](#Ejercicio_4b)
 
-c) Confeccionar una tabla que compare número de ciclos, CPI, RAWs y Branch Taken Stalls para los dos casos anteriores.
+c) Confeccionar una tabla que compare número de ciclos, CPI, RAWs y Branch Taken Stalls para los dos casos anteriores. [Resolución](#Ejercicio_4c)
 
 5 ) El siguiente programa multiplica por 2 los elementos de un arreglo llamado datos y genera un nuevo arreglo llamado res. Ejecutar el programa en el simulador winmips64 con la opción Delay Slot habilitada. [Resolución](#Ejercicio_5)
 
@@ -262,8 +262,16 @@ Ejercicio_3d
 
 ```Completar```
 
-Ejercicio_4
-===========
+Ejercicio_4a
+============
+
+![image](https://user-images.githubusercontent.com/55964635/141165757-05440f46-6fb1-4c37-8c53-7952e3fdbfb6.png)
+
+Ejercicio_4b
+============
+
+Ejercicio_4c
+============
 
 Ejercicio_5
 ===========
