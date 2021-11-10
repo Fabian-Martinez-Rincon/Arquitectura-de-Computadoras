@@ -41,7 +41,7 @@ Ejecutar nuevamente el programa anterior con la opción Enable Forwarding habili
 - ¿Qué indica el color de los registros en la ventana ***Register*** durante la ejecución?
 - ¿Cuál es el promedio de Ciclos Por Instruccion ***(CPI)*** en este caso? Comparar con el anterior
 
-3 ) Analizar el siguiente programa con el simulador MIPS64:  [Resolución](#Ejercicio_3)
+3 ) Analizar el siguiente programa con el simulador MIPS64:  
 
 ```s
 .data
@@ -56,13 +56,13 @@ Ejecutar nuevamente el programa anterior con la opción Enable Forwarding habili
 halt
 ```
 
-a ) Ejecutar el programa con Forwarding habilitado y responder:
+a ) Ejecutar el programa con Forwarding habilitado y responder: [Resolución](#Ejercicio_3a)
 
 - ¿Por qué se presentan atascos tipo RAW?
 - Branch Taken es otro tipo de atasco que aparece. ¿Qué significa? ¿Por qué se produce?
 - ¿Cuántos CPI tiene la ejecución de este programa? Tomar nota del número de ciclos, cantidad de instrucciones y CPI.
 
-b ) Ejecutar ahora el programa deshabilitando el Forwarding y responder:
+b ) Ejecutar ahora el programa deshabilitando el Forwarding y responder: [Resolución](#Ejercicio_3b)
 
 - ¿Qué instrucciones generan los atascos tipo RAW y por qué? ¿En qué etapa del cauce se produce el atasco en cada caso y durante cuántos ciclos?
 - Los Branch Taken Stalls se siguen generando. ¿Qué cantidad de ciclos dura este atasco en cada vuelta del lazo ***loop***?
@@ -205,6 +205,17 @@ Con la opción forwarding habilitada el dato contenido en el registro R2 podrá 
 
 
 Ejercicio_3a
+============
+
+- ¿Por qué se presentan atascos tipo RAW?
+
+Se presentan atasco por dependencia de datos de tipo ***RAW*** causado por la instrucción ***BNEZ R2***, loop al procesarse en la etapa ***ID***. Esta instrucción necesita del contenido del registro ***R2*** que está siendo utilizado por la instrucción ***DADDI R2,R2, -1*** en la etapa EX sin salir aún de esta.
+
+- Branch Taken es otro tipo de atasco que aparece. ¿Qué significa? ¿Por qué se produce?
+
+El atasco de tipo ***Branch Taken Stalls (BTS)***, ocurre como concecuencia de la ejecución incorrecta de la instrucción siguiente a una instrucción condicional. Esto se debe a que la condición a evaluar tarda algunos ciclos en ser ejecutada, mientras que durante esos ciclos siguen entrando nuevas instrucciones al pipeline. Luego de evaluada la condición si la instrucción posterior a ésta que se ejecutó no es la que debía ser ejecutada, su ejecución se trunca y se ejecuta la que está 
+
+Ejercicio_3b
 ============
 
 
