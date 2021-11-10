@@ -250,6 +250,11 @@ Esta diferencia tiene su causa en la instrucción condicional que es la que est�
 Ejercicio_3c
 ============
 
+Con la opción forwarding habilitada aún siguen apareciendo atascos RAW. Existe la posibilidad de tratar de eliminarlos reordenando las instrucciones en el programa y Dicho reordenamiento no debe afectar la lógica de este. El resultado de este método puede observarse en la imagen siguiente.
+
+![image](https://user-images.githubusercontent.com/55964635/141161278-22c3d010-d133-4bd9-b8c7-17a1666bfb93.png)
+
+
 Ejercicio_3d
 ============
 
