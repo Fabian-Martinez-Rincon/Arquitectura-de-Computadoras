@@ -4,6 +4,7 @@ Indice
 ======
    * [Intercambio de datos](#Intercambio)
    * [Activar Forwarding](#Activar_Forwarding)
+   * [Atascos](#Atascos)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Instrucciones](#Instrucciones)
      * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
@@ -31,6 +32,26 @@ halt
 Activar_Forwarding
 ==================
 No entendi una poronga
+
+Atascos
+=======
+
+Estructurales
+-------------
+
+Provocados por conflicto de recursos
+
+Dependencia_de_Datos
+--------------------
+
+- ***RAW:*** Read After Write
+- ***WAR:*** Write After Read
+- ***WAW:*** Write After Write
+
+Dependencia_de_Control
+----------------------
+
+Provocados al esperar la decisión de otra instrucción anterior (por ejemplo: si se realiza o no un salto)
 
 Fases_de_una_instruccion
 ========================
