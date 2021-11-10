@@ -204,8 +204,10 @@ Con la opción forwarding habilitada el dato contenido en el registro R2 podrá 
 ![image](https://user-images.githubusercontent.com/55964635/140980974-2d170779-38ae-4b28-8594-03465e485b71.png)
 
 
-Ejercicio_3
-===========
+Ejercicio_3a
+============
+
+
 
 Ejercicio_4
 ===========
