@@ -168,7 +168,7 @@ Veamos cómo nos manejamos con variables.
 - Para empezar, ***todas*** las operaciones aritméticas-lógicas ***deben*** hacerse con ***registros***
 - Si quiero usar variables, debo cargarlas antes en un registro
 - Las variables se definen en un bloque .data y arrancan en la dirección 0
-- Para tomar una variable se usa ***LD <DESTINO>, <VARIABLE> (DESPLAZAMIENTO)***.
+- Para tomar una variable se usa ***LD "DESTINO", "VARIABLE" (DESPLAZAMIENTO)***.
 
 ```s
 .data                     ; LD R1, A (R0)
