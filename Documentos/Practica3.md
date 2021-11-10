@@ -254,9 +254,13 @@ Con la opción forwarding habilitada aún siguen apareciendo atascos RAW. Existe
 
 ![image](https://user-images.githubusercontent.com/55964635/141161278-22c3d010-d133-4bd9-b8c7-17a1666bfb93.png)
 
+![image](https://user-images.githubusercontent.com/55964635/141164804-dad4f7ab-d78f-4c22-974f-b16fe14e7c6b.png)
+
 
 Ejercicio_3d
 ============
+
+```Completar```
 
 Ejercicio_4
 ===========
