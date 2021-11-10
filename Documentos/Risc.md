@@ -3,7 +3,6 @@
 Indice
 ======
    * [Instrucciones](#Instrucciones)
-   * [Activar Forwarding](#Activar_Forwarding)
    * [Atascos](#Atascos)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
