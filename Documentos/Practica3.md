@@ -215,6 +215,8 @@ Se presentan atasco por dependencia de datos de tipo ***RAW*** causado por la in
 
 El atasco de tipo ***Branch Taken Stalls (BTS)***, ocurre como concecuencia de la ejecución incorrecta de la instrucción siguiente a una instrucción condicional. Esto se debe a que la condición a evaluar tarda algunos ciclos en ser ejecutada, mientras que durante esos ciclos siguen entrando nuevas instrucciones al pipeline. Luego de evaluada la condición si la instrucción posterior a ésta que se ejecutó no es la que debía ser ejecutada, su ejecución se trunca y se ejecuta la que está en el lugar de memoria indicada por la etiqueta en la instrucción condicional.
 
+![image](https://user-images.githubusercontent.com/55964635/141157733-1ba69e9c-8889-46fa-9460-868e51ecf04e.png)
+
 
 
 Ejercicio_3b
