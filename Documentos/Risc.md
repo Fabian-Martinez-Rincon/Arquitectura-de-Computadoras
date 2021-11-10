@@ -3,6 +3,7 @@
 Indice
 ======
    * [Intercambio de datos](#Intercambio)
+   * [Activar Forwarding](#Activar_Forwarding)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Instrucciones](#Instrucciones)
      * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
@@ -26,6 +27,10 @@ Intercambio
     sd r1, B(r0)
 halt
 ```
+
+Activar_Forwarding
+==================
+
 
 Fases_de_una_instruccion
 ========================
