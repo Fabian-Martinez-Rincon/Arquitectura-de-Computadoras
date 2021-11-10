@@ -217,12 +217,27 @@ El atasco de tipo ***Branch Taken Stalls (BTS)***, ocurre como concecuencia de l
 
 ![image](https://user-images.githubusercontent.com/55964635/141157733-1ba69e9c-8889-46fa-9460-868e51ecf04e.png)
 
+- ¿Cuántos CPI tiene la ejecución de este programa? Tomar nota del número de ciclos, cantidad de instrucciones y CPI.
+
+Se ejecutan 12 instrucciones en 21 ciclos dando un ***CPI*** de 1.750
+
+![image](https://user-images.githubusercontent.com/55964635/141158306-30d4fc0a-dd46-4e7c-a4c2-dc8f2a6d438a.png)
 
 
 Ejercicio_3b
 ============
 
+- ¿Qué instrucciones generan los atascos tipo RAW y por qué? ¿En qué etapa del cauce se produce el atasco en cada caso y durante cuántos ciclos?
 
+Las instrucciones que generan atascos ***RAW*** son:
+
+la instrucción ```DSLL R1,R1,1``` (ver registro ***R1*** coloreado en gris), que trata de leer el contenido del registro ***R1***, mientras que la instrucción ```LD R1,A(r0)``` todavía no copio el contenido de la dirección de memoria A en R1 y permanece aún en la etapa WB (RAW durante 1 ciclo).
+
+Y la instrucción ```BNEZ R2,loop``` (ver registro ***R2*** coloreado en gris), que trata de leer el contenido del registro ***R2***, mientras que ```DADDI R2,R2,-1``` está buscando copiar el resultado de la operación en dicho registro, permaneciendo en la etapa ***MEM*** y posteriormente en la etapa ***WB*** (***RAW*** durante 2 ciclos).
+
+![image](https://user-images.githubusercontent.com/55964635/141158925-d29f52e4-74ad-4ad9-a2e0-ddbcf5484e4e.png)
+
+- Los Branch Taken Stalls se siguen generando. ¿Qué cantidad de ciclos dura este atasco en cada vuelta del lazo ***‘loop’***? Comparar con la ejecución con Forwarding y explicar la diferencia.
 
 Ejercicio_4
 ===========
