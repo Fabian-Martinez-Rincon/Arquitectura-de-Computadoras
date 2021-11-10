@@ -2,17 +2,47 @@
 
 Indice
 ======
+   * [Instrucciones](#Instrucciones)
    * [Intercambio de datos](#Intercambio)
    * [Activar Forwarding](#Activar_Forwarding)
    * [Atascos](#Atascos)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
-   * [Instrucciones](#Instrucciones)
-     * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
-     * [Aritmeticas](#Instrucciones_Aritmeticas)
-     * [Logicas](#Instrucciones_Logicas)
-     * [De desplazamiento de bits](#Instrucciones_de_desplazamiento_de_bits)
-     * [De Transferencia de control](#Instrucciones_de_Transferencia_de_control)
-     * [Control](#Instrucciones_control)
+   * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
+   * [Aritmeticas](#Instrucciones_Aritmeticas)
+   * [Logicas](#Instrucciones_Logicas)
+   * [De desplazamiento de bits](#Instrucciones_de_desplazamiento_de_bits)
+   * [De Transferencia de control](#Instrucciones_de_Transferencia_de_control)
+   * [Control](#Instrucciones_control)
+
+
+Instrucciones
+=============
+
+Veamos cómo nos manejamos con variables.
+
+- Para empezar, ***todas*** las operaciones aritméticas-lógicas ***deben*** hacerse con ***registros***
+- Si quiero usar variables, debo cargarlas antes en un registro
+- Las variables se definen en un bloque .data y arrancan en la dirección 0
+- Para tomar una variable se usa ***LD "DESTINO", "VARIABLE" (DESPLAZAMIENTO)***.
+
+```s
+.data                     ; LD R1, A (R0)
+  A: .word 5              ; R1 = variable en dir. de A + 0
+  B: .word 8
+.code
+  LD R1, A(R0)
+```
+
+- Para guardar un valor en memoria se utiliza el mismo mecanismo de desplazamiento
+- La sintaxis es ***SD "REGISTRO ORIGEN", "VARIABLE" (DESPLAZAMIENTO)***
+
+```s
+.data                     ; SD R1, A (R0)
+  A: .word 0              ; RES = VALOR DE R1 EN VARIABLE EN DIR. DE A + 0
+.code
+  DADDI R1, R0, 5
+  SD R1, A(R0)
+```
 
 
 Intercambio
@@ -160,34 +190,6 @@ Las instrucciones se organizan en ***fases*** de manera que esto sea posible
 </table>
 
 
-Instrucciones
-=============
-
-Veamos cómo nos manejamos con variables.
-
-- Para empezar, ***todas*** las operaciones aritméticas-lógicas ***deben*** hacerse con ***registros***
-- Si quiero usar variables, debo cargarlas antes en un registro
-- Las variables se definen en un bloque .data y arrancan en la dirección 0
-- Para tomar una variable se usa ***LD "DESTINO", "VARIABLE" (DESPLAZAMIENTO)***.
-
-```s
-.data                     ; LD R1, A (R0)
-  A: .word 5              ; R1 = variable en dir. de A + 0
-  B: .word 8
-.code
-  LD R1, A(R0)
-```
-
-- Para guardar un valor en memoria se utiliza el mismo mecanismo de desplazamiento
-- La sintaxis es ***SD "REGISTRO ORIGEN", "VARIABLE" (DESPLAZAMIENTO)***
-
-```s
-.data                     ; SD R1, A (R0)
-  A: .word 0              ; RES = VALOR DE R1 EN VARIABLE EN DIR. DE A + 0
-.code
-  DADDI R1, R0, 5
-  SD R1, A(R0)
-```
   
 Instrucciones_de_Transferencia_de_datos
 =======================================
