@@ -209,7 +209,11 @@ La primera se denomina ***Branch Target Buffer*** que consiste en tener un flag 
 
 Cada vez que ese flag/buffer se actualiza cuenta como un ***atasco de salto!*** Cada vez que le erramos a la predicción cuenta como atasco.
 
+***Misprediction*** (nuevo atasco): Es un atasco que me va a contabilizar cuando el ***BTB*** este equivocado
+
 ***Ejemplo:***
+
+
 
 Fases_de_una_instruccion
 ========================
