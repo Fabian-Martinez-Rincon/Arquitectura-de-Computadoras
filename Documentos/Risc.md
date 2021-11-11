@@ -146,6 +146,7 @@ Si ya tenemos los valores necesarios, podemos "adelantarlos"
 
 En estos buffers se almacena los valores para que los puedan usar en las próximas instrucciones. De esta manera no hace falta esperar a las etapas ***MEM*** y ***WB*** para usar los valores!. Este adelantamiento de operando lo llamamos ***Forwarding***. Los buffers no se pueden ver en el simulador. Una ventaja que tiene esta técnica es que nos permite postergar la "necesidad" de los operandos.
 
+¿Cuando conviente tenerlo activado? Siempre es conveniente tenerlo activado (en la mayoria de los casos)
 
 Dependencia_de_Control
 ----------------------
