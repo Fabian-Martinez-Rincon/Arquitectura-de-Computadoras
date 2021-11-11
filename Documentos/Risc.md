@@ -233,6 +233,9 @@ begin
 end;
 ```
   
+Vamos a tener dos atascos al principio
+y dos atascos al final
+  
 </td>
 <td>
  
@@ -248,6 +251,8 @@ begin
 end;
 ```
 
+Vamos a tener dos atascos en cada interación 
+(porque vamos a fallar la predicción)
  
 </td>
 </tr>
