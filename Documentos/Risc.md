@@ -389,6 +389,16 @@ Tiene un único tipo de dato que es el .double
 - Sumar en Pto. F. = 4 ciclos.
 - Dividir en Pto. F. = 24 Ciclos
 
+Esta arquitectura nos permite tener múltiples instrucciones en la etapa EX
+
+Podemos ejecutar múltiples instrucciones en menos tiempo!
+
+No todo es color de rosas. Introduce los siguientes atascos:
+
+- Dependencia Estructural
+- Dependencia de datos ***WAR***
+- Dependencia de datos ***WAW***
+
 Fases_de_una_instruccion
 ========================
 Las instrucciones se organizan en ***fases*** de manera que esto sea posible
