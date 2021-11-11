@@ -70,12 +70,56 @@ Provocados por conflicto de recursos
 Dependencia_de_Datos
 --------------------
 
-### RAW 
+RAW
+---
 
 Significa: Read After Write.
 
 Se produce cuando una instrucción necesita leer un dato que todavía no esta disponible
 
+<table>
+<tr>
+<td> Ejemplo </td> <td> Solucion </td>
+</tr>
+<tr>
+<td>
+ 
+```s
+.data
+NUM1: .word 15
+
+.code
+    ; Inicializamos un registro y le sumamos 10
+    DADDI R1, R0, 8
+    DADDI R2, R1, 10
+    ; Después hacemos otra cosa
+    LD R7, NUM1 (R0)
+HALT
+```
+</td>
+<td>
+ 
+
+```Pas
+procedure Carga_Parcial(var v;vector;var dimL);
+var
+    numero:integer;
+begin
+    dimL:=0;
+    readln(numero);
+    while (numero <> 0) and (dimL < dimF) do
+    begin
+       dimL:=dimL+1;
+       v[dimL]:=nummero;
+       readln(numero);                 
+    end;
+end.
+```
+ 
+</td>
+</tr>
+ 
+</table>
 
 ### WAR Write After Read
 
