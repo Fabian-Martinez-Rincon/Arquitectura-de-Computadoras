@@ -80,7 +80,7 @@ Significa: Read After Write.
 
 <table>
 <tr>
-<td> Ejemplo </td> <td> Solucion </td> <td> Solucion 2 </td>
+<td> Ejemplo </td> <td> Con NOPS </td> <td> Ordenando Sentencias </td>
 </tr>
 <tr>
 <td>
