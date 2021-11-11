@@ -70,7 +70,11 @@ Provocados por conflicto de recursos
 Dependencia_de_Datos
 --------------------
 
-### RAW Read After Write
+### RAW 
+
+Significa: Read After Write.
+
+Se produce cuando una instrucción necesita leer un dato que todavía no esta disponible
 
 
 ### WAR Write After Read
