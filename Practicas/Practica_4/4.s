@@ -3,15 +3,15 @@
     num: .word 7
     long: .word 10
 .code
-    ld r1, long(r0)
-    ld r2, num(r0)
+    ld r1, long(r0)     #Copia en r1 la direccion de (10+r0)
+    ld r2, num(r0)      #Copia en r2 la direccion de (7+r0)
     dadd r3, r0, r0
     dadd r10, r0, r0
     loop: ld r4, tabla(r3)
-    beq r4, r2, listo
-    daddi r1, r1, -1
-    daddi r3, r3, 8
-    bnez r1, loop
-    j fin
+        beq r4, r2, listo
+        daddi r1, r1, -1
+        daddi r3, r3, 8
+        bnez r1, loop
+        j fin
     listo: daddi r10, r0, 1
 fin: halt
