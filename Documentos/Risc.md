@@ -162,7 +162,23 @@ Tenemos dos tipos de saltos
 Branch_Taken_Stall
 ------------------
 
-Definicion: Atasco de salto, es un salto que tuvimos que haber hecho y no lo hicimos. (Empezamos a ejecutar una instrucción que no debiamos ejecutar). El programa se da cuenta, corta la ejecución y abajo comienza la sentencia que tendria que haber ejecutado
+Definicion: Atasco de salto, es un salto que tuvimos que haber hecho y no lo hicimos. (Empezamos a ejecutar una instrucción que no debiamos ejecutar). El programa se da cuenta, corta la ejecución y abajo comienza la sentencia que tendria que haber ejecutado.
+
+***Ejemplo:***
+
+```s
+.data
+B: .word 5
+
+.code
+    DADDI R1, R0, 1
+    LD R2, B (R0)
+    LOOP: DSLL R1, R1, 1    ; Desplazo a la izquierda
+        DADDI R2, R2, -1    ; Cant. de desplazamientos que faltan
+        BNEZ R2, LOOP       ; Si no es 0 salto a LOOP
+HALT
+
+```
 
 Fases_de_una_instruccion
 ========================
