@@ -296,6 +296,79 @@ Se terminaría el programa ya que se ejecuta el ***HALT*** en la primera interac
 </td>
 </tr>
  
+
+
+
+<tr>
+<td> Ejemplo Mal </td> <td> Delay Slot Activado </td>
+</tr>
+<tr>
+<td>
+ 
+```s
+.data
+    cant: .word 8
+    datos: .word 1, 2, 3, 4, 5, 6, 7, 8
+    res: .word 0
+
+.code
+    DADD R1, R0, R0          ; Inicializa R1 = 0
+    LD R2, cant (R0)         ; R2 = cant
+    LOOP: LD R3, datos (R1)  ; R3 = elemento de datos en la posición R1
+        DADDI R2, R2, -1     ; Resta 1 a la cantidad de elementos a procesar
+        DSLL R3, R3, 1       ; Multiplica por dos el elemento actual
+        SD R3, res (R1)      ; Almacena el resultado en la tabla de resultados
+        DADDI R1, R1, 8      ; Avanza a la siguiente posición
+        BNEZ R2, LOOP        ; Si quedan elementos sigo iterando
+    NOP
+HALT
+
+```
+  
+</td>
+<td>
+ 
+
+![image](https://user-images.githubusercontent.com/55964635/141335494-364c723f-0629-43df-9db7-8dc6ed41a694.png)
+ 
+</td>
+</tr>
+  
+  
+<tr>
+<td> Ejemplo Bien </td> <td> Delay Slot Activado </td>
+</tr>
+<tr>
+<td>
+ 
+```s
+.data
+    cant: .word 8
+    datos: .word 1, 2, 3, 4, 5, 6, 7, 8
+    res: .word 0
+
+.code
+    DADD R1, R0, R0          ; Inicializa R1 = 0
+    LD R2, cant (R0)         ; R2 = ca
+    LOOP: LD R3, datos (R1)  ; R3 = elemento de datos en la posición R1
+        DADDI R2, R2, -1     ; Resta 1 a la cantidad de elementos a procesar
+        DSLL R3, R3, 1       ; Multiplica por dos el elemento actual
+        SD R3, res (R1)      ; Almacena el resultado en la tabla de resultados
+        BNEZ R2, LOOP        ; Si quedan elementos sigo iterando
+    DADDI R1, R1, 8          ; Avanza a la siguiente posición
+HALT
+
+```
+  
+</td>
+<td>
+ 
+
+![image](https://user-images.githubusercontent.com/55964635/141336345-a413cef9-aa34-43b5-bc52-18657310112f.png)
+ 
+</td>
+</tr>
+ 
 </table>
 
 Fases_de_una_instruccion
