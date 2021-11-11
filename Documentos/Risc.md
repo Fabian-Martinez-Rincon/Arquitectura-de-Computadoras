@@ -67,7 +67,33 @@ Los queremos evitar a toda costa. Si tenemos atascos significa que una instrucci
 Estructurales
 -------------
 
-Provocados por conflicto de recursos
+Provocados por conflicto de recursos.
+
+En el MIPS sucede cuando dos instrucciones intentan acceder a la etapa ***MEM*** simultáneamente.
+
+
+
+<table>
+
+<tr>
+<td>
+ 
+![image](https://user-images.githubusercontent.com/55964635/141382017-8ba09cf4-599c-4c9d-9f46-8b1bd20947d1.png)
+  
+</td>
+<td>
+ 
+
+Dos instrucciones listas para pasar a la etapa de memoria.
+  
+Se produce un atasco estructural y solo pasa una de ellas
+  
+***Tiene prioridad la primera instruccion que entró en el cause***
+ 
+</td>
+</tr>
+ 
+</table>
 
 Dependencia_de_Datos
 --------------------
