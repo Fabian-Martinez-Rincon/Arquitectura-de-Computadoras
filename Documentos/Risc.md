@@ -16,6 +16,7 @@ Indice
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
      * [Multiplicación](#Multiplicacion)
+     * [Potencia](#Potencia)
    * [Set de instrucciones](#SetDeInstrucciones) 
      * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
      * [Aritmeticas](#Instrucciones_Aritmeticas)
@@ -302,7 +303,20 @@ Multiplicacion
 
 HALT
 ```
+Potencia
+--------
+```s
+.data
+B: .word 5
 
+.code
+DADDI R1, R0, 1
+LD R2, B (R0)
+LOOP: DSLL R1, R1, 1    # Desplazo a la izquierda
+	DADDI R2, R2, -1    # Cant. de desplazamientos que faltan
+	BNEZ R2, LOOP       # Si no es 0 salto a LOOP
+HALT
+```
 
 Instrucciones_de_Transferencia_de_datos
 =======================================
