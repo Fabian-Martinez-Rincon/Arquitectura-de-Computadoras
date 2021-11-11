@@ -80,7 +80,7 @@ Significa: Read After Write.
 
 <table>
 <tr>
-<td> Ejemplo </td> <td> Con NOPS </td> <td> Ordenando Sentencias </td>
+<td> Por software </td> <td> Con NOPS </td> <td> Ordenando Sentencias </td>
 </tr>
 <tr>
 <td>
@@ -135,10 +135,19 @@ HALT
  
 </table>
 
-### WAR Write After Read
+- WAR Write After Read y WAW Write After Write (estan pero tengo idea del para que)
 
+Forwarding
+----------
+***POR HARDWARE***
+Si ya tenemos los valores necesarios, podemos "adelantarlos"
 
-### WAW Write After Write
+![bufer](https://user-images.githubusercontent.com/55964635/141218205-34408dfc-a65e-4603-a07b-d00ff3784647.png)
+
+- En estos buffers se almacena los valores para que los puedan usar en las próximas instrucciones
+- De esta manera no hace falta esperar a las etapas ***MEM*** y ***WB*** para usar los valores!
+- Este adelantamiento de operando lo llamamos ***Forwarding***
+
 
 Dependencia_de_Control
 ----------------------
