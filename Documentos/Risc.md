@@ -151,7 +151,12 @@ En estos buffers se almacena los valores para que los puedan usar en las próxim
 Dependencia_de_Control
 ----------------------
 
-Provocados al esperar la decisión de otra instrucción anterior (por ejemplo: si se realiza o no un salto)
+Provocados al esperar la decisión de otra instrucción anterior (por ejemplo: si se realiza o no un salto).
+
+Tenemos dos tipos de saltos
+
+- ***Incondicionales:*** Salta siempre.
+- ***Condicionales:*** Salta dependiendo de que se cumpla una condición.
 
 Fases_de_una_instruccion
 ========================
