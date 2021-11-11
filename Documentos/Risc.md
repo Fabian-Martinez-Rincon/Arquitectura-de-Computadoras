@@ -259,6 +259,44 @@ Vamos a tener dos atascos en cada interación
  
 </table>
 
+Delay_Slot
+----------
+
+Es la otra técnica. Simplemente consiste en ejecutar ***SIEMPRE*** la siguiente instrucción a un salto
+
+<table>
+<tr>
+<td> Programa </td> <td> Definicion </td>
+</tr>
+<tr>
+<td>
+ 
+```s
+DADDI R2, R0, 3
+LOOP: DADDI R2, R2, -1
+  BNEZ R2, LOOP
+HALT
+```
+
+Se terminaría el programa ya que se ejecuta el ***HALT*** en la primera interación!
+  
+
+  
+</td>
+<td>
+ 
+
+
+- Buscamos ubicar instrucciones que ***no dependen del salto***
+- De esta manera aprovechamos una instrucción y no tenemos atascos de salto!
+- Cómo último recurso usar sentencias NOP
+
+
+ 
+</td>
+</tr>
+ 
+</table>
 
 Fases_de_una_instruccion
 ========================
