@@ -166,6 +166,15 @@ Definicion: Atasco de salto, es un salto que tuvimos que haber hecho y no lo hic
 
 ***Ejemplo:***
 
+
+
+<table>
+<tr>
+<td> Ejemplo </td> <td> Estadisticas </td>
+</tr>
+<tr>
+<td>
+ 
 ```s
 .data
 B: .word 5
@@ -179,6 +188,17 @@ B: .word 5
 HALT
 
 ```
+  
+</td>
+<td>
+ 
+
+![image](https://user-images.githubusercontent.com/55964635/141319796-9e25a0de-8651-48ea-9627-92abc1ae44ac.png)
+ 
+</td>
+</tr>
+ 
+</table>
 
 Fases_de_una_instruccion
 ========================
