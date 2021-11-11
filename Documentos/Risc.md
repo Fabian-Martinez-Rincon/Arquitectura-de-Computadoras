@@ -200,6 +200,17 @@ HALT
  
 </table>
 
+Branch_Target_Buffer
+--------------------
+
+Al igual que los atascos de dependencia de datos, tenemos diferentes técnicas para evitar los atascos por saltos.
+
+La primera se denomina ***Branch Target Buffer*** que consiste en tener un flag que indica que si se debe saltar incondicionalmente o no dependiendo de qué hizo antes (es decir, predice).
+
+Cada vez que ese flag/buffer se actualiza cuenta como un ***atasco de salto!*** Cada vez que le erramos a la predicción cuenta como atasco.
+
+***Ejemplo:***
+
 Fases_de_una_instruccion
 ========================
 Las instrucciones se organizan en ***fases*** de manera que esto sea posible
