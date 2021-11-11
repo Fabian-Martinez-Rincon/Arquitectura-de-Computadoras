@@ -79,20 +79,18 @@ Se produce cuando una instrucción necesita leer un dato que todavía no esta di
 
 <table>
 <tr>
-<td> Ejemplo </td> <td> Solucion </td>
+<td> Ejemplo </td> <td> Solucion </td> <td> Solucion 2 </td>
 </tr>
 <tr>
 <td>
  
 ```s
 .data
-NUM1: .word 15
+    NUM1: .word 15
 
 .code
-    ; Inicializamos un registro y le sumamos 10
     DADDI R1, R0, 8
     DADDI R2, R1, 10
-    ; Después hacemos otra cosa
     LD R7, NUM1 (R0)
 HALT
 ```
@@ -100,24 +98,39 @@ HALT
 <td>
  
 
-```Pas
-procedure Carga_Parcial(var v;vector;var dimL);
-var
-    numero:integer;
-begin
-    dimL:=0;
-    readln(numero);
-    while (numero <> 0) and (dimL < dimF) do
-    begin
-       dimL:=dimL+1;
-       v[dimL]:=nummero;
-       readln(numero);                 
-    end;
-end.
+```s
+.data
+    NUM1: .word 15
+
+.code
+    DADDI R1, R0, 8
+    NOP
+    NOP
+    DADDI R2, R1, 10
+    LD R7, NUM1 (R0)
+HALT
+
 ```
  
 </td>
+<td>
+  
+```s
+.data
+    NUM1: .word 15
+
+.code
+    DADDI R1, R0, 8
+    LD R7, NUM1 (R0)
+    DADDI R2, R1, 10
+HALT
+  
+```  
+  
+  
+</td>
 </tr>
+
  
 </table>
 
