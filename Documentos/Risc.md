@@ -7,7 +7,7 @@ Indice
      * [Estructurales](#Estructurales) 
      * [Dependencia_de_Datos](#Dependencia_de_Datos)
        * [RAW](#RAW) 
-       * [Fordwarding](#Fordwarding)
+       * [Fordwarding](#Forwarding)
      * [Dependencia_de_Control](#Dependencia_de_Control)
        * [Branch Taken Stall](#Branch_Taken_Stall)
        * [Branch Target Buffer (BTB)](#Branch_Target_Buffer) 
