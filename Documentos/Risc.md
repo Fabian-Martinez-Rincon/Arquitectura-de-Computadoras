@@ -12,6 +12,7 @@ Indice
        * [Branch Taken Stall](#Branch_Taken_Stall)
        * [Branch Target Buffer (BTB)](#Branch_Target_Buffer) 
        * [Delay Slot](#Delay_Slot)
+   * [Punto Flotante](#Punto_Flotante) 
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
@@ -371,6 +372,9 @@ HALT
  
 </table>
 
+Punto_Flotante
+==============
+
 Fases_de_una_instruccion
 ========================
 Las instrucciones se organizan en ***fases*** de manera que esto sea posible
@@ -472,6 +476,10 @@ Las instrucciones se organizan en ***fases*** de manera que esto sea posible
    
 
 </table>
+
+
+
+
 
 Codigos
 =======
