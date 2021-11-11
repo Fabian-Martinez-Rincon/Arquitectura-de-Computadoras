@@ -375,6 +375,15 @@ HALT
 Punto_Flotante
 ==============
 
+MIPS utiliza IEE 754 para números en punto flotante.
+
+Contamos con 32 registros: desde F0 (simpre vale 0) hasta F31
+
+Tiene un único tipo de dato que es el .double
+
+[Pagina recomendada](https://zator.com/Cpp/E2_2_4a1.htm)
+
+
 Fases_de_una_instruccion
 ========================
 Las instrucciones se organizan en ***fases*** de manera que esto sea posible
