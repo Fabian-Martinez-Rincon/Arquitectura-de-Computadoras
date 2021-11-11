@@ -383,6 +383,11 @@ Tiene un único tipo de dato que es el .double
 
 [Pagina recomendada](https://zator.com/Cpp/E2_2_4a1.htm)
 
+***NO todas las etapas tardan lo mismo***.
+- Generales = 1 ciclo
+- Multiplicar en Pto. F. = 7 ciclos
+- Sumar en Pto. F. = 4 ciclos.
+- Dividir en Pto. F. = 24 Ciclos
 
 Fases_de_una_instruccion
 ========================
