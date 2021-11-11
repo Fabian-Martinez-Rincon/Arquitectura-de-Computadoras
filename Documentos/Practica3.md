@@ -51,8 +51,8 @@ Ejecutar nuevamente el programa anterior con la opción Enable Forwarding habili
     ld r1, A(r0)
     ld r2, B(r0)
     loop: dsll r1, r1, 1
-    daddi r2, r2, -1
-    bnez r2, loop
+        daddi r2, r2, -1
+        bnez r2, loop
 halt
 ```
 
@@ -89,10 +89,10 @@ d ) Modificar el programa para que almacene en un arreglo en memoria de datos lo
     dadd r3, r0, r0
     dadd r10, r0, r0
     loop: ld r4, tabla(r3)
-    beq r4, r2, listo
-    daddi r1, r1, -1
-    daddi r3, r3, 8
-    bnez r1, loop
+        beq r4, r2, listo
+        daddi r1, r1, -1
+        daddi r3, r3, 8
+        bnez r1, loop
     j fin
     listo: daddi r10, r0, 1
 fin: halt
@@ -115,10 +115,10 @@ c) Confeccionar una tabla que compare número de ciclos, CPI, RAWs y Branch Take
     dadd r1, r0, r0
     ld r2, cant(r0)
     loop: ld r3, datos(r1)
-    daddi r2, r2, -1
-    dsll r3, r3, 1
-    sd r3, res(r1)
-    daddi r1, r1, 8
+        daddi r2, r2, -1
+        dsll r3, r3, 1
+        sd r3, res(r1)
+        daddi r1, r1, 8
     bnez r2, loop
     nop
 halt
