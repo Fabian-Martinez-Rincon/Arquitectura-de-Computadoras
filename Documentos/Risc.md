@@ -7,7 +7,7 @@ Indice
      * [Estructurales](#Estructurales) 
      * [Dependencia_de_Datos](#Dependencia_de_Datos)
        * [RAW](#RAW) 
-       * [Fordwarding](Fordwarding)
+       * [Fordwarding](#Fordwarding)
      * [Dependencia_de_Control](#Dependencia_de_Control)
        * [Branch Taken Stall](#Branch_Taken_Stall)
        * [Branch Target Buffer (BTB)](#Branch_Target_Buffer) 
@@ -70,9 +70,13 @@ Provocados por conflicto de recursos
 Dependencia_de_Datos
 --------------------
 
-- ***RAW:*** Read After Write
-- ***WAR:*** Write After Read
-- ***WAW:*** Write After Write
+### RAW Read After Write
+
+
+### WAR Write After Read
+
+
+### WAW Write After Write
 
 Dependencia_de_Control
 ----------------------
