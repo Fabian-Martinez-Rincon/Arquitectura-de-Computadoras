@@ -75,7 +75,8 @@ RAW
 
 Significa: Read After Write.
 
-Se produce cuando una instrucción necesita leer un dato que todavía no esta disponible
+- Se produce cuando una instrucción necesita leer un dato que todavía no esta disponible.
+- Si no nos queda de otra, podemos usar un ***NOP***
 
 <table>
 <tr>
