@@ -217,7 +217,43 @@ Cada vez que ese flag/buffer se actualiza cuenta como un ***atasco de salto!*** 
 
 ***¿Cuando conviene activar el BTB?***
 
-Como solo fallamos al principio y al final de loop, conviene usarlo cuando tenemos bucles muy grandes. (sin condiciones)
+Como solo fallamos al principio y al final de loop, conviene usarlo cuando tenemos bucles muy grandes. (sin condiciones de por medio)
+
+<table>
+<tr>
+<td> Buenoooo </td> <td> Maloooo </td>
+</tr>
+<tr>
+<td>
+ 
+```Pas
+for i:=1 to 100000000 do
+begin
+  // Hace algo                          
+end;
+```
+  
+</td>
+<td>
+ 
+
+
+```Pas
+for i:=1 to 100000000 do
+begin
+  if i es par then
+    // Hace algo
+  else
+    // Hace otro algo
+end;
+```
+
+ 
+</td>
+</tr>
+ 
+</table>
+
 
 Fases_de_una_instruccion
 ========================
