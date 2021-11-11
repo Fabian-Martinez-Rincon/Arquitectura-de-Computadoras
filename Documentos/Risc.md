@@ -213,6 +213,7 @@ Cada vez que ese flag/buffer se actualiza cuenta como un ***atasco de salto!*** 
 
 ***Ejemplo:***
 
+![gifPro](https://user-images.githubusercontent.com/55964635/141326920-15b9364c-8d09-4fa5-94a4-dd1708c6cd70.gif)
 
 
 Fases_de_una_instruccion
