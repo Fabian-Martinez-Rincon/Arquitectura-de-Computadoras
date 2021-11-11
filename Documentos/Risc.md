@@ -158,6 +158,11 @@ Tenemos dos tipos de saltos
 - ***Incondicionales:*** Salta siempre.
 - ***Condicionales:*** Salta dependiendo de que se cumpla una condición.
 
+Branch_Taken_Stall
+------------------
+
+
+
 Fases_de_una_instruccion
 ========================
 Las instrucciones se organizan en ***fases*** de manera que esto sea posible
