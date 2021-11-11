@@ -12,6 +12,6 @@
         daddi r1, r1, -1
         daddi r3, r3, 8
         bnez r1, loop
-        j fin
+    j fin
     listo: daddi r10, r0, 1
 fin: halt
