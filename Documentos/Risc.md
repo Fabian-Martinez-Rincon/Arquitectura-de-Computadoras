@@ -488,6 +488,12 @@ No todo es color de rosas. Introduce los siguientes atascos:
 Subrutinas
 ==========
 
+***IMPORTANTE***
+- No hay manejo implícito de la pila!
+- La dirección de retorno ***siempre*** estará en ***R31***
+  - Esto si se hace implícitamente en el ***JAL***
+- Los registros se pueden ***sobrescribir*** , incluído ***R31***
+  - Vamos a tener que salvarlos en la pila 
 
 
 Fases_de_una_instruccion
