@@ -2,7 +2,7 @@
 
 <h1 align="center">Instrucciones de Punto Flotante y pasaje de parámetros</h1>
 
-```1)``` Simular el siguiente programa de suma de números en punto flotante y analizar minuciosamente la ejecución paso a paso. Inhabilitar Delay Slot y mantener habilitado Forwarding.
+```1)``` Simular el siguiente programa de suma de números en punto flotante y analizar minuciosamente la ejecución paso a paso. Inhabilitar Delay Slot y mantener habilitado Forwarding. [Resolución](#Ejercicio_1)
 
 ```s
 .data
@@ -151,3 +151,9 @@ factorial: ...
 
 
 <h1 align="center">Ejercicios</h1>
+
+Ejercicio_1
+===========
+```a)``` 16 ciclos, 7 instrucciones y 2,286 Ciclos por Instrucción (CPI)
+
+```b)``` Se generan dos atascos por dependencia de datos
