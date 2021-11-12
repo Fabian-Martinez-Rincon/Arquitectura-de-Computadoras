@@ -182,7 +182,8 @@ WAR_Y_WAW
 
 Se producen cuando:
 - Hay ***dependencia de datos*** entre dos instrucciones (igual que RAW)
-- 
+- Una instrucción puede sobrepasar a una instrucción anterior, queriendo escribir un registro pendiente de lectura ```(WAR)``` o escritura ```(WAW)```
+- El simulador produce atascos cuando detecta una situación potencial (***Puede que realmente no suceda***) de dependencia WAR o WAW.
 
 Dependencia_de_Control
 ----------------------
