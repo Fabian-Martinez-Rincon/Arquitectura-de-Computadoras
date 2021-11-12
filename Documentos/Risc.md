@@ -497,7 +497,7 @@ Subrutinas
 
 ***CONVENCIONES***
 
-Las subrutinas deben garantizar el guardado de los registros que corresponden. De esta manera, una subrutina podrá llamar a otra sabiendo que esta no modificará el valor de estos registros, para poder mantener esta garantía, es necesario guardar los registros en la ***pila***. (PERO MIPS NO TIENE PILA 😧). Pero existe un registro que por convención todas las subrutinas usarán como puntero al tope de la pila. Y ese registro es.........
+Las subrutinas deben garantizar el guardado de los registros que correspondan. De esta manera, una subrutina podrá llamar a otra sabiendo que esta no modificará el valor de estos registros, para poder mantener esta garantía, es necesario guardar los registros en la ***pila***. (PERO MIPS NO TIENE PILA 😧). Pero existe un registro que por convención todas las subrutinas usarán como puntero al tope de la pila. Y ese registro es.........
 
 ```El registro $sp```
 
