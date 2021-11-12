@@ -495,7 +495,43 @@ Subrutinas
 - Los registros se pueden ***sobrescribir*** , incluído ***R31***
   - Vamos a tener que salvarlos en la pila 
 
+***CONVENCIONES***
+
+Las subrutinas deben garantizar el guardado de los registros que corresponden. De esta manera, una subrutina podrá llamar a otra sabiendo que esta no modificará el valor de estos registros, para poder mantener esta garantía, es necesario guardar los registros en la ***pila***. (PERO MIPS NO TIENE PILA 😧). Pero existe un registro que por convención todas las subrutinas usarán como puntero al tope de la pila. Y ese registro es.........
+
+```El registro $sp```
+
 <table>
+<tr>
+<td> PUSH $t1 </td> <td> POP $t1 </td>
+</tr>
+<tr>
+<td>
+ 
+```s
+daddi $sp, $sp, -8 ; "Subo" una celda de memoria
+sd $t1, 0 ($sp)    ; Almaceno el dato
+```
+</td>
+<td>
+ 
+
+```s
+ld $t1, 0 ($sp)     ; Extraigo el dato
+daddi $sp, $sp, 8   ; "Bajo" una celda de memoria
+```
+ 
+</td>
+</tr>
+ 
+</table>
+
+
+
+
+<table>
+  
+  
 <tr>
 <td> Como ejemplo </td> <td> Como lo vamos a usar </td>
 </tr>
@@ -543,6 +579,11 @@ SUMAR: DADD $v0, $a0, $a1
 </tr>
  
 </table>
+
+![image](https://user-images.githubusercontent.com/55964635/141481712-959f5046-9204-40a8-8d79-35374fa43604.png)
+
+- En verde aquellos que, en caso de usarse, ***deben ser salvados***
+- En azul aquellos que podemos sobrescribir sin ningún problema
 
 Fases_de_una_instruccion
 ========================
