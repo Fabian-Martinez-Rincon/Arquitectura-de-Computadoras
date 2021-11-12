@@ -14,6 +14,7 @@ Indice
        * [Branch Target Buffer (BTB)](#Branch_Target_Buffer) 
        * [Delay Slot](#Delay_Slot)
    * [Punto Flotante](#Punto_Flotante) 
+   * [Subrutinas](#Subrutinas)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
@@ -483,6 +484,11 @@ No todo es color de rosas. Introduce los siguientes atascos:
 - Dependencia Estructural
 - Dependencia de datos ***WAR***
 - Dependencia de datos ***WAW***
+
+Subrutinas
+==========
+
+
 
 Fases_de_una_instruccion
 ========================
