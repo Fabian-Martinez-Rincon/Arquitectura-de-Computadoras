@@ -80,7 +80,8 @@ En el MIPS sucede cuando dos instrucciones intentan acceder a la etapa ***MEM***
 <tr>
 <td>
  
-![image](https://user-images.githubusercontent.com/55964635/141382017-8ba09cf4-599c-4c9d-9f46-8b1bd20947d1.png)
+![Imagen1](https://user-images.githubusercontent.com/55964635/141484332-582750ca-f2a6-489a-b82e-5ea5d366c52e.png)
+
   
 </td>
 <td>
@@ -580,7 +581,8 @@ SUMAR: DADD $v0, $a0, $a1
  
 </table>
 
-![image](https://user-images.githubusercontent.com/55964635/141481712-959f5046-9204-40a8-8d79-35374fa43604.png)
+![registros](https://user-images.githubusercontent.com/55964635/141483880-dd4a0804-4b23-4d06-873d-0b8fe19a2515.png)
+
 
 - En verde aquellos que, en caso de usarse, ***deben ser salvados***
 - En azul aquellos que podemos sobrescribir sin ningún problema
