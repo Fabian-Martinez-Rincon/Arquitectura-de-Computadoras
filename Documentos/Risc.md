@@ -15,6 +15,7 @@ Indice
        * [Delay Slot](#Delay_Slot)
    * [Punto Flotante](#Punto_Flotante) 
    * [Subrutinas](#Subrutinas)
+   * [E/S](#Entrada_Salida)
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
@@ -587,6 +588,10 @@ SUMAR: DADD $v0, $a0, $a1
 
 - En verde aquellos que, en caso de usarse, ***deben ser salvados***
 - En azul aquellos que podemos sobrescribir sin ningún problema
+
+Entrada_Salida
+==============
+
 
 Fases_de_una_instruccion
 ========================
