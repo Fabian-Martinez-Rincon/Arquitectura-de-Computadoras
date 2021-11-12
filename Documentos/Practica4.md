@@ -157,3 +157,31 @@ Ejercicio_1
 ```a)``` 16 ciclos, 7 instrucciones y 2,286 Ciclos por Instrucción (CPI)
 
 ```b)``` Se generan dos atascos por dependencia de datos
+
+Ejercicio_2
+===========
+ mtc1, cvt.1.d, cvt.d.1 y mfc1
+ 
+Ejercicio_2
+===========
+
+Ejercicio_3
+===========
+Ejercicio_4
+===========
+Ejercicio_5
+===========
+Ejercicio_6
+===========
+Ejercicio_7
+===========
+Ejercicio_8
+===========
+Ejercicio_9
+===========
+Ejercicio_10
+============
+Ejercicio_11
+============
+Ejercicio_12
+============
