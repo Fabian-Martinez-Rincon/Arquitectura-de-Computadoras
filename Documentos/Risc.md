@@ -20,6 +20,7 @@ Indice
      * [Intercambio de datos](#Intercambio)
      * [Multiplicación](#Multiplicacion)
      * [Potencia](#Potencia)
+     * [Pasar un String a mayusculas](#String_Mayusculas)
    * [Set de instrucciones](#SetDeInstrucciones) 
      * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
      * [Aritmeticas](#Instrucciones_Aritmeticas)
@@ -744,6 +745,9 @@ Potencia
         BNEZ R2, LOOP       ; Si no es 0 salto a LOOP
 HALT
 ```
+
+String_Mayusculas
+-----------------
 
 Instrucciones_de_Transferencia_de_datos
 =======================================
