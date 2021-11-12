@@ -30,15 +30,15 @@
 
 ```e)``` Explicar por qué colocando un ***NOP*** antes de la suma, se soluciona el ***RAW*** de la instrucción ***ADD*** y como consecuencia se elimina el ***WAR***. 
 
-```2)``` Es posible convertir valores enteros almacenados en alguno de los registros ```r1-r31``` a su representación equivalente en punto flotante y viceversa. Describa la funcionalidad de las instrucciones ***mtc1, cvt.1.d, cvt.d.1 y mfc1***.
+```2)``` Es posible convertir valores enteros almacenados en alguno de los registros ```r1-r31``` a su representación equivalente en punto flotante y viceversa. Describa la funcionalidad de las instrucciones ***mtc1, cvt.1.d, cvt.d.1 y mfc1***. [Resolución](#Ejercicio_2)
 
-```3)``` Escribir un programa que calcule la superficie de un triángulo rectángulo de base 5,85 cm y altura 13,47 cm.
+```3)``` Escribir un programa que calcule la superficie de un triángulo rectángulo de base 5,85 cm y altura 13,47 cm. [Resolución](#Ejercicio_3)
 
 Pista: la superficie de un triángulo se calcula como: 
 
 ```Superficie = (base x altura) / 2```
 
-```4)``` El índice de masa corporal (IMC) es una medida de asociación entre el peso y la talla de un individuo.
+```4)``` El índice de masa corporal (IMC) es una medida de asociación entre el peso y la talla de un individuo. [Resolución](#Ejercicio_4)
 
 Se calcula a partir del peso (expresado en kilogramos, por ejemplo: 75,7 kg) y la  estatura (expresada en metros, por ejemplo 1,73 m), usando la fórmula:
 
@@ -59,7 +59,7 @@ Escriba un programa que dado el peso y la estatura de una persona calcule su IMC
 
 
 
-```5)``` El procesador MIPS64 posee 32 registros, de 64 bits cada uno, llamados r0 a r31 (también conocidos como $0 a $31).
+```5)``` El procesador MIPS64 posee 32 registros, de 64 bits cada uno, llamados r0 a r31 (también conocidos como $0 a $31).  [Resolución](#Ejercicio_5)
 
 Sin embargo, resulta más conveniente para los programadores darles nombres más significativos a esos registros.
 
@@ -82,7 +82,7 @@ La siguiente tabla muestra la convención empleada para nombrar a los 32 registr
 
 Complete la tabla anterior explicando el uso que normalmente se le da cada uno de los registros nombrados. Marque en la columna ```“¿Preservado?”``` si el valor de cada grupo de registros debe ser preservado luego de realizada una llamada a una subrutina. Puede encontrar información útil en el apunte Programando sobre MIPS64
 
-```6)``` Como ya se observó anteriormente, muchas instrucciones que normalmente forman parte del repertorio de un procesador con arquitectura CISC no existen en el MIPS64. En particular, el soporte para la invocación a subrutinas es mucho más simple que el provisto en la arquitectura x86 (pero no por ello menos potente). El siguiente programa muestra un ejemplo de invocación a una subrutina.
+```6)``` Como ya se observó anteriormente, muchas instrucciones que normalmente forman parte del repertorio de un procesador con arquitectura CISC no existen en el MIPS64. En particular, el soporte para la invocación a subrutinas es mucho más simple que el provisto en la arquitectura x86 (pero no por ello menos potente). El siguiente programa muestra un ejemplo de invocación a una subrutina. [Resolución](#Ejercicio_6)
 
 ```s
 .data
@@ -114,17 +114,17 @@ a_la_potencia: daddi $v0, $zero, 1
 
 ```d)``` ¿Qué sucedería si la subrutina a_la_potencia necesitara invocar a otra subrutina para realizar la multiplicación, por ejemplo, en lugar de usar la instrucción ***dmul***? ¿Cómo sabría cada una de las subrutinas a que dirección de memoria deben retornar?
 
-```7)``` Escriba una subrutina que reciba como parámetros un número positivo M de 64 bits, la dirección del comienzo de una tabla que contenga valores numéricos de 64 bits sin signo y la cantidad de valores almacenados en dicha tabla. La subrutina debe retornar la cantidad de valores mayores que M contenidos en la tabla.
+```7)``` Escriba una subrutina que reciba como parámetros un número positivo M de 64 bits, la dirección del comienzo de una tabla que contenga valores numéricos de 64 bits sin signo y la cantidad de valores almacenados en dicha tabla. La subrutina debe retornar la cantidad de valores mayores que M contenidos en la tabla. [Resolución](#Ejercicio_7)
 
-```8)``` Escriba una subrutina que reciba como parámetros las direcciones del comienzo de dos cadenas terminadas en cero y retorne la posición en la que las dos cadenas difieren. En caso de que las dos cadenas sean idénticas, debe retornar -1.
+```8)``` Escriba una subrutina que reciba como parámetros las direcciones del comienzo de dos cadenas terminadas en cero y retorne la posición en la que las dos cadenas difieren. En caso de que las dos cadenas sean idénticas, debe retornar -1. [Resolución](#Ejercicio_8)
 
-```9)``` Escriba la subrutina ES_VOCAL, que determina si un carácter es vocal o no, ya sea mayúscula o minúscula. La rutina debe recibir el carácter y debe retornar el valor 1 si el carácter es una vocal, o 0 en caso contrario.
+```9)``` Escriba la subrutina ES_VOCAL, que determina si un carácter es vocal o no, ya sea mayúscula o minúscula. La rutina debe recibir el carácter y debe retornar el valor 1 si el carácter es una vocal, o 0 en caso contrario. [Resolución](#Ejercicio_9)
 
-```10)``` Usando la subrutina escrita en el ejercicio anterior, escribir la subrutina ***CONTAR_VOC***, que recibe una cadena terminada en cero , y devuelve la cantidad de vocales que tiene esa cadena.
+```10)``` Usando la subrutina escrita en el ejercicio anterior, escribir la subrutina ***CONTAR_VOC***, que recibe una cadena terminada en cero , y devuelve la cantidad de vocales que tiene esa cadena. [Resolución](#Ejercicio_10)
 
-```11)``` Escribir una subrutina que reciba como argumento una tabla de números terminada en 0. La subrutina debe contar la cantidad de números que son impares en la tabla, esta condición se debe verificar usando una subrutina es_impar. La subrutina es_impar debe devolver 1 si el número es impar y 0 si no lo es.
+```11)``` Escribir una subrutina que reciba como argumento una tabla de números terminada en 0. La subrutina debe contar la cantidad de números que son impares en la tabla, esta condición se debe verificar usando una subrutina es_impar. La subrutina es_impar debe devolver 1 si el número es impar y 0 si no lo es. [Resolución](#Ejercicio_11)
 
-```12)``` El siguiente programa espera usar una subrutina que calcule en forma recursiva el factorial de un número entero:
+```12)``` El siguiente programa espera usar una subrutina que calcule en forma recursiva el factorial de un número entero: [Resolución](#Ejercicio_12)
 
 ```s
 data
