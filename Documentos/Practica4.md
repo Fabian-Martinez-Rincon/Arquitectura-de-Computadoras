@@ -193,8 +193,62 @@ Ejercicio_5
 
 Ejercicio_6
 ===========
+```s
+.data
+    VALOR1: .word 2
+    VALOR2: .word 4
+    RES:    .word 0
+    
+.text
+    ld $a0, VALOR1($zero)   ; a = 16
+    ld $a1, VALOR2($zero)   ; a1 = 4
+    jal a_la_potencia       ; Salta y guarda la dir en R31
+    sd $v0, RES($zero)      ; Muesto el valor de retorno de la subrutina
+    halt
+
+    a_la_potencia: daddi $v0, $zero, 1  ; Incremento v0
+        lazo: slt $t1, $a1, $zero       ; si a1 < 0 deja un 1 en t1
+        bnez $t1, terminar              ; cuando t1 llega a 0 termino
+        daddi $a1, $a1, -1              ; decremento a1
+        dmul $v0, $v0, $a0              ; v0 = v0 * a0
+        j lazo
+
+    terminar: jr $ra
+
+    ; El programa saca la potencia de un nro, el programa hace VALOR2 ^ VALOR1
+
+    ; jal Salta a la dirección rotulada offN y copia en r31 la dirección de retorno
+
+    ; Salta a la dirección contenida en el registro rd
+```
 Ejercicio_7
 ===========
+```s
+.data
+    M: .word 3
+    TABLA: .word 1,2,3,4,5
+    RESULTADO: .word 0
+.code
+    ld $a0, M(r0)           ; a0 = 14
+    daddi $a1, $0, 5        ; a1 = cantidad de elementos
+    daddi $a2, $0, TABLA    ; a2 = paso la direccion de TABLA
+    jal VALORES             ; salto a la rutina y guardo la direccion de retorno
+    nop                     ; pinto
+    sd $v0, RESULTADO($0)   ; VALORES de retorno de la subrutina, lo guardo en RESULTADO
+    halt
+
+VALORES: dadd $t0, $a1, $0              ; guardo 5 en el registro temporal
+    dadd $v0, $0, $0                    ; inicializo v0
+    LOOP: ld $t4, 0($a2)                ; copia en el registro temporal el primer elemento de la TABLA
+        slt $t2, $t4, $a0               ; si t4 es menor que a0, entonces dejo 1 en t2
+        bnez $t2 ,NO_INCREMENTAR        ; si t2 <> 0 entonces salto a NO_INCREMENTAR
+        beq $t4, $a0, NO_INCREMENTAR    ; Si es igual, no incremento
+        daddi $v0, $v0, 1               ; aumento el contador 
+    NO_INCREMENTAR: daddi $a2, $a2, 8   ; avanzo en la tabla
+        daddi $t0, $t0, -1              ; decremento el contador de elementos de tabla
+        bnez $t0, LOOP                  ; si t0 <> 0 salto a loop
+        jr $ra                          ; vuelve al programa principal
+```
 Ejercicio_8
 ===========
 Ejercicio_9
