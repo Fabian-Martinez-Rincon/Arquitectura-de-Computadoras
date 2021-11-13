@@ -18,6 +18,7 @@ Indice
    * [E/S](#Entrada_Salida)
      * [Pantalla Alfanumérica](#Pantalla_Alfanumerica) 
      * [Pantalla Grafica](#Pantalla_Grafica) 
+     * [Teclado](#Teclado) 
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
@@ -676,6 +677,8 @@ HALT
 Pantalla_Grafica
 ----------------
 
+Teclado
+-------
 
 Fases_de_una_instruccion
 ========================
