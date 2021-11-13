@@ -16,6 +16,8 @@ Indice
    * [Punto Flotante](#Punto_Flotante) 
    * [Subrutinas](#Subrutinas)
    * [E/S](#Entrada_Salida)
+     * [Pantalla Alfanumérica](#Pantalla_Alfanumerica) 
+     * [Pantalla Grafica](#Pantalla_Grafica) 
    * [Fases de una instrucción](#Fases_de_una_instruccion)
    * [Codigos](#Codigos)
      * [Intercambio de datos](#Intercambio)
@@ -592,6 +594,8 @@ SUMAR: DADD $v0, $a0, $a1
 Entrada_Salida
 ==============
 
+Pantalla_Alfanumerica
+---------------------
 <table>
 <tr>
 <td> Imprimir Entero </td> <td> Imprimir Double </td> <td> Imprimir String </td>
@@ -668,6 +672,10 @@ HALT
 </tr>
  
 </table>
+
+Pantalla_Grafica
+----------------
+
 
 Fases_de_una_instruccion
 ========================
