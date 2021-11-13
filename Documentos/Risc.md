@@ -594,6 +594,12 @@ SUMAR: DADD $v0, $a0, $a1
 
 Entrada_Salida
 ==============
+Existen dos "registros" (es decir, dos celdas de memoria comunes)
+
+- ***CONTROL*** sirve para enviar códigos de operaciones. (0x10000)
+- ***DATA*** sirve para enviar o recibir datos.	(0x10008)
+
+Como son celdas de memoria se leen y escriben con instrucciones de memoria: LD/L.D/LBU/SD/S.D....
 
 Pantalla_Alfanumerica
 ---------------------
