@@ -666,7 +666,7 @@ HALT
     DADDI $t0, $0, TEXTO  
     SD $t0, 0($s1)        
     
-    daddi $t0, $0, 4      
+    DADDI $t0, $0, 4      
     SD $t0, 0($s0)        
 HALT
 
