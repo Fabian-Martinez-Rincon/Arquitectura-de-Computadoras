@@ -655,17 +655,23 @@ HALT
 
 ```s
 .data
-    CONTROL:    .word32 0x10000
-    DATA:       .word32 0x10008
-    TEXTO: .asciiz "Hola, Mundo!" ; El mensaje a mostrar
-.text
-    lwu $s0, DATA($zero)        ; $s0 = dirección de DATA
-    daddi $t0, $zero, TEXTO     ; $t0 = dirección del mensaje a mostrar
-    sd $t0, 0($s0)              ; DATA recibe el puntero al comienzo del mensaje
-    lwu $s1, CONTROL($zero)     ; $s1 = dirección de CONTROL
-    daddi $t0, $zero, 4         ; $t0 = 4 -> función 4: salida de una cadena ASCII
-    sd $t0, 0($s1)              ; CONTROL recibe 4 y produce la salida del mensaje
+    CONTROL:  .word 0x10000
+    DATA:     .word 0x10008
+    TEXTO:    .asciiz "Hola, Mundo!" 
+
+.code
+    LD $s0, DATA($0)      
+    LD $s1, CONTROL($0)   
+
+    DADDI $t0, $0, TEXTO  
+    SD $t0, 0($s0)        ; Mando el dato a DATA
+    
+    daddi $t0, $0, 4      ; (1)
+    SD $t0, 0($s1)        ; (2)
 HALT
+
+;(1) $t0 = 4 -> función 4: salida de una cadena ASCII
+;(2) CONTROL recibe 4 y produce la salida del mensaje
 ```
 	
 </td>
