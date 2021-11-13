@@ -611,17 +611,17 @@ Pantalla_Alfanumerica
     NUM:     .word 2
 
 .code
-    LD $s0, CONTROL ($0)    ;s0 = CONTROL
-    LD $s1, DATA ($0)       ;s1 = DATA
+    LD $s0, CONTROL ($0)    
+    LD $s1, DATA ($0)      
 
     LD $t0, NUM ($0)
-    SD $t0, 0 ($s1)         ; Mando el dato a DATA
-
+    SD $t0, 0 ($s1)         
+     ; CONTROL = 2
     DADDI $t0, $0, 2
-    SD $t0, 0 ($s0)         ; CONTROL = 2
-
-    ;DADDI $t0, $0, 6       ; LIMPIA LA PANTALLA
-    ;SD $t0, 0 ($s0)        ; CONTROL = 6
+    SD $t0, 0 ($s0)        
+    ; LIMPIA LA PANTALLA
+    ;DADDI $t0, $0, 6       
+    ;SD $t0, 0 ($s0)        
 HALT
 ```
 </td>
@@ -635,17 +635,17 @@ HALT
     NUM:     .double 19.5
 
 .code
-    LD $s0, CONTROL ($0)    ;s0 = CONTROL
-    LD $s1, DATA ($0)       ;s1 = DATA
+    LD $s0, CONTROL ($0)    
+    LD $s1, DATA ($0)      
 
     L.D f1, NUM ($0)
-    S.D f1, 0 ($s1)         ; Mando el dato a DATA
-
+    S.D f1, 0 ($s1)        
+    ; Control 3
     DADDI $t0, $0, 3
-    SD $t0, 0 ($s0)         ; CONTROL = 3
+    SD $t0, 0 ($s0)         
 
-    ;DADDI $t0, $0, 6       ; LIMPIA LA PANTALLA
-    ;SD $t0, 0 ($s0)        ; CONTROL = 6
+    ;DADDI $t0, $0, 6       
+    ;SD $t0, 0 ($s0)        
 HALT
 ```
  
@@ -664,7 +664,7 @@ HALT
     LD $s1, CONTROL($0)   
 
     DADDI $t0, $0, TEXTO  
-    SD $t0, 0($s0)        ; Mando el dato a DATA
+    SD $t0, 0($s0)        
     
     daddi $t0, $0, 4      ; (1)
     SD $t0, 0($s1)        ; (2)
