@@ -209,7 +209,7 @@ Se producen cuando:
     ADD.D F3, F2, F1    ; F3 = F2 + F1
     MUL.D F4, F2, F1    ; F4 = F2 * F1
     S.D F3, res1 (R0)   ; Guarda la suma en res1
-    S.D F4, res2 (R0)   ; Guarda la multiplicacion en res2
+    S.D F4, res2 (R0)   ; Guarda la mult en res2
 HALT
 ```
 </td>
@@ -230,7 +230,7 @@ HALT
     MUL.D F2, F2, F1    ; F2 = F2 * F1
     MUL.D F4, F2, F1    ; F4 = F2 * F1
     S.D F3, res1 (R0)   ; Guarda la suma en res1
-    S.D F4, res2 (R0)   ; Guarda la multiplicacion en res2
+    S.D F4, res2 (R0)   ; Guarda la mult en res2
 HALT
 ```
  
