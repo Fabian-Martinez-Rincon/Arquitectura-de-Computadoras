@@ -592,6 +592,62 @@ SUMAR: DADD $v0, $a0, $a1
 Entrada_Salida
 ==============
 
+<table>
+<tr>
+<td> Imprimir Entero </td> <td> Imprimir Double </td>
+</tr>
+<tr>
+<td>
+ 
+```s
+.data
+    CONTROL: .word 0x10000
+    DATA:    .word 0x10008
+    NUM:     .word 2
+
+.code
+    LD $s0, CONTROL ($0)    ;s0 = CONTROL
+    LD $s1, DATA ($0)       ;s1 = DATA
+
+    LD $t0, NUM ($0)
+    SD $t0, 0 ($s1)         ; Mando el dato a DATA
+
+    DADDI $t0, $0, 2
+    SD $t0, 0 ($s0)         ; CONTROL = 2
+
+    ;DADDI $t0, $0, 6       ; LIMPIA LA PANTALLA
+    ;SD $t0, 0 ($s0)        ; CONTROL = 6
+HALT
+```
+</td>
+<td>
+ 
+
+```s
+.data
+    CONTROL: .word 0x10000
+    DATA:    .word 0x10008
+    NUM:     .double 19.5
+
+.code
+    LD $s0, CONTROL ($0)    ;s0 = CONTROL
+    LD $s1, DATA ($0)       ;s1 = DATA
+
+    L.D f1, NUM ($0)
+    S.D f1, 0 ($s1)         ; Mando el dato a DATA
+
+    DADDI $t0, $0, 3
+    SD $t0, 0 ($s0)         ; CONTROL = 3
+
+    ;DADDI $t0, $0, 6       ; LIMPIA LA PANTALLA
+    ;SD $t0, 0 ($s0)        ; CONTROL = 6
+HALT
+```
+ 
+</td>
+</tr>
+ 
+</table>
 
 Fases_de_una_instruccion
 ========================
