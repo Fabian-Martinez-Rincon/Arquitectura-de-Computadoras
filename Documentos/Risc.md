@@ -612,6 +612,10 @@ Como son celdas de memoria se leen y escriben con instrucciones de memoria: LD/L
   - 2 Imprime un ***entero con signo***
   - 3 Imprime un ***flotante***
 
+***PINTAR UN PÍXEL***
+- ***DATA*** --> Color y coordenadas
+- ***CONTROL*** --> El valor 5
+
 Pantalla_Alfanumerica
 ---------------------
 <table>
