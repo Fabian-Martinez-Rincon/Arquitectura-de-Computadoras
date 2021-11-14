@@ -38,7 +38,7 @@
     SD $t1, 0 ($s6)
 
     DADDI $a0, $0, 0    ;CONTADORES PARA LEER
-    DADDI $a1, $0, 3
+    DADDI $a1, $0, 4
     
     LOOP: DADDI $t1, $0, 8
         SB $t1, 0($s6) 
