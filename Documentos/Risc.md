@@ -713,7 +713,8 @@ Pantalla_Grafica
 ----------------
 Pantalla de 50x50px
 
-![DATA](https://user-images.githubusercontent.com/55964635/141662626-8c822606-6945-4bbf-b0f1-33ed12ad32f7.png)
+![NUEVOOWO](https://user-images.githubusercontent.com/55964635/141663154-5352df7d-2e41-46a4-b4f9-49837c3a5349.png)
+
 
 ```s
 .data ;Imprimir un pixel
