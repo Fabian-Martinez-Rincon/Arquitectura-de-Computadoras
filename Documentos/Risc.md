@@ -717,6 +717,14 @@ Pantalla de 50x50px
 ![NUEVOOWO](https://user-images.githubusercontent.com/55964635/141663154-5352df7d-2e41-46a4-b4f9-49837c3a5349.png)
 
 
+
+
+
+
+<table>
+<tr>
+<td>
+ 
 ```s
 .data ;Imprimir un pixel
     CONTROL: .word 0x10000
@@ -727,13 +735,17 @@ Pantalla de 50x50px
     LD $s1, DATA ($0)        ; $s1 = DATA
 
     LD $t0, PIXEL ($0)
-    SD $t0, 0 ($s1)             ; Mando el dato a DATA
+    SD $t0, 0 ($s1)      ; Mando el dato a DATA
 
     DADDI $t0, $0, 5
     SD $t0, 0 ($s0)             ; CONTROL = 5
 
 HALT
 ```
+</td>
+<td>
+ 
+
 ```s
 .data
     coorX:   .byte 24 ; X
@@ -743,8 +755,8 @@ HALT
     DATA:    .word 0x10008
 
 .code 
-    ld $s0, CONTROL ($zero) 		; $s0 = dir de CONTROL
-    ld $s1, DATA ($zero) 	   		; $s1 = dir de DATA
+    ld $s0, CONTROL ($zero)   ; $s0 = dir de CONTROL
+    ld $s1, DATA ($zero)      ; $s1 = dir de DATA
 
     ; limpia la pantalla
 
@@ -754,15 +766,20 @@ HALT
     lbu $t0, coorX ($zero) 			
     sb $t0, 5 ($s1) 				
 
-    lbu $t1, coorY ($zero)			; $t1 = valor de coordenada Y
-    sb $t1, 4 ($s1) 				; DATA + 4 recibe el valor de coordenada Y
+    lbu $t1, coorY ($zero)    ; $t1 = valor de coordenada Y
+    sb $t1, 4 ($s1) 	      ; DATA + 4 recibe el valor de coordenada Y
     
-    lwu $t2, color ($zero)	; $t2 = color
-    sw $t2, 0 ($s1) ; Pongo color en DATA
+    lwu $t2, color ($zero)    ; $t2 = color
+    sw $t2, 0 ($s1) 	      ; Pongo color en DATA
     daddi $t0, $zero, 5
-    sd $t0, 0 ($s0) ; Pinta el píxel
+    sd $t0, 0 ($s0) 	      ; Pinta el píxel
 HALT
 ```
+ 
+</td>
+</tr>
+ 
+</table>
 
 Teclado
 -------
