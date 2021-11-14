@@ -24,6 +24,7 @@ Indice
      * [Intercambio de datos](#Intercambio)
      * [Multiplicación](#Multiplicacion)
      * [Potencia](#Potencia)
+     * [BASE_EXPONENTE](#BASE_EXPONENTE)
      * [Pasar un String a mayusculas](#String_Mayusculas)
    * [Set de instrucciones](#SetDeInstrucciones) 
      * [De Transferencia de datos](#Instrucciones_de_Transferencia_de_datos)
@@ -1081,6 +1082,23 @@ SLTI $t0, $v0, 0x61 ; Compara con ‘a’ minúscula
 salir: JR $ra 	; Retorna
 ```
 
+BASE_EXPONENTE
+==============
+
+```s
+.data
+    BASE: .word 2
+    EXPONENTE: .word 3
+.code
+    LD $t0, BASE($0)
+    LD $t1, EXPONENTE($0)
+    DADD $t2, $t2 , $t0
+    LOOP: BEQZ $t1, TERMINO
+        dmul $t2, $t2, $t0  
+        DADDI $t1, $t1, -1        
+    J LOOP
+TERMINO: HALT
+```
 
 Instrucciones_de_Transferencia_de_datos
 =======================================
