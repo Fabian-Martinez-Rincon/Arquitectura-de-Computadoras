@@ -1,4 +1,4 @@
-data
+.data
     coorX: .byte 24                 ; coordenada X de un punto
     coorY: .byte 24                 ; coordenada Y de un punto
     color: .byte 255, 0, 255, 0     ; color: máximo rojo + máximo azul => magenta
