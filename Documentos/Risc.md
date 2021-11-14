@@ -605,6 +605,13 @@ Como son celdas de memoria se leen y escriben con instrucciones de memoria: LD/L
 - ***DATA*** --> Direccion del string
 - ***CONTROL*** --> El valor 4
 
+***IMPRIMIR UN NÚMERO***
+- ***DATA*** --> El Dato
+- ***CONTROL*** 
+  - 1 Imprime un ***entero sin signo***
+  - 2 Imprime un ***entero con signo***
+  - 3 Imprime un ***flotante***
+
 Pantalla_Alfanumerica
 ---------------------
 <table>
