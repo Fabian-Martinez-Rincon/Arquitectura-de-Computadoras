@@ -3,6 +3,7 @@
 - [Pila, Subrutinas y Parametros](/Documentos/Assembler.md)
 - [Interrupciones](/Documentos/Interrupciones.md)
 - [Risc](/Documentos/Risc.md)
+- [Ejercicios_Random](/Documentos/Ejercicios_Random.md)
 - [Practica 2 Importante](/Documentos/Practica1.md)
 - [Practica 3 Importante](/Documentos/Practica2.md)
 - [Practica 4 Importante](/Documentos/Practica3.md)
