@@ -601,6 +601,10 @@ Existen dos "registros" (es decir, dos celdas de memoria comunes)
 
 Como son celdas de memoria se leen y escriben con instrucciones de memoria: LD/L.D/LBU/SD/S.D....
 
+***IMPRIMIR UN STRING***
+- ***DATA*** --> Direccion del string
+- ***CONTROL*** --> El valor 4
+
 Pantalla_Alfanumerica
 ---------------------
 <table>
@@ -689,6 +693,11 @@ HALT
 
 Pantalla_Grafica
 ----------------
+Pantalla de 50x50px
+
+![DATA](https://user-images.githubusercontent.com/55964635/141662626-8c822606-6945-4bbf-b0f1-33ed12ad32f7.png)
+
+
 
 Teclado
 -------
