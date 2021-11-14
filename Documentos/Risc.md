@@ -601,6 +601,10 @@ Existen dos "registros" (es decir, dos celdas de memoria comunes)
 
 Como son celdas de memoria se leen y escriben con instrucciones de memoria: LD/L.D/LBU/SD/S.D....
 
+
+Pantalla_Alfanumerica
+---------------------
+
 ***IMPRIMIR UN STRING***
 - ***DATA*** --> Direccion del string
 - ***CONTROL*** --> El valor 4
@@ -615,16 +619,6 @@ Como son celdas de memoria se leen y escriben con instrucciones de memoria: LD/L
 ***LIMPIAR LA PANTALLA***
 - ***CONTROL*** -> El valor 6
 
-***PINTAR UN PÍXEL***
-- ***DATA*** --> Color y coordenadas
-- ***CONTROL*** --> El valor 5
-
-***LIMPIAR LA PANTALLA***
-- ***CONTROL*** -> El valor 7
-
-
-Pantalla_Alfanumerica
----------------------
 <table>
 <tr>
 <td> Imprimir Entero </td> <td> Imprimir Double </td> <td> Imprimir String </td>
@@ -713,6 +707,13 @@ Pantalla_Grafica
 ----------------
 Pantalla de 50x50px
 
+***PINTAR UN PÍXEL***
+- ***DATA*** --> Color y coordenadas
+- ***CONTROL*** --> El valor 5
+
+***LIMPIAR LA PANTALLA***
+- ***CONTROL*** -> El valor 7
+
 ![NUEVOOWO](https://user-images.githubusercontent.com/55964635/141663154-5352df7d-2e41-46a4-b4f9-49837c3a5349.png)
 
 
@@ -733,16 +734,60 @@ Pantalla de 50x50px
 
 HALT
 ```
+```s
+.data
+    coorX:   .byte 24 ; X
+    coorY:   .byte 24 ; Y
+    color:   .byte 255, 0, 255, 0 
+    CONTROL: .word 0x10000
+    DATA:    .word 0x10008
 
+.code 
+    ld $s0, CONTROL ($zero) 		; $s0 = dir de CONTROL
+    ld $s1, DATA ($zero) 	   		; $s1 = dir de DATA
+
+    ; limpia la pantalla
+
+    daddi $t0, $zero, 7			
+    sd $t0, 0 ($s0) 				
+
+    lbu $t0, coorX ($zero) 			
+    sb $t0, 5 ($s1) 				
+
+    lbu $t1, coorY ($zero)			; $t1 = valor de coordenada Y
+    sb $t1, 4 ($s1) 				; DATA + 4 recibe el valor de coordenada Y
+    
+    lwu $t2, color ($zero)	; $t2 = color
+    sw $t2, 0 ($s1) ; Pongo color en DATA
+    daddi $t0, $zero, 5
+    sd $t0, 0 ($s0) ; Pinta el píxel
+HALT
+```
 
 Teclado
 -------
 
+***LEER UN NÚMERO (ENTERO O FLOTANTE)***
+
+- ***CONTROL*** --> El valor 8
+- ***DATA*** --> 
+  - ***Muestra*** el caracter presionado
+  - Termina de leer cuando presiona ENTER
+  - Si el dato ingresado no es un número se guarda 0. Tomar el valor (***HEXADECIMAL***) con LD o L.D desde ***DATA***
+
+***LEER UN CARACTER***
+- ***CONTROL*** -> El valor 9
+- ***DATA*** ->
+  - ***NO*** muestra el caracter presionado
+  - No espera al ENTER
+  - Tomar el valor (***ASCII***) con LBU desde ***DATA*** 
+
+
+
+
 Fases_de_una_instruccion
 ========================
 Las instrucciones se organizan en ***fases*** de manera que esto sea posible
-
-
 
 <table>
 <tr>
