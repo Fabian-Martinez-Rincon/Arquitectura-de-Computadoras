@@ -1,248 +1,229 @@
-        .data
-CONTROL: .word32  0x10000
-DATA:    .word32  0x10008
-MENU:    .asciiz "  Reset    (0)\n  Negro    (1)\n  Azul     (2)\n  Verde    (3)\n  Cyan     (4)\n  Rojo     (5)\n  Magenta  (6)\n  Amarillo (7)\n  Blanco   (8)\n  Actual: "
+.data
+        CONTROL: .word32  0x10000
+        DATA:    .word32  0x10008
+        MENU:    .asciiz "  Reset    (0)\n  NEGRO    (1)\n  AZUL     (2)\n  VERDE    (3)\n  CYAN     (4)\n  ROJO     (5)\n  VIOLETA  (6)\n  AMARILLO (7)\n  BLANCO   (8)\n  ACTUAL: "
 
-; TODO   Para ejecutar en MIPS cambiar "Data Adress Bus" a 12 bits (Ctrl+A) ;
+        NEGRO:          .byte    0,  0,  0,  0     
+        AZUL:           .byte    0,  0,  255,0     
+        VERDE:          .byte    0,  255,0,  0     
+        CYAN:           .byte    0,  255,255,0     
+        ROJO:           .byte    255,0,  0,  0     
+        VIOLETA:        .byte    255,0,  255,0   
+        AMARILLO:       .byte    255,255,0,  0     
+        BLANCO:         .byte    255,255,255,0     
+        GRIS:           .byte    150,150,150,0    
+                                
+        NEGROCAR:       .asciiz  "NEGRO"          
+        AZULCAR:        .asciiz  "AZUL"            
+        VERDECAR:       .asciiz  "VERDE"          
+        CYANCAR:        .asciiz  "CYAN"            
+        ROJOCAR:        .asciiz  "ROJO"            
+        VIOLETACAR:     .asciiz  "VIOLETA"         
+        AMARILLOCAR:    .asciiz  "AMARILLO"         
+        BLANCOCAR:      .asciiz  "BLANCO"                                     
+        IMAGE:          .space   2500             
+        OFF:            .space   1                
 
-;Color            R | G | B | 0     ;-------------- COMANDOS ---------------;
-negr:    .byte    0,  0,  0,  0     ; 1 -> pintar negro  (0x31)             ;
-azul:    .byte    0,  0,  255,0     ; 2 -> pintar azul  (0x32)              ;
-verd:    .byte    0,  255,0,  0     ; 3 -> pintar verde  (0x33)             ;
-cyan:    .byte    0,  255,255,0     ; 4 -> pintar cyan  (0x34)              ;
-rojo:    .byte    255,0,  0,  0     ; 5 -> pintar rojo  (0x35)              ;
-mage:    .byte    255,0,  255,0     ; 6 -> pintar magenta (0x36)            ;
-amar:    .byte    255,255,0,  0     ; 7 -> pintar amarillo (0x37)           ;
-blan:    .byte    255,255,255,0     ; 8 -> pintar blanco (0x38)             ;
-gris:    .byte    150,150,150,0     ; spc-> alternar modo (0x20)            ;
-;                                   ; A-a-> mover izquierda (0x41-0x61)     ;
-;                                   ; S-s-> mover abajo  (0x53-0x73)        ;
-;                                   ; D-d-> mover derecha (0x44-0x64)       ;
-;                                   ; W-w-> mover arriba  (0x57-0x77)       ;
-;                                   ; 0 -> reset   (0x30)                   ;
-anegr:   .asciiz  "Negro"           ;                                       ;
-aazul:   .asciiz  "Azul"            ;                                       ;
-averd:   .asciiz  "Verde"           ;                                       ;
-acyan:   .asciiz  "Cyan"            ;                                       ;
-arojo:   .asciiz  "Rojo"            ;                                       ;
-amage:   .asciiz  "Magenta"         ;                                       ;
-aamar:   .asciiz  "Amarill"         ;                                       ;
-ablan:   .asciiz  "Blanco"          ;                                       ;
-;                                   ;                                       ;
-IMAGE:   .space   2500              ;                                       ;
-OFF:     .space   1                 ;                                       ;
-        .code                       ;---------------------------------------;
-;-----------------------------------;------- VARIABLES DEL PROGRAMA --------;
-         daddi  $fp, r0, 0xff8      ; $fp = 0xff8 -> Inicio de pila         ;
-;-----------------------------------;---------------------------------------;
-         daddi  $v1, r0, 1          ; $v1 = true -> Modo cursor             ;
-;-----------------------------------;---------------------------------------;
-         daddi  $s1, r0, 5          ; $s1 = 5 -> Dibuja un bit en pantalla  ;
-         daddi  $s2, r0, 7          ; $s2 = 7 -> Borra la pantalla          ;
-         daddi  $s3, r0, 9          ; $s3 = 9 -> Lee un caracter ascii      ;
-;-----------------------------------;---------------------------------------;
-         daddi  $s4, r0, 49         ; $s4 = Dimension de la pantalla        ;
-;-----------------------------------;---------------------------------------;
-         daddi  $s0, r0, gris       ; $s0 = gris -> Color del cursor        ;
-         daddi  $s5, r0, negr       ; $s5 = blanco -> Color Pincel          ;
-;-----------------------------------;---------------------------------------;
-         daddi  $s6, r0, 24         ; $s6 = Cursor X                        ;
-         daddi  $s7, r0, 24         ; $s7 = Cursor Y                        ;
-;-----------------------------------;---------------------------------------;
-         daddi  $k0, r0, 24         ; $k0 = Cursor Anterior X               ;
-         daddi  $k1, r0, 24         ; $k1 = Cursor Anterior Y               ;
-;-----------------------------------;---------------------------------------;
-         lwu    $t8, DATA(r0)       ; $t8 = DATA                            ;
-         lwu    $t9, CONTROL(r0)    ; $t9 = CONTROL                         ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;--- INICIALIZAR EL LIENZO EN BLANCO ---;
-fullres: daddi  $t0, r0, IMAGE      ; Offset IMAGE                          ;
-         daddi  $t1, r0, OFF        ; Offset end IMAGE                      ;
-         daddi  $t3, r0, blan       ; Color para inicializar                ;
-iniciar: sb     $t3, 0($t0)         ; Guardo el color                       ;
-         daddi  $t0, $t0, 1         ; Bajo en la memoria                    ;
-         bne    $t0, $t1, iniciar   ; Si no llegue al inicio sigo subiendo  ;
-;-----------------------------------;---------------------------------------;
-         jal    printSt             ; Imprimo ayuda y color actual          ;
-leer:    jal    drawPix             ; Loop del programa                     ;
-         jal    drawCur             ; Dibujo los dos pixeles                ;
-         sd     $s3, 0($t9)         ; CONTROL = 9 -> Lee un caracter ASCII  ;
-         lb     $t0, 0($t8)         ; $t0 = ASCII caracter presionado       ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;--------------- SWITCH ----------------;
-up1:     daddi  $v0, r0, 0x57       ; case: W                               ;
-         bne    $t0, $v0, up2       ;                                       ;
-         j      mArriba             ;                                       ;
-;-----------------------------------;---------------------------------------;
-up2:     daddi  $v0, r0, 0x77       ; case: w                               ;
-         bne    $t0, $v0, de1       ;                                       ;
-         j      mArriba             ;                                       ;
-;-----------------------------------;---------------------------------------;
-de1:     daddi  $v0, r0, 0x44       ; case: D                               ;
-         bne    $t0, $v0, de2       ;                                       ;
-         j      mDerech             ;                                       ;
-;-----------------------------------;---------------------------------------;
-de2:     daddi  $v0, r0, 0x64       ; case: d                               ;
-         bne    $t0, $v0, iz1       ;                                       ;
-         j      mDerech             ;                                       ;
-;-----------------------------------;---------------------------------------;
-iz1:     daddi  $v0, r0, 0x41       ; case: A                               ;
-         bne    $t0, $v0, iz2       ;                                       ;
-         j      mIzquie             ;                                       ;
-;-----------------------------------;---------------------------------------;
-iz2:     daddi  $v0, r0, 0x61       ; case: a                               ;
-         bne    $t0, $v0, do1       ;                                       ;
-         j      mIzquie             ;                                       ;
-;-----------------------------------;---------------------------------------;
-do1:     daddi  $v0, r0, 0x53       ; case: S                               ;
-         bne    $t0, $v0, do2       ;                                       ;
-         j      mAbajo              ;                                       ;
-;-----------------------------------;---------------------------------------;
-do2:     daddi  $v0, r0, 0x73       ; case: s                               ;
-         bne    $t0, $v0, space     ;                                       ;
-         j      mAbajo              ;                                       ;
-;-----------------------------------;---------------------------------------;
-space:   daddi  $v0, r0, 0x20       ; case: [espacio]                       ;
-         bne    $t0, $v0, reset     ;                                       ;
-         beq    $v1, r0, sipi       ;                                       ;
-nope:    daddi  $v1, r0, 0          ;                                       ;
-         j      leer                ;                                       ;
-sipi:    daddi  $v1, r0, 1          ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-reset:   daddi  $v0, r0, 0x30       ; case: 0 - reset                       ;
-         bne    $t0, $v0, cnegro    ;                                       ;
-         daddi  $t0, r0, 7          ;                                       ;
-         sd     $t0, 0($t9)         ;                                       ;
-         daddi  $v1, r0, 1          ;                                       ;
-         j      fullres             ;                                       ;
-;-----------------------------------;---------------------------------------;
-cnegro:  daddi  $v0, r0, 0x31       ; case: 1 - color negro                 ;
-         bne    $t0, $v0, cazul     ;                                       ;
-         daddi  $s5, r0, negr       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-cazul:   daddi  $v0, r0, 0x32       ; case: 2 - color azul                  ;
-         bne    $t0, $v0, cverd     ;                                       ;
-         daddi  $s5, r0, azul       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-cverd:   daddi  $v0, r0, 0x33       ; case: 3 - color verde                 ;
-         bne    $t0, $v0, ccyan     ;                                       ;
-         daddi  $s5, r0, verd       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-ccyan:   daddi  $v0, r0, 0x34       ; case: 4 - color cyan                  ;
-         bne    $t0, $v0, crojo     ;                                       ;
-         daddi  $s5, r0, cyan       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-crojo:   daddi  $v0, r0, 0x35       ; case: 5 - color rojo                  ;
-         bne    $t0, $v0, cmage     ;                                       ;
-         daddi  $s5, r0, rojo       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-cmage:   daddi  $v0, r0, 0x36       ; case: 6 - color magenta               ;
-         bne    $t0, $v0, camar     ;                                       ;
-         daddi  $s5, r0, mage       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-camar:   daddi  $v0, r0, 0x37       ; case: 7 - color amarillo              ;
-         bne    $t0, $v0, cblan     ;                                       ;
-         daddi  $s5, r0, amar       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-cblan:   daddi  $v0, r0, 0x38       ; case: 8 - color blanco - (goma)       ;
-         bne    $t0, $v0, leer      ;                                       ;
-         daddi  $s5, r0, blan       ;                                       ;
-         jal    printSt             ;                                       ;
-         j      leer                ;                                       ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;------MOVER CURSOR HACIA ARRIBA--------;
-mArriba: beq    $s7, $s4, leer      ; Si llegue al tope freno               ;
-         dadd   $k0, $s6, r0        ; Copia el valor actual para el ant     ;
-         dadd   $k1, $s7, r0        ; Copia el valor actual para el ant     ;
-         daddi  $s7, $s7, 1         ; Incremento en Y el cursor             ;
-         j      leer                ; Vuelvo al flujo normal del programa   ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;-----MOVER CURSOR HACIA LA DERECHA-----;
-mDerech: beq    $s6, $s4, leer      ; Si llegue al tope freno               ;
-         dadd   $k0, $s6, r0        ; Copia el valor actual para el ant     ;
-         dadd   $k1, $s7, r0        ; Copia el valor actual para el ant     ;
-         daddi  $s6, $s6, 1         ; Incremento en X el cursor             ;
-         j      leer                ; Vuelvo al flujo normal del programa   ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;-------MOVER CURSOR HACIA ABAJO--------;
-mAbajo:  beqz   $s7, leer           ; Si llegue al tope freno               ;
-         dadd   $k0, $s6, r0        ; Copia el valor actual para el ant     ;
-         dadd   $k1, $s7, r0        ; Copia el valor actual para el ant     ;
-         daddi  $s7, $s7, -1        ; Decremento en Y el cursor             ;
-         j      leer                ; Vuelvo al flujo normal del programa   ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;----MOVER CURSOR HACIA LA IZQUIERDA----;
-mIzquie: beqz   $s6, leer           ; Si llegue al tope freno               ;
-         dadd   $k0, $s6, r0        ; Copia el valor actual para el ant     ;
-         dadd   $k1, $s7, r0        ; Copia el valor actual para el ant     ;
-         daddi  $s6, $s6, -1        ; Decremento en X el cursor             ;
-         j      leer                ; Vuelvo al flujo normal del programa   ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;-------- DIBUJAR PIXEL ANTERIOR -------;
-drawPix: bnez   $v1, ppincel        ;                                       ;
-         lbu    $t0, 0($s5)         ; DATA  = $t0 -> Color sin signo        ;
-         sb     $k0, 5($t8)         ; DATA + 5 = Cursor en X                ;
-         sb     $k1, 4($t8)         ; DATA + 4 = Cursor en Y                ;
-         daddi  $t0, $t0, -8        ;                                       ;
-         lwu    $t0, 0($s0)         ; DATA  = $t0 -> Color sin signo        ;
-         sw     $t0, 0($t8)         ; DATA  = $t0 -> Color sin signo        ;
-         sd     $t1, 0($t9)         ; CONTROL = 5 -> Dibuja el pixel        ;
-         jr     $ra                 ;                                       ;
-ppincel: dmul   $t0, $k0, $s4       ; Calculo la posicion en el arreglo     ;
-         sb     $k0, 5($t8)         ; DATA + 5 = Cursor en X                ;
-         sb     $k1, 4($t8)         ; DATA + 4 = Cursor en Y                ;
-         dadd   $t0, $t0, $k1       ; Calculo la posicion en el arreglo     ;
-         daddi  $t0, $t0, IMAGE     ; Calculo la posicion en el arreglo     ;
-         lbu    $t0, 0($t0)         ; DATA  = $t0 -> Color sin signo        ;
-         daddi  $t0, $t0, -8        ;                                       ;
-         lwu    $t0, 0($t0)         ; DATA  = $t0 -> Color sin signo        ;
-         sw     $t0, 0($t8)         ; DATA  = $t0 -> Color sin signo        ;
-         sd     $s1, 0($t9)         ; CONTROL = 5 -> Dibuja el pixel        ;
-         jr     $ra                 ;                                       ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;--------- DIBUJAR PIXEL ACTUAL --------;
-drawCur: sb     $s6, 5($t8)         ; DATA + 5 = Cursor en X                ;
-         sb     $s7, 4($t8)         ; DATA + 4 = Cursor en Y                ;
-         beqz   $v1, cpincel        ;                                       ;
-         daddi  $t0, r0, gris       ; DATA  = $t0 -> Color sin signo        ;
-         j      ccursor             ;                                       ;
-cpincel: dmul   $t1, $s6, $s4       ; Calculo la posicion en el arreglo     ;
-         dadd   $t0, r0, $s5        ;                                       ;
-         dadd   $t1, $t1, $s7       ; Calculo la posicion en el arreglo     ;
-         daddi  $t1, $t1, IMAGE     ; Calculo la posicion en el arreglo     ;
-         sb     $s5, 0($t1)         ; Calculo la posicion en el arreglo     ;
-ccursor: daddi  $t0, $t0, -8        ;                                       ;
-         lwu    $t0, 0($t0)         ; DATA  = $t0 -> Color sin signo        ;
-         sw     $t0, 0($t8)         ; DATA  = $t0 -> Color sin signo        ;
-         sd     $s1, 0($t9)         ; CONTROL = 5 -> Dibuja el pixel        ;
-         jr     $ra                 ;                                       ;
-;-----------------------------------;---------------------------------------;
-;-----------------------------------;------ IMPRIMIR MENU EN TERMINAL ------;
-printSt: daddi  $t0, r0, 6          ;                                       ;
-         sd     $t0, 0($t9)         ; CONTROL = $t0                         ;
-         daddi  $t0, r0, MENU       ; Guardo el offset                      ;
-         sd     $t0, 0($t8)         ; DATA = Offset                         ;
-         daddi  $t0, r0, 4          ; $t0 = 4 -> Imprime un asciiz          ;
-         sd     $t0, 0($t9)         ; CONTROL = $t0                         ;
-         dadd   $t0, r0, $s5        ; Guardo el offset                      ;
-         daddi  $t0, $t0, 64        ; Nombre del color                      ;
-         sd     $t0, 0($t8)         ; DATA = Offset                         ;
-         daddi  $t0, r0, 4          ; $t0 = 4 -> Imprime un asciiz          ;
-         sd     $t0, 0($t9)         ; CONTROL = $t0                         ;
-         jr     $ra                 ;                                       ;
-;-----------------------------------;---------------------------------------;
+.code                      
+        DADDI  $sp, $0, 0x400    
+        DADDI  $v1, $0, 1         
+        DADDI  $s1, $0, 5          
+        DADDI  $s2, $0, 7         
+        DADDI  $s3, $0, 9         
+        DADDI  $s4, $0, 50       ;LIMITE     
+        DADDI  $s0, $0, GRIS      
+        DADDI  $s5, $0, NEGRO  
+
+        DADDI  $s6, $0, 24         
+        DADDI  $s7, $0, 24        
+        DADDI  $t2, $0, 24         
+        DADDI  $t3, $0, 24         
+
+        LWU    $t8, DATA($0)       
+        LWU    $t9, CONTROL($0)    
+
+LIMPIAR: DADDI  $t0, $0, IMAGE      
+         DADDI  $t1, $0, OFF        
+         DADDI  $t3, $0, BLANCO      
+INICIAR: SB     $t3, 0($t0)         
+         DADDI  $t0, $t0, 1        
+         BNE    $t0, $t1, INICIAR   
+
+         JAL    IMPRIMIRMENU            
+LEER:    JAL    DIBUJARPIXEL             
+         JAL    DIBUJARESQUINA             
+         SD     $s3, 0($t9)         
+         LB     $t0, 0($t8)         
+;____________________________________________________________
+ARRIBA: DADDI  $v0, $0, 0x57                            ; W
+        BNE    $t0, $v0, ARRIBA2       
+        J MAXARRIBA             
+
+ARRIBA2: DADDI  $v0, $0, 0x77                           ; w
+         BNE    $t0, $v0, DERECHA       
+         J MAXARRIBA             
+
+DERECHA: DADDI  $v0, $0, 0x44                           ; D
+         BNE    $t0, $v0, DERECHA2       
+         J MAXDERECHA             
+
+DERECHA2: DADDI  $v0, $0, 0x64                          ; d
+          BNE $t0, $v0, IZQUIERDA       
+          J MAXDERECHA             
+
+IZQUIERDA: DADDI  $v0, $0, 0x41                         ; A
+           BNE $t0, $v0, IZQUIERDA2       
+           J MAXIZQUIRDA             
+
+IZQUIERDA2: DADDI  $v0, $0, 0x61                        ; a
+            BNE    $t0, $v0, ABAJO       
+            J MAXIZQUIRDA             
+
+ABAJO: DADDI  $v0, $0, 0x53                             ; S
+       BNE    $t0, $v0, ABAJO2       
+       J MAXABAJO              
+
+ABAJO2: DADDI  $v0, $0, 0x73                            ; s
+        BNE    $t0, $v0, ESPACIO     
+        J MAXABAJO             
+;____________________________________________________________
+ESPACIO: DADDI  $v0, $0, 0x20                   ; ESPACIO
+         BNE    $t0, $v0, REINICIAR             ; t0 <> 
+         BEQ    $v1, $0, CONCEDIDO       
+DENEGAR: DADDI  $v1, $0, 0          
+         J LEER                
+CONCEDIDO: DADDI  $v1, $0, 1          
+           J LEER               
+
+REINICIAR: DADDI  $v0, $0, 0x30                 ; 0
+           BNE    $t0, $v0, CONEGRO   
+           DADDI  $t0, $0, 7          
+           SD     $t0, 0($t9)        
+           DADDI  $v1, $0, 1          
+           J LIMPIAR             
+;____________________________________________________________COLORES
+CONEGRO: DADDI  $v0, $0, 0x31                   ; 1
+         BNE    $t0, $v0, COAZUL     
+         DADDI  $s5, $0, NEGRO       
+         JAL IMPRIMIRMENU            
+         J LEER                
+
+COAZUL: DADDI  $v0, $0, 0x32                    ; 2       
+        BNE    $t0, $v0, COVERDE     
+        DADDI  $s5, $0, AZUL       
+        JAL IMPRIMIRMENU             
+        J LEER                
+
+COVERDE: DADDI  $v0, $0, 0x33                   ; 3
+         BNE    $t0, $v0, COCYAN     
+         DADDI  $s5, $0, VERDE       
+         JAL    IMPRIMIRMENU             
+         J LEER                
+
+COCYAN: DADDI  $v0, $0, 0x34                    ; 4
+        BNE    $t0, $v0, COROJO     
+        DADDI  $s5, $0, CYAN       
+        JAL    IMPRIMIRMENU            
+        J LEER                
+
+COROJO: DADDI  $v0, $0, 0x35                    ; 5
+        BNE    $t0, $v0, COVIOLETA    
+        DADDI  $s5, $0, ROJO       
+        JAL    IMPRIMIRMENU             
+        J LEER                
+
+COVIOLETA: DADDI  $v0, $0, 0x36                 ; 6
+           BNE    $t0, $v0, COAMARILLO     
+           DADDI  $s5, $0, VIOLETA       
+           JAL    IMPRIMIRMENU             
+           J LEER                
+
+COAMARILLO: DADDI  $v0, $0, 0x37                ; 7
+            BNE    $t0, $v0, COBLANCO     
+            DADDI  $s5, $0, AMARILLO       
+            JAL    IMPRIMIRMENU             
+            J LEER                
+
+COBLANCO: DADDI  $v0, $0, 0x38                  ; 8
+          BNE    $t0, $v0, LEER      
+          DADDI  $s5, $0, BLANCO       
+          JAL    IMPRIMIRMENU             
+          J LEER               
+;____________________________________________________________
+MAXARRIBA: BEQ    $s7, $s4, LEER      
+           DADD   $t2, $s6, $0        
+           DADD   $t3, $s7, $0        
+           DADDI  $s7, $s7, 1         
+           J LEER                
+
+MAXDERECHA: BEQ    $s6, $s4, LEER      
+            DADD   $t2, $s6, $0        
+            DADD   $t3, $s7, $0        
+            DADDI  $s6, $s6, 1         
+         J LEER                
+
+
+MAXABAJO:  BEQZ   $s7, LEER          
+         DADD   $t2, $s6, $0        
+         DADD   $t3, $s7, $0        
+         DADDI  $s7, $s7, -1        
+         J      LEER               
+
+MAXIZQUIRDA: BEQZ   $s6, LEER           
+         DADD   $t2, $s6, $0        
+         DADD   $t3, $s7, $0        
+         DADDI  $s6, $s6, -1        
+         J      LEER                
+;____________________________________________________________
+DIBUJARPIXEL: BNEZ   $v1, PINCEL  ; SI = 1 , VOY A PINCEL      
+              LBU    $t0, 0($s5)         
+              SB     $t2, 5($t8)         
+              SB     $t3, 4($t8)         
+              DADDI  $t0, $t0, -8        
+              LWU    $t0, 0($s0)        
+              SW     $t0, 0($t8)        
+              SD     $t1, 0($t9)        
+              JR     $ra         
+                 
+PINCEL: DMUL   $t0, $t2, $s4       
+        SB     $t2, 5($t8)         
+        SB     $t3, 4($t8)        
+        DADD   $t0, $t0, $t3       
+        DADDI  $t0, $t0, IMAGE     
+        LBU    $t0, 0($t0)         
+        DADDI  $t0, $t0, -8        
+        LWU    $t0, 0($t0)         
+        SW     $t0, 0($t8)         
+        SD     $s1, 0($t9)         
+        JR     $ra                
+
+DIBUJARESQUINA: SB     $s6, 5($t8)        
+                SB     $s7, 4($t8)         
+                BEQZ   $v1, COPINCEL        
+                DADDI  $t0, $0, CYAN            ; QUE COLOR DE TROLO
+                J      COCURSOR  
+                           
+COPINCEL: DMUL   $t1, $s6, $s4       
+          DADD   $t0, $0, $s5        
+          DADD   $t1, $t1, $s7       
+          DADDI  $t1, $t1, IMAGE     
+          SB     $s5, 0($t1)    
+
+COCURSOR: DADDI  $t0, $t0, -8        
+          LWU    $t0, 0($t0)         
+          SW     $t0, 0($t8)         
+          SD     $s1, 0($t9)         
+          JR     $ra                 
+
+IMPRIMIRMENU: DADDI  $t0, $0, 6          
+              SD     $t0, 0($t9)         
+              DADDI  $t0, $0, MENU       
+              SD     $t0, 0($t8)         
+              DADDI  $t0, $0, 4          
+              SD     $t0, 0($t9)         
+              DADD   $t0, $0, $s5        
+              DADDI  $t0, $t0, 64       
+              SD     $t0, 0($t8)         
+              DADDI  $t0, $0, 4          
+              SD     $t0, 0($t9)         
+              JR     $ra                 
