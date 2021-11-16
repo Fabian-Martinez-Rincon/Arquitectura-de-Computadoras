@@ -10,7 +10,7 @@
 
 ```5)``` Escribir un programa que multiplique dos numeros enteros almacenados en memoria (sin utilizar la instruccion DMUL), mediante sumas sucesivas y almacene el resultado en memoria. [Resolución](#Ejercicio_5)
 
-```6)``` Escribir un programa que busque un valor existente en la posicion de memoria ***BUSCAR*** en una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG***. Si se encuentra el valor en la tabla debe cargarse el valor en R10, caso contrario debe cargarse 0
+```6)``` Escribir un programa que busque un valor existente en la posicion de memoria ***BUSCAR*** en una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG***. Si se encuentra el valor en la tabla debe cargarse el valor en R10, caso contrario debe cargarse 0 [Resolución](#Ejercicio_6)
 
 ```7)``` Escribir un programa que recorra una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG*** y genere otra a partir de las posiciones de memoria IMPARES que contenga todos los elementos impares de ***TABLA***
 
@@ -370,4 +370,25 @@ Ejercicio_5
     BNEZ $t1, JUMP
     SD $t3, RES($0)
 HALT
+```
+Ejercicio_6
+===========
+```s
+.data
+    TABLA:    .word 1,2,3,4,5,6,7
+    BUSCAR:   .word 4
+    LONG:     .word 7
+.code
+    LD $s0, LONG($0)
+    DADDI $s1,$s1, TABLA
+    LD $s2, BUSCAR($0)
+    LOOP: LD $t0, 0($s1)
+        BEQ $t0, $s2, IGUAL
+        DADDI $s1, $s1, 8
+        DADDI $s0, $s0, -1
+    BNEZ $s0, LOOP
+    DADDI R10,$0,0
+    J FIN
+    IGUAL: DADDI R10,R0,1
+FIN: HALT
 ```
