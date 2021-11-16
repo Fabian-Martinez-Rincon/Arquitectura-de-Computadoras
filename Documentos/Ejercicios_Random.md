@@ -27,6 +27,14 @@ OPCIONES:
 ```9)``` Implementar un programa que produzca una salida estableciendo el color de un punto de la pantalla gráfica (en la ventana Terminal del simulador WinMIPS64). Y que las coordenadas y color del punto sean ingresados por teclado [Resolución](#Ejercicio_9)
 
 
+```10)``` Escriba una subrutina que reciba como parámetros un número positivo M de 64 bits, la dirección del comienzo de una tabla que contenga valores numéricos de 64 bits sin signo y la cantidad de valores almacenados en dicha tabla. La subrutina debe retornar la cantidad de valores mayores que M contenidos en la tabla. [Resolución](#Ejercicio_10)
+
+```11)``` Escriba una subrutina que reciba como parámetros las direcciones del comienzo de dos cadenas terminadas en cero y retorne la posición en la que las dos cadenas difieren. En caso de que las dos cadenas sean idénticas, debe retornar -1. [Resolución](#Ejercicio_11)
+
+```12)``` Escriba la subrutina ES_VOCAL, que determina si un carácter es vocal o no, ya sea mayúscula o minúscula. La rutina debe recibir el carácter y debe retornar el valor 1 si el carácter es una vocal, o 0 en caso contrario. [Resolución](#Ejercicio_12)
+
+```13)``` Usando la subrutina escrita en el ejercicio anterior, escribir la subrutina ***CONTAR_VOC***, que recibe una cadena terminada en cero , y devuelve la cantidad de vocales que tiene esa cadena. [Resolución](#Ejercicio_13)
+
 Ejercicio_1
 ===========
 ```s
@@ -523,3 +531,14 @@ Ejercicio_9
     SD $s3, 0($s6)       ; IMPRIMIR EL CARACTER
 HALT
 ```
+Ejercicio_10
+============
+
+Ejercicio_11
+============
+
+Ejercicio_12
+============
+
+Ejercicio_13
+============
