@@ -207,6 +207,7 @@ RESULTADO: SD $s5, 0($s1) ;IMPRIMO EL MENSAJE NORMAL
     JR $ra
 ```
 Ejercicio_4
+===========
 ```s
 .data 
     CONTROL:       .word 0x10000
