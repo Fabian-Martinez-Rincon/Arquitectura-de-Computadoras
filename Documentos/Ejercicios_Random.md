@@ -244,8 +244,6 @@ Ejercicio_4
     LWU $s1, DATA($0)
     DADDI $s2, $0, 4
     DADDI $s4, $0, 9
-    ;DADDI $s5, $s5, 6
-
     ;______________________________ IMPRIME MENSAJE
     REPETIR: SD $0, INGRESADO($0) 
     DADDI $t0, $0, MENSAJE  
@@ -255,12 +253,18 @@ Ejercicio_4
     DADDI $sp, $0, 0x400
 
     DADDI $a0, $a0, 4       ; CANTIDAD DE DIGITOS A LEER
-    JAL CHAR
-    DADDI $t0, $t0, 4       ; contador para el bucle :D
+
+    DADDI $t9, $0 , 0
+    LOOP: beqz $a0, FIN     ; LECTURA DE A UN DIGITO :d
+        JAL CHAR
+        DADDI $a0, $a0 , -1           ; DECREMENTO MI CONTADOR
+    J LOOP
+
+    ;______________________________
+    FIN: DADDI $t0, $t0, 4       ; contador para el bucle :D
 
     DADDI $t3, $0, 0       ;inicializo para recorrer ambos caracteres
     DADDI $t7, $0, 0
-
 
     LD $t1, CLAVE($t3)    ; ME MUEVO POR AMBAS CADENAS
     LD $t2, INGRESADO($t3)
@@ -277,18 +281,15 @@ Ejercicio_4
     
 TERMINO: HALT
 
-CHAR: DADDI $t9, $0 , 0
-    LOOP: beqz $a0, FIN 
-        SD $s4,0 ($s0)                ; CONTROL = 9
+CHAR: SD $s4,0 ($s0)                ; CONTROL = 9
         LBU $t1,0 ($s1)               ; *PRESIONA UNA TECLA*
         SB $t1, INGRESADO($t9)        ; GUARDO LA VARIABLE
         DADDI $s3, $t9, INGRESADO     ; TOMO LA DIR DE INGRESADO
         SD $s3, 0 ($s1)               ; MANDO DIR DE INGRESADO
         SD $s2, 0 ($s0)               ; IMPRIMIR INGRESADO , CONTROL 4
-        DADDI $a0, $a0 , -1           ; DECREMENTO MI CONTADOR
+        
         DADDI $t9, $t9 , 1            ;AVANZO LA CLAVE
-        J LOOP
-    FIN: JR $ra
+    JR $ra
 
 RESPUESTA: beqz $t7, INCORRECTO
 
