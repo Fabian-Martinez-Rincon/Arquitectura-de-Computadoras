@@ -8,6 +8,22 @@
 
 ```4)``` Escriba un programa que solicite el ingreso por teclado de una clave (sucesión de cuatro caracteres) utilizando la subrutina ***char*** de ingreso de un carácter. Luego, debe comparar la secuencia ingresada con una cadena almacenada en la variable ***clave***. Si las dos cadenas son iguales entre si, la subrutina llamada ***respuesta*** mostrará el texto ***“Bienvenido”*** en la salida estándar del simulador (ventana Terminal). En cambio, si las cadenas no son iguales, la subrutina deberá mostrar ***“ERROR”*** y solicitar nuevamente el ingreso de la clave. [Resolución](#Ejercicio_4)
 
+```5)``` Escribir un programa que multiplique dos numeros enteros almacenados en memoria (sin utilizar la instruccion DMUL), mediante sumas sucesivas y almacene el resultado en memoria.
+
+```6)``` Escribir un programa que busque un valor existente en la posicion de memoria ***BUSCAR*** en una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG***. Si se encuentra el valor en la tabla debe cargarse el valor en R10, caso contrario debe cargarse 0
+
+```7)``` Escribir un programa que recorra una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG*** y genere otra a partir de las posiciones de memoria IMPARES que contenga todos los elementos impares de ***TABLA***
+
+```8)```Escribir un programa que lea 3 números enteros (A,B y C) ingresados por el usuario desde teclado, realice un calculo aritmético y almacene el resultado en la memoria en la variable ***RESUL***. para mostrar el resultado en la pantalla alfanumerica. 
+
+OPCIONES:
+
+```a)``` El calculo aritmetico es  (A+B) elevado a la C, en este caso debe hacer 2 subrutinas: una para el ingreso de los números y otra para mostrar el resultado en la pantalla alfanumerica
+
+```b)``` El calculo aritmetico es (A+B) x C, en este caso debe hacer dos subrutinas, una para el ingreso de los numeros y otra para realizar el calculo.
+
+```c)``` El calculo aritmetico es (A-B) / C, en este caso se deben hacer dos subrutinas, una para realizar el calculo y otra para mostrar el resultado en la pantalla
+
 Ejercicio_1
 ===========
 ```s
