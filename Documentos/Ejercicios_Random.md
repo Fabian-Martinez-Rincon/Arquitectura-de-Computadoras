@@ -106,16 +106,16 @@ Ejercicio_2
     DATA:         .word 0x10008
     MENSAJE:      .asciiz " INGRESE UN CARACTER: "
     MENSAJEMAL:  .asciiz "  EL CARACTER NO ES UN DIGITO. "
-    CERO:         .asciiz " CERO  "
-    UNO:          .asciiz " UNO   "
-    DOS:          .asciiz " DOS   "
-    TRES:         .asciiz " TRES  "
-    CUATRO:       .asciiz " CUATRO"
-    CINCO:        .asciiz " CINCO "
-    SEIS:         .asciiz " SEIS  "
-    SIETE:        .asciiz " SIETE "
-    OCHO:         .asciiz " OCHO  "
-    NUEVE:        .asciiz " NUEVE "
+    CERO:         .ascii " CERO"
+    UNO:          .ascii " UNO"
+    DOS:          .ascii " DOS"
+    TRES:         .ascii " TRES"
+    CUATRO:       .ascii " CUATRO"
+    CINCO:        .ascii " CINCO"
+    SEIS:         .ascii " SEIS"
+    SIETE:        .ascii " SIETE"
+    OCHO:         .ascii " OCHO"
+    NUEVE:        .ascii " NUEVE"
     CARACTER: .byte 0
 ;________________________________________________________
 .code
@@ -128,7 +128,6 @@ Ejercicio_2
     SD $s5, 0($s1)        
     SD $s4, 0($s0)          
     ;_______________________________
-    DADDI $sp, $0, 0x400        ; INICIALIZO EL PUNTERO A TOPE DE PILA
     JAL INGRESO
     LD $t0, CARACTER($0) 
     SLTI $t1, $t0, 0x30         ; un 1 si es menor
@@ -146,10 +145,7 @@ Ejercicio_2
     TERMINO: HALT
 
 ;________________________________________________________
-INGRESO: DADDI $sp, $sp, -8 
-    SD $t7, 0 ($sp)
-    ;______________________________
-    DADDI $t1, $0, 9   ; LEE UN CARACTER
+INGRESO: DADDI $t1, $0, 9   ; LEE UN CARACTER
     SD $t1,0 ($s0)
     LBU $t1,0 ($s1)
     SB $t1, CARACTER($0)
@@ -159,8 +155,6 @@ INGRESO: DADDI $sp, $sp, -8
     DADDI $t1, $0, 4
     SD $t1, 0 ($s0) 
     ;_______________________________  LEE E IMPRIME EL CARACTER
-    LD $t7, 0 ($sp)
-    DADDI $sp, $sp, 8  
     JR $ra
 ;________________________________________________________
 MUESTRA:  daddi $t7,$0,0x30
@@ -172,6 +166,7 @@ MUESTRA:  daddi $t7,$0,0x30
     IMPRIMIR:  SD $a1, 0($s1)              
     SD $s4, 0($s0)    
 JR $ra
+
 ```
 Ejercicio_3
 ===========
