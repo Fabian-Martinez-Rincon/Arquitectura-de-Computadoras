@@ -12,7 +12,7 @@
 
 ```6)``` Escribir un programa que busque un valor existente en la posicion de memoria ***BUSCAR*** en una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG***. Si se encuentra el valor en la tabla debe cargarse el valor en R10, caso contrario debe cargarse 0 [Resolución](#Ejercicio_6)
 
-```7)``` Escribir un programa que recorra una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG*** y genere otra a partir de las posiciones de memoria IMPARES que contenga todos los elementos impares de ***TABLA***
+```7)``` Escribir un programa que recorra una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG*** y genere otra a partir de las posiciones de memoria IMPARES que contenga todos los elementos impares de ***TABLA*** [Resolución](#Ejercicio_7)
 
 ```8)```Escribir un programa que lea 3 números enteros (A,B y C) ingresados por el usuario desde teclado, realice un calculo aritmético y almacene el resultado en la memoria en la variable ***RESUL***. para mostrar el resultado en la pantalla alfanumerica. 
 
@@ -392,3 +392,6 @@ Ejercicio_6
     IGUAL: DADDI R10,R0,1
 FIN: HALT
 ```
+Ejercicio_7
+===========
+
