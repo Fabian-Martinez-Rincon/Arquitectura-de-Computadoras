@@ -437,6 +437,31 @@ Ejercicio_6
     IGUAL: DADDI R10,R0,1
 FIN: HALT
 ```
+Ejercicio_7
+===========
+```s
+                .data
+TABLA:          .word 7, 8, 9, 99, 10
+LONG:           .word 5
+IMPARES:        .word 0
+
+                .text
+                daddi $s0, $0, TABLA
+                ld $s1, LONG($0)
+                daddi $s2, $0, IMPARES
+                
+                
+LOOP:           beqz $s1, FIN
+                ld $t1, 0($s0)
+                daddi $s0, $s0, 8
+                daddi $s1, $s1, -1
+                andi $t2, $t1, 1
+                beqz $t2, LOOP
+                sd $t1, 0($s2)
+                daddi $s2, $s2, 8
+                j LOOP
+FIN: halt
+```
 Ejercicio_8
 ===========
 ```s
@@ -457,35 +482,26 @@ Ejercicio_8
     DADDI $s4, $s4, MENSAJE
     DADDI $s5, $s5, 8           ; LEER
 
+            daddi $t0, $0, 0
+            daddi $t2, $0, 24
+LECTURA:    SD $s4, 0($s1)              
+            SD $s3, 0($s0)
 
-    SD $s4, 0($s1)              
-    SD $s3, 0($s0)
+            SD $s5, 0 ($s0)             
+            LD $t1, 0 ($s1)             
+            SD $t1, A($t0)
+            daddi $t0, $t0, 8
+            bne $t0, $t2, LECTURA
 
-    SD $s5, 0 ($s0)             
-    LD $t1, 0 ($s1)             
-    SD $t1, A ($0)    
 
-    SD $s4, 0($s1)              
-    SD $s3, 0($s0)
-
-    SD $s5, 0 ($s0)             
-    LD $t2, 0 ($s1)             
-    SD $t2, B ($0)    
-
-    SD $s4, 0($s1)              
-    SD $s3, 0($s0)
-
-    SD $s5, 0 ($s0)             
-    LD $t3, 0 ($s1)             
-    SD $t3, C ($0)             
-
-    LD $t0, RESUL ($0)
     DADDI $t0, $0, 0
-
+    ld $t1, A($0) 
+    ld $t2, B($0) 
     DADD $t4, $t1, $t2      ; A + B
     
-
-    DADD $t0, $t0 , $t4
+ 
+    ld $t3, C($0)
+    DADDI $t0, $t0 ,1
     LOOP: BEQZ $t3, TERMINO
         dmul $t0, $t0, $t4  
         DADDI $t3, $t3, -1        
@@ -496,6 +512,7 @@ Ejercicio_8
     SD $s2, 0 ($s0)
 
 HALT
+
 ```
 
 Ejercicio_9
