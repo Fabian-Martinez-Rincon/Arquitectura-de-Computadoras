@@ -24,6 +24,9 @@ OPCIONES:
 
 ```c)``` El calculo aritmetico es (A-B) / C, en este caso se deben hacer dos subrutinas, una para realizar el calculo y otra para mostrar el resultado en la pantalla
 
+```9)``` Implementar un programa que produzca una salida estableciendo el color de un punto de la pantalla gráfica (en la ventana Terminal del simulador WinMIPS64). Y que las coordenadas y color del punto sean ingresados por teclado
+
+
 Ejercicio_1
 ===========
 ```s
@@ -452,3 +455,6 @@ Ejercicio_8
 
 HALT
 ```
+
+Ejercicio_9
+===========
