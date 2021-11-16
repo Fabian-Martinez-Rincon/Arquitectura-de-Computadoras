@@ -14,7 +14,7 @@
 
 ```7)``` Escribir un programa que recorra una ***TABLA*** de cantidad de elementos indicada en la posición de memoria ***LONG*** y genere otra a partir de las posiciones de memoria IMPARES que contenga todos los elementos impares de ***TABLA*** [Resolución](#Ejercicio_7)
 
-```8)```Escribir un programa que lea 3 números enteros (A,B y C) ingresados por el usuario desde teclado, realice un calculo aritmético y almacene el resultado en la memoria en la variable ***RESUL***. para mostrar el resultado en la pantalla alfanumerica. 
+```8)```Escribir un programa que lea 3 números enteros (A,B y C) ingresados por el usuario desde teclado, realice un calculo aritmético y almacene el resultado en la memoria en la variable ***RESUL***. para mostrar el resultado en la pantalla alfanumerica. [Resolución](#Ejercicio_8)
 
 OPCIONES:
 
