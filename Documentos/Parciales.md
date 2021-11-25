@@ -1,4 +1,4 @@
-<h1 align="center"> 💻Interrupciones</h1>
+<h1 align="center"> 💻Parciales</h1>
 
 
  Implementar  una subrutina INGRESAR_NUMERO. 
