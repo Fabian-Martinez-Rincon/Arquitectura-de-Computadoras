@@ -11,6 +11,7 @@
 - [Practica 6 Importante](/Documentos/Practica5.md)
 - [Teoria (Para el Primer Parcial)](/Documentos/Teoria1.md)
 - [Teoria Apuntes](/Documentos/Teoria1Apuntes.md)
+- [Parciales](/Documentos/Parciales.md)
 
 Indice
 =================
