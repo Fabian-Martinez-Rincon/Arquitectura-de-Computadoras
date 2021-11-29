@@ -37,6 +37,29 @@ OPCIONES:
 
 ```14)``` Escribir un programa que solicite el ingreso de una cadena de caracteres por teclado que finalice al leer el caracter 0. Luego, el programa debe imprimir la cadena ingresada al derecho y al revés. [Resolución](#Ejercicio_14)
 
+```15)``` Escribir un programa que lea una tabla de 3x3 con números en punto flotante. La tabla se almacena como un vector de 9 elementos, donde primero se almacena la fila 1 de izquierda a derecha, luego la fila 2 y finalmente la fila 3. Utilizar una subrutina para la lectura.
+
+Luego de la lectura, realizar dos subrutinas que calculen:
+subrutina 1) La suma de la diagonal de la matriz (también llamada traza de A o Traza(A))
+subrutina 2) La suma de los valores absolutos de los elementos de la matriz (también llamada la Norma de la matriz o Norma(A)).
+
+Las subrutinas deben recibir dirección base de la tabla según la convención vista, y devolver en $f1 y $f2, respectivamente, los valores pedidos. 
+
+Finalmente, en el programa principal deberá llamar a estar subrutinas y con su resultado calcular e informar el valor de Traza(A)/Norma(A). 
+
+Nota: Para calcular el valor absoluto de un número, sugerimos multiplicar el número por -1 si es que es negativo.
+
+Ejemplo: Si la matriz A tiene valores: [Resolucion](#Ejercicio_15)
+
+1  2 -3
+
+3  4  5
+
+-2 -3 -4
+
+
+Entonces Traza(A) = 1 + 4 - 4 = 1  y Norma(A) = 1 + 2 +3 +3 + 4 + 5 + 2 + 3 + 4 = 27
+
 Ejercicio_1
 ===========
 ```s
@@ -720,4 +743,97 @@ loop2:          lbu $t2, 0($t0)
                 DADDI $a0, $a0, -1
                 bnez $a0, loop2
                 jr $ra
+```
+Ejercicio_15
+============
+```s
+.data
+    CONTROL: .word32 0x10000
+    DATA:    .word32 0x10008
+    TABLA:   .word 0,0,0,0,0,0,0,0,0
+    preg:    .asciiz ' \n Ingrese un numero '
+    resultado:    .asciiz ' \n valor de Traza(A)/Norma(A) es: '
+    absoluto: .double  -1.0
+    cero: .double 0.0
+    
+.code
+    lwu $s1, CONTROL($zero)
+    lwu $s0, DATA($zero)
+    l.d f12, cero($zero)
+
+    jal leerDatos
+
+    daddi $a0, $0, TABLA            ; Mando la direccion de la tabla 
+    jal trazaA    
+    
+    daddi $a0, $0, TABLA            ; Mando la direccion de la tabla 
+    jal trazaB
+    
+
+    daddi $t0, $0, resultado                      ; $t0 = dirección del mensaje a mostrar  
+    sd $t0, 0($s0) 			                 ; DATA recibe el puntero al comienzo del mensaje 
+    daddi $t0, $0, 4 			            ; $t0 = 4 -> función 4: salida de una cadena ASCII 
+    sd $t0, 0($s1) 	
+
+    div.d f3, f1, f2
+       
+    S.D f3, 0 ($s0)     
+
+    ; Control 3
+    DADDI $t0, $0, 3
+    SD $t0, 0 ($s1)    
+HALT
+;__________________________________________________________________________
+trazaB: daddi $t7, $0, 0          ; desplazador
+daddi $t5, $0, 9                  ; contador
+
+l.d f4, absoluto($0)
+add.d f3, f3, f4                  ; constante -1    
+
+loop3: add.d f2, f2 , f0     
+    L.D f0, 0 ($a0)            
+
+    daddi $t1, $0, 0
+    slti $t1, $t0, 0
+
+    beqz $t1, continuar
+
+    mul.d f0, f0, f3              ; Multiplico con -1.0
+
+    continuar: daddi $a0,$a0,8    ; para tomar los datos de en diagonal
+    daddi $t5,$t5,-1              ; disminuyo el contador
+    bnez $t5, loop3
+
+    jr $ra
+;__________________________________________________________________________
+trazaA: daddi $t7, $0, 0          ; desplazador
+daddi $t5, $0, 3                  ; contador
+
+loop2: add.d f1, f1 , f0     
+    L.D f0, 0 ($a0)            
+    daddi $a0,$a0,32              ; para tomar los datos de en diagonal
+    daddi $t5,$t5,-1              ; disminuyo el contador
+    bnez $t5, loop2
+jr $ra
+;__________________________________________________________________________
+leerDatos: daddi $t5,$0,9          ; Cantidad de elementos
+
+loop: daddi $t0, $0, preg          ; $t0 = dirección del mensaje a mostrar  
+sd $t0, 0($s0) 			           ; DATA recibe el puntero al comienzo del mensaje 
+
+daddi $t0, $0, 4 			       ; $t0 = 4 -> función 4: salida de una cadena ASCII 
+sd $t0, 0($s1) 			           ; CONTROL recibe 4 y produce la salida del mensaje 
+
+DADDI $t0, $zero, 8
+SD $t0, 0 ($s1)             ; CONTROL = 8
+
+L.D f1, 0 ($s0)             ; Tomo número en t0
+
+S.D f1, TABLA ($t6)         ; Guardo el valor en la tabla
+daddi $t6,$t6,8             ; Continuo con el siguiente numero
+daddi $t5,$t5,-1            ; disminuyo el contador
+
+bnez $t5, loop
+
+jr $ra
 ```
