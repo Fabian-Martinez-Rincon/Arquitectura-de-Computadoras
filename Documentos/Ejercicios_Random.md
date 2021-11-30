@@ -126,71 +126,66 @@ JR $ra
 Ejercicio_2
 ===========
 ```s
-.data ;leer desde teclado
-    CONTROL:      .word 0x10000
-    DATA:         .word 0x10008
-    MENSAJE:      .asciiz " INGRESE UN CARACTER: "
-    MENSAJEMAL:  .asciiz "  EL CARACTER NO ES UN DIGITO. "
-    CERO:         .ascii " CERO"
-    UNO:          .ascii " UNO"
-    DOS:          .ascii " DOS"
-    TRES:         .ascii " TRES"
-    CUATRO:       .ascii " CUATRO"
-    CINCO:        .ascii " CINCO"
-    SEIS:         .ascii " SEIS"
-    SIETE:        .ascii " SIETE"
-    OCHO:         .ascii " OCHO"
-    NUEVE:        .ascii " NUEVE"
-    CARACTER: .byte 0
-;________________________________________________________
+.data
+    CONTROL: .word 0x10000
+    DATA:    .word 0x10008
+    tabla1:  .double 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0
+    tabla2:  .double 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+;___________________________________________________________________
 .code
-    LWU $s0, CONTROL ($0) 	; $s0 = CONTROL
-    LWU $s1, DATA ($0) 	   	; $s1 = DATA
-    DADDI $s4, $0, 4
-    DADDI $s5, $0, MENSAJE
-    DADDI $s6, $0, MENSAJEMAL
-    ;_______________________________    IMPRIME MENSAJE
-    SD $s5, 0($s1)        
-    SD $s4, 0($s0)          
-    ;_______________________________
-    JAL INGRESO
-    LD $t0, CARACTER($0) 
-    SLTI $t1, $t0, 0x30         ; un 1 si es menor
-    DADDI $t3, $t3, 0x39
-    SLT $t1, $t3,  $t0         ; un 1 si me paso
-    DADDI $t4, $t4 ,1
-    BEQ $t1, $t4 , MALO
-    
-    DADDI $a1, $0, CERO
-    JAL MUESTRA
-    J TERMINO
-    
-    MALO: SD $s6, 0($s1)              
-    SD $s4, 0($s0)   
-    TERMINO: HALT
+    LD $s0, CONTROL($0)
+    LD $s1, DATA($0)
 
-;________________________________________________________
-INGRESO: DADDI $t1, $0, 9   ; LEE UN CARACTER
-    SD $t1,0 ($s0)
-    LBU $t1,0 ($s1)
-    SB $t1, CARACTER($0)
-    ; IMPRIME
-    DADDI $s3, $0, CARACTER
-    SD $s3, 0 ($s1)
-    DADDI $t1, $0, 4
-    SD $t1, 0 ($s0) 
-    ;_______________________________  LEE E IMPRIME EL CARACTER
-    JR $ra
-;________________________________________________________
-MUESTRA:  daddi $t7,$0,0x30
-    LOOP: BEQ $t0, $t7, IMPRIMIR
-        DADDI $t0, $t0, -1
-        DADDI $a1, $a1, 8
-        J LOOP
+    DADDI $t3, $0, 12       ; CANTIDAD DE ELEMENTOS
+    DADDI $t1, $0, tabla1
+    DADDI $t2, $0, tabla2
 
-    IMPRIMIR:  SD $a1, 0($s1)              
-    SD $s4, 0($s0)    
+    ;ME MUEVO EN LA TABLA
+    
+    LOOP: L.D F1, 0($t1)    ; ME MUEVO POR TABLA1
+          L.D F2, 8($t1) 
+
+          ; MANDO AMBOS NROS A PROMEDIAR
+          JAL PROMEDIAR
+
+          ; GUARDO EL RESULTADO DEL PROMEDIO EN TABLA2
+          S.D F3, 0 ($t2)       
+
+          ; AVANZO EN LAS TABLAS Y DISMINUYO EL CONTADOR
+          DADDI $t3, $t3, -1
+          DADDI $t1, $t1, 8
+          DADDI $t2, $t2, 8
+
+    BNEZ $t3, LOOP
+
+    DADDI $a0, $0, tabla2  ; MANDO COMO PARAMETRO LA DIRECCION DE TABLA2
+    JAL IMPRIMIR
+
+HALT
+;___________________________________________________________________
+PROMEDIAR: ADD.D F3, F1, F2
+    DADDI $t0, $0, 2
+    mtc1 $t0, F4
+    cvt.d.l F4, F4
+    DIV.D F3,F3,F4
 JR $ra
+;___________________________________________________________________
+IMPRIMIR: DADDI $t0, $0, 11  ; CANTIDAD DE ELEMENTOS DE tabla2
+
+    loopImprimir: L.D F1, 0 ($a0)       ; TOMO EL ELEMENTO ACTUAL
+        ; MANDO EL DATO A DATA Y EL 3 A CONTROL
+        S.D F1, 0 ($s1)
+        DADDI $t1, $0, 3
+        SD $t1, 0 ($s0)
+
+        ; AVANZO A LA SIGUIENTE POSICION A IMPRIMIR
+        DADDI $a0, $a0, 8
+        DADDI $t0, $t0, -1
+    BNEZ $t0, loopImprimir
+
+JR $ra
+;___________________________________________________________________
+
 
 ```
 Ejercicio_3
