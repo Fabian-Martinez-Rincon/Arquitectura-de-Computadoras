@@ -457,39 +457,41 @@ Ejercicio_8
 .code
     LD $s0, CONTROL ($0)    
     LD $s1, DATA ($0)
-    DADDI $s2, $s2, 2           ; MOSTRAR ENTERO
-    DADDI $s3, $s3, 4           ; IMPRIMIR
-    DADDI $s4, $s4, MENSAJE
-    DADDI $s5, $s5, 8           ; LEER
-
-            daddi $t0, $0, 0
+    
+            daddi $t7, $0, 0    ; Recorre la tabla
             daddi $t2, $0, 24
-LECTURA:    SD $s4, 0($s1)              
-            SD $s3, 0($s0)
+LECTURA:    DADDI $t0, $0, MENSAJE 
+            SD $t0, 0($s1)
+            DADDI $t0, $0, 4           ; IMPRIMIR              
+            SD $t0, 0($s0)
 
-            SD $s5, 0 ($s0)             
-            LD $t1, 0 ($s1)             
-            SD $t1, A($t0)
-            daddi $t0, $t0, 8
-            bne $t0, $t2, LECTURA
+            daddi $t0, $0, 8   ; LEER
+            SD $t0, 0 ($s0)             
+            
+            LD $t1, 0 ($s1) 
+            SD $t1, A($t7)
+
+            daddi $t7, $t7, 8       ; Avanzo en los nros ingresados
+            bne $t7, $t2, LECTURA
 
 
     DADDI $t0, $0, 0
     ld $t1, A($0) 
     ld $t2, B($0) 
-    DADD $t4, $t1, $t2      ; A + B
+    DADD $s2, $t1, $t2      ; A + B
     
  
-    ld $t3, C($0)
+    ld $t3, C($0)           ; (A + B) ^ C
     DADDI $t0, $t0 ,1
     LOOP: BEQZ $t3, TERMINO
-        dmul $t0, $t0, $t4  
+        dmul $t0, $t0, $s2  
         DADDI $t3, $t3, -1        
     J LOOP
 
     TERMINO: SD $t0, RESUL ($0) 
-    SD $t0, 0 ($s1)         
-    SD $s2, 0 ($s0)
+    SD $t0, 0 ($s1)
+    DADDI $t0, $0, 2         
+    SD $t0, 0 ($s0)
 
 HALT
 
