@@ -396,20 +396,24 @@ Ejercicio_6
 ```s
 .data
     TABLA:    .word 1,2,3,4,5,6,7
-    BUSCAR:   .word 4
+    BUSCAR:   .word 5
     LONG:     .word 7
 .code
-    LD $s0, LONG($0)
-    DADDI $s1,$s1, TABLA
-    LD $s2, BUSCAR($0)
-    LOOP: LD $t0, 0($s1)
-        BEQ $t0, $s2, IGUAL
-        DADDI $s1, $s1, 8
-        DADDI $s0, $s0, -1
-    BNEZ $s0, LOOP
-    DADDI R10,$0,0
+    LD $t1, LONG($0)
+    DADDI $t2,$0, TABLA
+    LD $t3, BUSCAR($0)
+
+    LOOP: LD $t0, 0($t2)
+        BEQ $t0, $t3, IGUAL
+        DADDI $t2, $t2, 8
+        DADDI $t1, $t1, -1
+        
+        BNEZ $t1, LOOP
+        DADDI R10,$0,0
     J FIN
-    IGUAL: DADDI R10,R0,1
+
+    IGUAL: DADD R10,$0,$t3  # Mando el dato a R10
+    
 FIN: HALT
 ```
 Ejercicio_7
