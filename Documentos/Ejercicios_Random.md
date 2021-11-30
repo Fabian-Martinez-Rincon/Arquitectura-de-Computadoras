@@ -201,21 +201,24 @@ Ejercicio_3
 .code
     LWU $s0, CONTROL ($0) 	    ; $s0 = CONTROL
     LWU $s1, DATA ($0) 	   	    ; $s1 = DATA
-    DADDI $s2, $s2 , 4          ; 4 IMPRIMIR UN STRING
-    DADDI $s3, $s3 , 8          ; 8 LEE UN NUMERO
-    DADDI $s4, $s4 , MENSAJE
-    DADDI $s5, $s5 , MENSAJE2 
-    DADDI $s6, $s6 , 2          ; PARA IMPRIMIR UN NUMERO
     ;_______________________________    IMPRIME MENSAJE
-    SD $s4, 0($s1)               
-    SD $s2, 0($s0)          
+    daddi $t0, $0, MENSAJE      ; $t0 = dirección del mensaje a mostrar  
+    sd $t0, 0($s1) 			    ; DATA recibe el puntero al comienzo del mensaje 
+
+    daddi $t0, $0, 4 			; $t0 = 4 -> función 4: salida de una cadena ASCII 
+    sd $t0, 0($s0) 			    ; CONTROL recibe 4 y produce la salida del mensaje 
+         
     ;_______________________________
     DADDI $sp, $0, 0x400        ; INICIALIZO EL PUNTERO A TOPE DE PILA
     JAL INGRESO   
     LD $t6, NRO($0)
+
     ; IMPRIMO EL MENSAJE PARA INGRESAR OTRO NUMERO
-    SD $s4, 0($s1)               
-    SD $s2, 0($s0)  
+    daddi $t0, $0, MENSAJE                 	    ; $t0 = dirección del mensaje a mostrar  
+    sd $t0, 0($s1) 			      	            ; DATA recibe el puntero al comienzo del mensaje 
+
+    daddi $t0, $0, 4 			                ; $t0 = 4 -> función 4: salida de una cadena ASCII 
+    sd $t0, 0($s0) 	
     
     JAL INGRESO   
     LD $t7, NRO($0)
@@ -227,24 +230,29 @@ Ejercicio_3
     JAL RESULTADO
     HALT
 
-INGRESO: DADDI $t1, $0, 8   ; LEE UN NRO
-    SD $t1,0 ($s0)
-    LD $t1,0 ($s1)
-    SD $t1, NRO($0)
+INGRESO: DADDI $t0, $0, 8   ; LEE UN NRO
+    SD $t0,0 ($s0)
+    LD $t0,0 ($s1)
+    SD $t0, NRO($0)
+
     ; IMPRIME
-    DADD $s3, $0, $t1
-    SD $s3, 0 ($s1)
-    DADDI $t1, $0, 4
-    SD $t1, 0 ($s0) 
+    SD $t0, 0 ($s1)
+    DADDI $t0, $0, 4
+    SD $t0, 0 ($s0) 
     ;_______________________________  LEE E IMPRIME EL NRO
     JR $ra
 
-RESULTADO: SD $s5, 0($s1) ;IMPRIMO EL MENSAJE NORMAL             
-    SD $s2, 0($s0)    
+RESULTADO: daddi $t0, $0, MENSAJE2                 	; $t0 = dirección del mensaje a mostrar  
+    sd $t0, 0($s1) 			      	                ; DATA recibe el puntero al comienzo del mensaje 
+
+    daddi $t0, $0, 4 			                    ; $t0 = 4 -> función 4: salida de una cadena ASCII 
+    sd $t0, 0($s0) 			                        ; CONTROL recibe 4 y produce la salida del mensaje 
+    
 
     ; IMPRIMO EL RESULTADO
-    SD $a0, 0 ($s1)  
-    SD $s6, 0 ($s0) 
+    SD $a0, 0 ($s1) 
+    daddi $t0, $0, 2  
+    SD $t0, 0 ($s0) 
     JR $ra
 
 ```
