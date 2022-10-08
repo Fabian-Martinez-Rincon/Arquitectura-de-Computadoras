@@ -536,6 +536,10 @@ OUT 32H, AL       ;CA
 
 MOV AL, 0         ;TODOS DE SALIDA
 OUT 33H, AL       ;CB
+  
+IN AL, 30H        ;poner el strobe en 0
+AND AL, 0FDH
+OUT 30H, AL
 
 ;RECORREMOS EL STRING
 MOV BX, OFFSET MENSAJE
