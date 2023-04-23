@@ -34,6 +34,7 @@ Indice
    * [Instrucciones de Control y Manejo de Interrupciones](Instrucciones_De_Control_Y_Manejo_De_Interrupciones)
    * [ASCII](#ASCII)
 
+---
 
 Registros_Indice
 ================
