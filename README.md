@@ -1,5 +1,10 @@
 <h1 align="center"> 💻Arquitectura De Computadoras </h1>
 
+---
+
+<p><img width="250" align='right' src="https://user-images.githubusercontent.com/55964635/233821142-59442bca-978d-4bf5-9708-f8ca08236327.png"></p>
+
+
 - [Pila, Subrutinas y Parametros](/Documentos/Assembler.md)
 - [Interrupciones](/Documentos/Interrupciones.md)
 - [Risc](/Documentos/Risc.md)
@@ -13,6 +18,8 @@
 - [Teoria Apuntes](/Documentos/Teoria1Apuntes.md)
 - [Parciales](/Documentos/Parciales.md)
 - [Copiar Pegar](/Documentos/CopiarPegar.md)
+
+---
 
 Indice
 =================
