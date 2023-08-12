@@ -6,9 +6,12 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)
 [![GitHub stars](https://img.shields.io/github/stars/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)](https://github.com/FabianMartinez1234567/Arquitectura-de-Computadoras/stargazers/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)](https://github.com/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=1200&pause=1000&color=F7F123&center=true&width=635&lines=💻 Arquitectura de Computadoras"/>
+
  </div>
 
-<h1 align="center"> 💻 Arquitectura De Computadoras </h1>
+
 <a title="" href="https://cafecito.app/ei-materias"><img src="/Documentos/Cafecito.png" alt="" /></a>
 
 ***Literal Estan todas las practicas resueltas y corregidas***
