@@ -5,7 +5,6 @@
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)
 [![GitHub stars](https://img.shields.io/github/stars/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)](https://github.com/FabianMartinez1234567/Arquitectura-de-Computadoras/stargazers/)
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)](https://github.com/Fabian-Martinez-Rincon/Arquitectura-de-Computadoras)
 
 
 
